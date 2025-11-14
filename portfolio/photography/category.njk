@@ -1,0 +1,24 @@
+---
+layout: layout.njk
+pagination:
+  data: categories
+  size: 1
+  alias: category
+permalink: "/portfolio/photography/{{ category.name }}/"
+---
+
+<section class="portfolio-hero">
+  <h1>{{ category.name | capitalize }}</h1>
+</section>
+
+<div class="portfolio-lower-wrapper">
+  <div class="photo-grid">
+    {% for img in category.images %}
+      <a href="/portfolio/photography/{{ category.name }}/{{ img }}" 
+         class="photo-item"
+         data-lightbox="gallery">
+        <img src="/portfolio/photography/{{ category.name }}/{{ img }}" alt="">
+      </a>
+    {% endfor %}
+  </div>
+</div>

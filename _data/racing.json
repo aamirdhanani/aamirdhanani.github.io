@@ -1,0 +1,26 @@
+
+{
+    "races": [
+      {
+        "title": "5K Personal Best",
+        "image": "/racing/5k.jpg",
+        "description": "Set a new personal record in the 5K during the 2024 Niagara Road Series, improving pace and race consistency through structured interval and tempo training.",
+        "time":"5:00"
+      
+    },
+      {
+        "title": "Niagara Falls Half Marathon",
+        "image": "/racing/halfmarathon.jpg",
+        "description": "Completed the Niagara Falls Half Marathon with strong negative splits and improved endurance strategy while managing elevation and pacing challenges.",
+        "time":"5:00"
+    },
+      {
+        "title": "Track Sprint Event – 400m",
+        "image": "/racing/400m.jpg",
+        "description": "Achieved a season-best time in the 400m, refining acceleration, stride mechanics, and late-race speed endurance through disciplined track sessions.",
+        "time":"5:00"
+      
+    }
+    ]
+  }
+  

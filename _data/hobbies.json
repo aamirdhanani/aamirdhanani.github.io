@@ -1,0 +1,25 @@
+{
+    "hobbies": [
+      {
+        "title": "Photography",
+        "description": "Exploring creative angles, street photography, lighting experiments, and capturing fleeting moments.",
+        "image": "/images/hobbies/photography.jpg"
+      },
+      {
+        "title": "Sim Racing",
+        "description": "Practicing racecraft, perfecting lap times, and competing online in GT and formula cars.",
+        "image": "/images/hobbies/simracing.jpg"
+      },
+      {
+        "title": "Reading & Journaling",
+        "description": "A collection of ideas, quotes, and notes from books, essays, and long walks.",
+        "image": "/images/hobbies/journaling.jpg"
+      },
+      {
+        "title": "Building & Coding",
+        "description": "Small projects, experiments, scripts, automation, and anything that looks interesting.",
+        "image": "/images/hobbies/building.jpg"
+      }
+    ]
+  }
+  

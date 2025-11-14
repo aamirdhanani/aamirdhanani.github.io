@@ -1,0 +1,33 @@
+{
+    "timeline": [
+      {
+        "year": "2024",
+        "items": [
+          {
+            "month": "April",
+            "location": "Tokyo, Japan",
+            "description": "Cherry blossom season, walked everywhere, ate everything.",
+            "image": ""
+          },
+          {
+            "month": "January",
+            "location": "Calgary, Canada",
+            "description": "Snowboarding trip in -25° weather.",
+            "image": "/images/travel/calgary.jpg"
+          }
+        ]
+      },
+      {
+        "year": "2023",
+        "items": [
+          {
+            "month": "September",
+            "location": "New York City, USA",
+            "description": "Work trip with a ton of photography walks.",
+            "image": "/images/travel/nyc.jpg"
+          }
+        ]
+      }
+    ]
+  }
+  

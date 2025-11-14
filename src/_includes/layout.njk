@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title or site.title }}</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+
+<body>
+  <div class="page-container">
+    {% include "header.njk" %}
+    <main class="content">
+      {{ content | safe }}
+    </main>
+    {% include "footer.njk" %}
+  </div>
+</body>
+
+
+</html>
+

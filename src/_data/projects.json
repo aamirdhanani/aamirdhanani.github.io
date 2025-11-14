@@ -1,0 +1,18 @@
+[
+    {
+      "title": "Sample Project One",
+      "description": "A longer description about the project. This can include why you built it, what tech or process you used, or anything you want to share.",
+      "image": "/images/projects/sample1.jpg"
+    },
+    {
+      "title": "Sample Project Two",
+      "description": "Another project with its own details. You can write as much text as you want here.",
+      "image": "/images/projects/sample2.jpg"
+    },
+    {
+      "title": "Sample Project Three",
+      "description": "Short or long descriptions are accepted — Eleventy will handle the layout automatically.",
+      "image": "/images/projects/sample3.jpg"
+    }
+  ]
+  

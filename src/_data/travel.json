@@ -1,35 +1,137 @@
 {
     "timeline": [
-        {
-            "year": "2025",
-            "items": [
-                {
-                "month": "November",
-                "location": "New York, United States of America",
-                "description": "Visiting the cousin, checking out a car show, and running a race!",
-                "image": ""
-                }
-            ]
-            },
       {
-        "year": "2024",
+        "year": "2025",
         "items": [
           {
+            "month": "November",
+            "location": "New York City, USA",
+            "description": "Visited my cousin.",
+            "image": ""
+          },
+          {
+            "month": "October",
+            "location": "Mexico City, Mexico",
+            "description": "Attended Formula 1, ate tacos, and hung out with my brother and cousin.",
+            "image": ""
+          },
+          {
+            "month": "October",
+            "location": "Dark Sky Barren Reserve, Muskoka, Canada",
+            "description": "Camping trip with the boys.",
+            "image": ""
+          },
+          {
+            "month": "September",
+            "location": "Alliston, Ontario, Canada",
+            "description": "Camping trip with friends.",
+            "image": ""
+          },
+          {
+            "month": "September",
+            "location": "Alliston, Ontario, Canada",
+            "description": "Solo camping trip and completed a 13 km hike.",
+            "image": ""
+          },
+          {
+            "month": "August",
+            "location": "Mount Washington, New Hampshire, USA",
+            "description": "Road trip to Mount Washington.",
+            "image": ""
+          },
+          {
+            "month": "July",
+            "location": "Italy (Naples, Rome, Pompeii, Capri, Sorrento)",
+            "description": "Family trip exploring cities along the coast.",
+            "image": ""
+          },
+          {
+            "month": "May",
+            "location": "Halifax, Nova Scotia, Canada",
+            "description": "Trip with friends.",
+            "image": ""
+          },
+          {
+            "month": "April",
+            "location": "New York City, USA",
+            "description": "Drove a car to NYC, flew home, and spent time with my cousin.",
+            "image": ""
+          },
+          {
+            "month": "March",
+            "location": "New York City, USA",
+            "description": "Visited my cousin.",
+            "image": ""
+          },
+          {
+            "month": "February",
+            "location": "Ellicottville, New York, USA",
+            "description": "Friends ski trip.",
+            "image": ""
+          },
+          {
             "month": "January",
-            "location": "Calgary, Canada",
-            "description": "Snowboarding trip in -25° weather.",
-            "image": "/images/travel/calgary.jpg"
+            "location": "New York City, USA",
+            "description": "Visited my cousin.",
+            "image": ""
           }
         ]
       },
       {
-        "year": "2023",
+        "year": "2024",
         "items": [
           {
-            "month": "September",
+            "month": "November",
+            "location": "Nashville, Tennessee & Panama City, Florida, USA",
+            "description": "Road trip for Jacob’s Ironman event; stopped in Nashville for the bar scene.",
+            "image": ""
+          },
+          {
+            "month": "August",
+            "location": "Germany → France → Luxembourg → Belgium → Netherlands → Germany",
+            "description": "Picked up a car and road-tripped through Stuttgart, Baden-Baden, Metz, Luxembourg City, Brussels, Amsterdam, Zandvoort (Formula 1), Düsseldorf, Nürburg (Nürburgring), Mannheim, and back to Stuttgart.",
+            "image": ""
+          },
+          {
+            "month": "July",
+            "location": "Boston, Massachusetts, USA",
+            "description": "Family trip with whale watching and exploring the city.",
+            "image": ""
+          },
+          {
+            "month": "February",
+            "location": "Ellicottville, New York, USA",
+            "description": "Friends ski trip.",
+            "image": ""
+          }
+        ]
+      },
+      {
+        "year": "2022",
+        "items": [
+          {
+            "month": "November",
+            "location": "Texas, USA",
+            "description": "Attended my cousin’s wedding.",
+            "image": ""
+          },
+          {
+            "month": "February",
+            "location": "Cancun, Mexico",
+            "description": "Group grad trip.",
+            "image": ""
+          },
+          {
+            "month": "February",
             "location": "New York City, USA",
-            "description": "Work trip with a ton of photography walks.",
-            "image": "/images/travel/nyc.jpg"
+            "description": "Solo trip for fun.",
+            "image": ""
+          },
+          {
+            "month": "January",
+            "location": "Texas, USA",
+            "description": "Visited for my cousin’s engagement.",
+            "image": ""
           }
         ]
       }

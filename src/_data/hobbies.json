@@ -56,6 +56,18 @@
         "description": "Maybe I this is a hobby, maybe I just like to eat. Who knows.",
         "image": "/images/hobbies/food.jpg"
       }
+      ,
+      {
+        "title": "Skiing",
+        "description": "Love hitting the slopes!",
+        "image": "/images/hobbies/skiing.jpg"
+      }
+      ,
+      {
+        "title": "Drone Flying",
+        "description": "Like to fly the drone to get pictures and explore the skies.",
+        "image": "/images/hobbies/drone.jpg"
+      }
     ]
   }
   

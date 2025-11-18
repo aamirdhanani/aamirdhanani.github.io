@@ -2,23 +2,72 @@
 {
     "races": [
       {
-        "title": "5K Personal Best",
+        "title": "I AM MISSING THE TORONTO HALF AND THE NIGHT RUN JUST DID AND TERRY FOX RUN",
         "image": "/racing/5k.jpg",
-        "description": "Set a new personal record in the 5K during the 2024 Niagara Road Series, improving pace and race consistency through structured interval and tempo training.",
-        "time":"5:00"
+        "description": "Should also just confirm with Bibs what exaclty i am missing if anything.",
+        "time":"78.55km - 15:07:00"
       
     },
       {
-        "title": "Niagara Falls Half Marathon",
-        "image": "/racing/halfmarathon.jpg",
-        "description": "Completed the Niagara Falls Half Marathon with strong negative splits and improved endurance strategy while managing elevation and pacing challenges.",
-        "time":"5:00"
+        "title": "2025 - The Sunburn Solstice",
+        "image": "/racing/5k.jpg",
+        "description": "Yeah not sure what compeled me to do this but it was a wild experience. Something about having only one task for the day and repeating it for 15 hours.",
+        "time":"78.55km - 15:07:00"
+      
     },
       {
-        "title": "Track Sprint Event – 400m",
+        "title": "2024 - Niagara Falls Marathon",
+        "image": "/racing/5k.jpg",
+        "description": "First full marathon. Crazy experience, I don't think I could ever describe what it felt like to do something for that long.",
+        "time":"10km - 04:09:00"
+      
+    },
+      {
+        "title": "2024 - Brita Ultra Night Run",
+        "image": "/racing/5k.jpg",
+        "description": "Did the 10k alone as my friends only signed up for the 5. lame.",
+        "time":"10km - 00:54:38"
+      
+    },
+      {
+        "title": "2024 - Under Armour 10K",
+        "image": "/racing/5k.jpg",
+        "description": "Was pacing Elvin who wanted to hit 57 minutes for the ten.",
+        "time":"10km - 00:57:22"
+      
+    },
+      {
+        "title": "2024 - Around the Bay",
+        "image": "/racing/5k.jpg",
+        "description": "Working towards marathon prep, this was a test. Funny story the race was supposed to be only 30km but construction increased it to 34km. Then the morning of there was a sinkhole that added another km.",
+        "time":"35km - 03:43:00"
+      
+    },
+      {
+        "title": "2023 - Michelob Ultra Night Run",
+        "image": "/racing/5k.jpg",
+        "description": "Was a fun event last time so I figured why not. This time I dragged along my cousin Saif.",
+        "time":"5km - 00:29:56"
+      
+    },
+      {
+        "title": "2023 - Niagara Ultra",
+        "image": "/racing/5k.jpg",
+        "description": "Had gotten pretty lazy between the last race and this one. The only reason I did this is because my friend Elvin couldn't make it and forcefully transfered the bib to me.",
+        "time":"10km - 01:01:00"
+      
+    },
+      {
+        "title": "2022 - Niagara Falls Half Marathon",
+        "image": "/racing/halfmarathon.jpg",
+        "description": "Completed the Niagara Falls Half Marathon. First big boy race ever. Little did I know of the story to follow.",
+        "time":"21.21km - 02:06:00"
+    },
+      {
+        "title": "2022 - Michelob Ultra Night Run",
         "image": "/racing/400m.jpg",
-        "description": "Achieved a season-best time in the 400m, refining acceleration, stride mechanics, and late-race speed endurance through disciplined track sessions.",
-        "time":"5:00"
+        "description": "First race ever. Shout out to my friend Jacob for hyping me up here and on pretty much every other event.",
+        "time":"10km - 00:57:30"
       
     }
     ]

@@ -2,23 +2,59 @@
     "hobbies": [
       {
         "title": "Photography",
-        "description": "Exploring creative angles, street photography, lighting experiments, and capturing fleeting moments.",
+        "description": "Love to take photos and use a camera for it's purpose. Some how I have ended up with 5 cameras, a variety from new to old. Some of my better pictures are displayed within the portfolio section.",
         "image": "/images/hobbies/photography.jpg"
       },
       {
         "title": "Sim Racing",
-        "description": "Practicing racecraft, perfecting lap times, and competing online in GT and formula cars.",
+        "description": "Ever since I was little I have always been into cars. I have tried out a few racing sims however most of my time is spent on the dinky one I have at home. The one in the image is probably a bit too overkill.... and would require a whole room to house. It was fun to use though!",
         "image": "/images/hobbies/simracing.jpg"
       },
       {
-        "title": "Reading & Journaling",
-        "description": "A collection of ideas, quotes, and notes from books, essays, and long walks.",
+        "title": "Reading",
+        "description": "I like to think outside the box and learn as much as I can. Unfortunately I also get distracted and never really finish my books.",
         "image": "/images/hobbies/journaling.jpg"
       },
       {
-        "title": "Building & Coding",
-        "description": "Small projects, experiments, scripts, automation, and anything that looks interesting.",
+        "title": "Coding",
+        "description": "Being able to put together things that help me solve an issue or help me display who I am is what I enjoy.",
         "image": "/images/hobbies/building.jpg"
+      },
+      {
+        "title": "Flying planes",
+        "description": "Although technically I have not done anywhere close to the flight hours required at this moment, I really enjoyed the experience of flying a plane and would like to start working towards my RPL soon!",
+        "image": "/images/hobbies/plane.jpg"
+      }
+      ,
+      {
+        "title": "Leather work",
+        "description": "Technically I have not created anything with real leather - as I do not think that I have the skills to do that yet - I love working with my hands to create things that I can use in daily life.",
+        "image": "/images/hobbies/wallet.jpg"
+      },
+      {
+        "title": "3D Printing ",
+        "description": "The machine that can make objects appear out of no where. 3D printing has lead to some really cool opportunities like buidling a keyboard from scratch or developing an organizational system.",
+        "image": "/images/hobbies/3dprinter.jpg"
+      },
+      {
+        "title": "Driving - But in real life",
+        "description": "I love driving around and exploring new places! Statistically my heart rate is second lowest while I am driving followed by sleeping.",
+        "image": "/images/hobbies/driving.jpg"
+      },
+      {
+        "title": "Watches",
+        "description": "Recently I have been getting into collecting time pieces, learning the difference between monetary value and sentimental value has been a big thing.",
+        "image": "/images/hobbies/plane.jpg"
+      },
+      {
+        "title": "Traveling",
+        "description": "Not sure if this counts as a hobby but I love being able to hop onto a plane and explore a new place.",
+        "image": "/images/hobbies/traveling.jpg"
+      },
+      {
+        "title": "Food",
+        "description": "Maybe I this is a hobby, maybe I just like to eat. Who knows.",
+        "image": "/images/hobbies/food.jpg"
       }
     ]
   }

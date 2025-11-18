@@ -1,16 +1,41 @@
 [
     {
-      "title": "Sample Project One",
+      "title": "This Portfolio!",
       "description": "A longer description about the project. This can include why you built it, what tech or process you used, or anything you want to share.",
       "image": "/images/projects/sample1.jpg"
     },
     {
-      "title": "Sample Project Two",
+      "title": "My Closet App",
       "description": "Another project with its own details. You can write as much text as you want here.",
       "image": "/images/projects/sample2.jpg"
     },
     {
-      "title": "Sample Project Three",
+      "title": "Split Keyboard",
+      "description": "Short or long descriptions are accepted — Eleventy will handle the layout automatically.",
+      "image": "/images/projects/sample3.jpg"
+    },
+    {
+      "title": "Macro Pad",
+      "description": "Short or long descriptions are accepted — Eleventy will handle the layout automatically.",
+      "image": "/images/projects/sample3.jpg"
+    },
+    {
+      "title": "Leather Cardholder",
+      "description": "Short or long descriptions are accepted — Eleventy will handle the layout automatically.",
+      "image": "/images/projects/sample3.jpg"
+    },
+    {
+      "title": "Threshold Athletics",
+      "description": "Short or long descriptions are accepted — Eleventy will handle the layout automatically.",
+      "image": "/images/projects/sample3.jpg"
+    },
+    {
+      "title": "Wader.ca",
+      "description": "Short or long descriptions are accepted — Eleventy will handle the layout automatically.",
+      "image": "/images/projects/sample3.jpg"
+    },
+    {
+      "title": "Desiety.com",
       "description": "Short or long descriptions are accepted — Eleventy will handle the layout automatically.",
       "image": "/images/projects/sample3.jpg"
     }

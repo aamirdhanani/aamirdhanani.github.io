@@ -3,12 +3,12 @@
       {
         "title": "Photography",
         "description": "Love to take photos and use a camera for it's purpose. Some how I have ended up with 5 cameras, a variety from new to old. Some of my better pictures are displayed within the portfolio section.",
-        "image": ""
+        "image": "/src/images/hobbies/photography.jpg"
       },
       {
         "title": "Sim Racing",
         "description": "Ever since I was little I have always been into cars. I have tried out a few racing sims however most of my time is spent on the dinky one I have at home. The one in the image is probably a bit too overkill.... and would require a whole room to house. It was fun to use though!",
-        "image": ""
+        "image": "/src/images/hobbies/simracing.png"
       },
       {
         "title": "Reading",
@@ -34,7 +34,7 @@
       {
         "title": "3D Printing ",
         "description": "The machine that can make objects appear out of no where. 3D printing has lead to some really cool opportunities like buidling a keyboard from scratch or developing an organizational system.",
-        "image": ""
+        "image": "/src/images/hobbies/3dprinting.jpg"
       },
       {
         "title": "Driving - But in real life",
@@ -54,19 +54,19 @@
       {
         "title": "Food",
         "description": "Maybe this is a hobby, maybe I just like to eat. Who knows.",
-        "image": ""
+        "image": "/src/images/hobbies/food.png"
       }
       ,
       {
         "title": "Skiing",
         "description": "Love hitting the slopes, especailly when it's with friends!",
-        "image": ""
+        "image": "/src/images/hobbies/skiing.png"
       }
       ,
       {
         "title": "Drone Flying",
         "description": "Like to fly the drone to get pictures and explore the skies.",
-        "image": ""
+        "image": "/src/images/hobbies/flyingdrone.png"
       }
       ,
       {
@@ -90,19 +90,19 @@
       {
         "title": "Watching Formula One",
         "description":"DUU DUU DUUUU DUUUU, yes a redbull fan. Get over it.",
-        "image": ""
+        "image": "/src/images/hobbies/watchingf1.png"
       }
       ,
       {
         "title": "Watching the NBA",
         "description":"LET'S GOOO RAPTORSSS.",
-        "image": ""
+        "image": "/src/images/hobbies/watchingnba.jpg"
       }
       ,
       {
         "title": "Listening to music",
         "description":"I listen to a very wide vareity of music. From Country to Rap to Classical I can pretty much bop with anything.",
-        "image": ""
+        "image": "/src/images/hobbies/music.png"
       }
     ]
   }

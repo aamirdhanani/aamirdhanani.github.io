@@ -1,43 +1,42 @@
 [
-    {
-      "title": "This Portfolio!",
-      "description": "A longer description about the project. This can include why you built it, what tech or process you used, or anything you want to share.",
-      "image": "/images/projects/sample1.jpg"
-    },
-    {
-      "title": "My Closet App",
-      "description": "Another project with its own details. You can write as much text as you want here.",
-      "image": "/images/projects/sample2.jpg"
-    },
-    {
-      "title": "Split Keyboard",
-      "description": "Short or long descriptions are accepted — Eleventy will handle the layout automatically.",
-      "image": "/images/projects/sample3.jpg"
-    },
-    {
-      "title": "Macro Pad",
-      "description": "Short or long descriptions are accepted — Eleventy will handle the layout automatically.",
-      "image": "/images/projects/sample3.jpg"
-    },
-    {
-      "title": "Leather Cardholder",
-      "description": "Short or long descriptions are accepted — Eleventy will handle the layout automatically.",
-      "image": "/images/projects/sample3.jpg"
-    },
-    {
-      "title": "Threshold Athletics",
-      "description": "Short or long descriptions are accepted — Eleventy will handle the layout automatically.",
-      "image": "/images/projects/sample3.jpg"
-    },
-    {
-      "title": "Wader.ca",
-      "description": "Short or long descriptions are accepted — Eleventy will handle the layout automatically.",
-      "image": "/images/projects/sample3.jpg"
-    },
-    {
-      "title": "Desiety.com",
-      "description": "Short or long descriptions are accepted — Eleventy will handle the layout automatically.",
-      "image": "/images/projects/sample3.jpg"
-    }
-  ]
-  
+  {
+    "title": "This Portfolio",
+    "description": "A fully custom-built portfolio site designed to showcase my work, travel, and personal projects. Built with a focus on clean design, performance, and maintainability.",
+    "image": "/images/projects/PortfolioProject.png"
+  },
+  {
+    "title": "My Closet App",
+    "description": "A personal wardrobe management app that helps organize outfits, track clothing usage, and simplify daily decisions. Designed for both practicality and fun experimentation.",
+    "image": ""
+  },
+  {
+    "title": "Split Keyboard",
+    "description": "A hand-built split mechanical keyboard project focused on ergonomics, custom key mapping, and soldering practice.",
+    "image": "/images/projects/splitKeyboard.jpg"
+  },
+  {
+    "title": "Macro Pad",
+    "description": "A custom macro pad designed for productivity and shortcuts, featuring programmable keys and a compact layout.",
+    "image": "/images/projects/macroPad.jpg"
+  },
+  {
+    "title": "Leather Cardholder",
+    "description": "A handmade leather cardholder project exploring crafting techniques like saddle stitching, burnishing, and pattern design.",
+    "image": "/images/projects/leatherCardholder.jpg"
+  },
+  {
+    "title": "Threshold Athletics",
+    "description": "A web project built for Threshold Athletics, focusing on clean UI, accessibility, and fast performance.",
+    "image": "/images/projects/thresholdAthletics.jpg"
+  },
+  {
+    "title": "Wader.ca",
+    "description": "A modern website built for Wader.ca, emphasizing simplicity, clarity, and mobile-first design.",
+    "image": "/images/projects/wader.jpg"
+  },
+  {
+    "title": "Desiety.com",
+    "description": "A multi-page website created for Desiety.com, focused on brand presentation and easy content management.",
+    "image": "/images/projects/desiety.jpg"
+  }
+]

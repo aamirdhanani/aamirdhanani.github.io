@@ -13,12 +13,12 @@
       {
         "title": "Reading",
         "description": "I like to think outside the box and learn as much as I can. Unfortunately I also get distracted and never really finish my books.",
-        "image": "/images/hobbies/journaling.jpg"
+        "image": ""
       },
       {
         "title": "Coding",
         "description": "Being able to put together things that help me solve an issue or help me display who I am is what I enjoy.",
-        "image": "/images/hobbies/building.jpg"
+        "image": ""
       },
       {
         "title": "Flying planes",
@@ -53,13 +53,13 @@
       },
       {
         "title": "Food",
-        "description": "Maybe I this is a hobby, maybe I just like to eat. Who knows.",
+        "description": "Maybe this is a hobby, maybe I just like to eat. Who knows.",
         "image": "/images/hobbies/food.jpg"
       }
       ,
       {
         "title": "Skiing",
-        "description": "Love hitting the slopes!",
+        "description": "Love hitting the slopes, especailly when it's with friends!",
         "image": "/images/hobbies/skiing.jpg"
       }
       ,
@@ -67,6 +67,42 @@
         "title": "Drone Flying",
         "description": "Like to fly the drone to get pictures and explore the skies.",
         "image": "/images/hobbies/drone.jpg"
+      }
+      ,
+      {
+        "title": "Neuroscience",
+        "description":"In my spare time I have looked into studying Neuroscience. Why? Because why not. I took the the Fundamentals of Neuroscience course available on EdX.",
+        "image": "/images/hobbies/drone.jpg"
+      }
+      ,
+      {
+        "title": "Camping",
+        "description":"Nothing like spending some time in the great outdoors! Have I tested my gear on my parents deck. Yes, yes I have. Did I sleep outside for a few days? Yes, yes I did.",
+        "image": "/images/hobbies/camping.jpg"
+      }
+      ,
+      {
+        "title": "Cycling",
+        "description":"Although this is less of a facination now, cycling outside is something that I enjoy.",
+        "image": ""
+      }
+      ,
+      {
+        "title": "Watching Formula One",
+        "description":"DUU DUU DUUUU DUUUU, yes a redbull fan. Get over it.",
+        "image": ""
+      }
+      ,
+      {
+        "title": "Watching the NBA",
+        "description":"LET'S GOOO RAPTORSSS.",
+        "image": ""
+      }
+      ,
+      {
+        "title": "Listening to music",
+        "description":"I listen to a very wide vareity of music. From Country to Rap to Classical I can pretty much bop with anything.",
+        "image": ""
       }
     ]
   }

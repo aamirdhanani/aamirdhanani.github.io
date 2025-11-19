@@ -13,8 +13,11 @@ title: "Aamir Dhanani"
 <section class="projects-list">
   {% for project in projects %}
     <article class="project-card timeline-animate">
-      <img src="{{ project.image }}" alt="{{ project.title }}">
 
+
+      {% if project.image %}
+        <img src="{{ project.image }}" alt="{{ project.location }}">
+      {% endif %}
       <div class="project-content">
         <h2>{{ project.title }}</h2>
         <p>{{ project.description }}</p>

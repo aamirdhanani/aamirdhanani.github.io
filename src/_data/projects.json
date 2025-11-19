@@ -12,12 +12,12 @@
   {
     "title": "Split Keyboard",
     "description": "A hand-built split mechanical keyboard project focused on ergonomics, custom key mapping, and soldering practice.",
-    "image": ""
+    "image": "/src/images/projects/splitkeeb.jpg"
   },
   {
     "title": "Macro Pad",
     "description": "A custom macro pad designed for productivity and shortcuts, featuring programmable keys and a compact layout.",
-    "image": ""
+    "image": "/src/images/projects/macropad.jpg"
   },
   {
     "title": "Leather Cardholder",

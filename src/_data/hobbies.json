@@ -23,7 +23,7 @@
       {
         "title": "Flying planes",
         "description": "Although technically I have not done anywhere close to the flight hours required at this moment, I really enjoyed the experience of flying a plane and would like to start working towards my RPL soon!",
-        "image": ""
+        "image": "/src/images/hobbies/flyingplane.JPEG"
       }
       ,
       {
@@ -39,7 +39,7 @@
       {
         "title": "Driving - But in real life",
         "description": "I love driving around and exploring new places! Statistically my heart rate is second lowest while I am driving followed by sleeping.",
-        "image": ""
+        "image": "/src/images/hobbies/drivingirl.jpg"
       },
       {
         "title": "Watches",
@@ -78,7 +78,7 @@
       {
         "title": "Camping",
         "description":"Nothing like spending some time in the great outdoors! Have I tested my gear on my parents deck. Yes, yes I have. Did I sleep outside for a few days? Yes, yes I did.",
-        "image": ""
+        "image": "/src/images/hobbies/camping.JPG"
       }
       ,
       {

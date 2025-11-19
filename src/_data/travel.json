@@ -36,20 +36,20 @@
           {
             "month": "August",
             "location": "Mount Washington, New Hampshire, USA",
-            "description": "Road trip to Mount Washington.",
-            "image": ""
+            "description": "Road trip to climb Mount Washington.",
+            "image": "/src/images/travel/newhamp.JPG"
           },
           {
             "month": "July",
             "location": "Italy (Naples, Rome, Pompeii, Capri, Sorrento)",
             "description": "Family trip exploring cities along the coast.",
-            "image": ""
+            "image": "/src/images/travel/italywithfam.jpg"
           },
           {
             "month": "May",
             "location": "Halifax, Nova Scotia, Canada",
             "description": "Trip with friends.",
-            "image": ""
+            "image": "/src/images/travel/novascotia.jpg"
           },
           {
             "month": "April",

@@ -2,7 +2,7 @@
   {
     "title": "This Portfolio",
     "description": "A fully custom-built portfolio site designed to showcase my work, travel, and personal projects. Built with a focus on clean design, performance, and maintainability.",
-    "image": "/images/projects/PortfolioProject.png"
+    "image": "/src/images/projects/PortfolioProject.png"
   },
   {
     "title": "My Closet App",

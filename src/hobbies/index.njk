@@ -10,20 +10,24 @@ title: "Hobbies and Interests"
 </section>
 
 <div class="portfolio-lower-wrapper">
-<div class="projects-list timeline-animate">
-  {% for hobby in hobbies.hobbies %}
-  <div class="project-card">
+  <div class="projects-list timeline-animate">
 
+    {% set sortedHobbies = hobbies.hobbies | sort(attribute="title") %}
 
-    {% if hobby.image %}
-      <img src="{{ hobby.image }}" alt="{{ hobby.location }}">
-    {% endif %}
-    
-    <div class="project-content">
-      <h2>{{ hobby.title }}</h2>
-      <p>{{ hobby.description }}</p>
+    {% for hobby in sortedHobbies %}
+    <div class="project-card">
+
+      {% if hobby.image %}
+        <img src="{{ hobby.image }}" alt="{{ hobby.location }}">
+      {% endif %}
+
+      <div class="project-content">
+        <h2>{{ hobby.title }}</h2>
+        <p>{{ hobby.description }}</p>
+      </div>
+
     </div>
+    {% endfor %}
+
   </div>
-  {% endfor %}
-</div>
 </div>

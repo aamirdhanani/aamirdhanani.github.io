@@ -11,18 +11,23 @@ title: "Aamir Dhanani"
 
 <div class="portfolio-lower-wrapper">
 <section class="projects-list">
-  {% for project in projects %}
-    <article class="project-card timeline-animate">
 
+  {% set sortedProjects = projects | sort(attribute="title") %}
+
+  {% for project in sortedProjects %}
+    <article class="project-card timeline-animate">
 
       {% if project.image %}
         <img src="{{ project.image }}" alt="{{ project.location }}">
       {% endif %}
+
       <div class="project-content">
         <h2>{{ project.title }}</h2>
         <p>{{ project.description }}</p>
       </div>
+
     </article>
   {% endfor %}
+
 </section>
 </div>

@@ -12,31 +12,31 @@
   {
     "title": "Split Keyboard",
     "description": "A hand-built split mechanical keyboard project focused on ergonomics, custom key mapping, and soldering practice.",
-    "image": "/images/projects/splitKeyboard.jpg"
+    "image": ""
   },
   {
     "title": "Macro Pad",
     "description": "A custom macro pad designed for productivity and shortcuts, featuring programmable keys and a compact layout.",
-    "image": "/images/projects/macroPad.jpg"
+    "image": ""
   },
   {
     "title": "Leather Cardholder",
     "description": "A handmade leather cardholder project exploring crafting techniques like saddle stitching, burnishing, and pattern design.",
-    "image": "/images/projects/leatherCardholder.jpg"
+    "image": ""
   },
   {
     "title": "Threshold Athletics",
     "description": "A web project built for Threshold Athletics, focusing on clean UI, accessibility, and fast performance.",
-    "image": "/images/projects/thresholdAthletics.jpg"
+    "image": ""
   },
   {
     "title": "Wader.ca",
     "description": "A modern website built for Wader.ca, emphasizing simplicity, clarity, and mobile-first design.",
-    "image": "/images/projects/wader.jpg"
+    "image": ""
   },
   {
     "title": "Desiety.com",
     "description": "A multi-page website created for Desiety.com, focused on brand presentation and easy content management.",
-    "image": "/images/projects/desiety.jpg"
+    "image": ""
   }
 ]

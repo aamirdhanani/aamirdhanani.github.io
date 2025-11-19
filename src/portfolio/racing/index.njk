@@ -13,7 +13,9 @@ title: "Racing"
 <div class="projects-list timeline-animate">
   {% for race in racing.races %}
   <div class="project-card">
-    <img src="{{ race.image }}" alt="{{ race.title }}">
+      {% if race.image %}
+        <img src="{{ race.image }}" alt="{{ race.location }}">
+      {% endif %}
     <div class="project-content">
       <h2>{{ race.title }}</h2>
       <h3>{{ race.time }}</h2>

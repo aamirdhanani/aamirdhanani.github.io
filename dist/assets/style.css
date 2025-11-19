@@ -359,7 +359,7 @@ a { color: var(--accent); }
 }
 
 .info-card {
-  background: #0070f3; /* same blue glass effect */
+  background: #0070f3; 
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   padding: 2rem;

@@ -1,0 +1,20 @@
+---
+layout: layout.njk
+title: Photography
+---
+
+<section class="portfolio-hero">
+  <h1>Photography</h1>
+  <p class="tagline">Collections captured through my lens.</p>
+</section>
+
+<div class="portfolio-lower-wrapper">
+<section class="photo-category-grid">
+  {% for cat in categories %}
+  <a class="photo-category-card" href="{{ cat.url }}">
+    <div class="photo-thumb" style="background-image: url('/portfolio/photography/{{ cat.name }}/{{ cat.cover }}')"></div>
+    <h2>{{ cat.name | capitalize }}</h2>
+  </a>
+  {% endfor %}
+</section>
+</div>

@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node scripts/fetch-strava.js && npx @11ty/eleventy --serve",
+    "build": "node scripts/fetch-strava.js && npx @11ty/eleventy",
+    "deploy": "node scripts/fetch-strava.js && npx eleventy && cp -r dist/* . && git add -A && git commit -m \"Deploy site\" && git push origin main --force"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "lightbox2": "^2.11.5"
+  }
+}

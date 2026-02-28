@@ -1,0 +1,35 @@
+---
+layout: /layout.njk
+title: "Aamir Dhanani"
+---
+<script src="/assets/js/main.js" defer></script>
+
+<section class="portfolio-hero">
+  <h1>Travel</h1>
+  <p class="tagline">A log of trips I've been on over the past few years.</p>
+</section>
+
+
+<div class="portfolio-lower-wrapper">
+<div class="timeline-container">
+  {% for yearBlock in travel.timeline %}
+    <h2 class="timeline-year">{{ yearBlock.year }}</h2>
+
+    {% for item in yearBlock.items %}
+      <div class="timeline-item timeline-animate">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+          <h3>{{ item.month }} – {{ item.location }}</h3>
+          <p>{{ item.description }}</p>
+
+          {% if item.image %}
+            <img src="{{ item.image }}" alt="{{ item.location }}">
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  {% endfor %}
+</div>
+
+</div>

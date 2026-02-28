@@ -1,0 +1,33 @@
+---
+layout: layout.njk
+title: "Hobbies and Interests"
+---
+<script src="/assets/js/main.js" defer></script>
+
+<section class="portfolio-hero">
+  <h1>Hobbies and Interests</h1>
+  <p class="tagline">Things I explore, practice, and enjoy.</p>
+</section>
+
+<div class="portfolio-lower-wrapper">
+  <div class="projects-list timeline-animate">
+
+    {% set sortedHobbies = hobbies.hobbies | sort(attribute="title") %}
+
+    {% for hobby in sortedHobbies %}
+    <div class="project-card">
+
+      {% if hobby.image %}
+        <img src="{{ hobby.image }}" alt="{{ hobby.location }}">
+      {% endif %}
+
+      <div class="project-content">
+        <h2>{{ hobby.title }}</h2>
+        <p>{{ hobby.description }}</p>
+      </div>
+
+    </div>
+    {% endfor %}
+
+  </div>
+</div>

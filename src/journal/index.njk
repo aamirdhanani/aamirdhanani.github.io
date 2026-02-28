@@ -1,0 +1,37 @@
+---
+layout: layout.njk
+title: "Journal"
+---
+<script src="/assets/js/main.js" defer></script>
+
+<section class="portfolio-hero">
+  <h1>Journal</h1>
+  <p class="tagline">A collection of thoughts, quotes, and ideas.</p>
+</section>
+
+<div class="portfolio-lower-wrapper">
+<div class="journal-filters">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn tip" data-filter="tip">Tip</button>
+  <button class="filter-btn fact" data-filter="fact">Fact</button>
+  <button class="filter-btn interesting" data-filter="interesting">Interesting</button>
+
+</div>
+
+
+<div class="journal-list timeline-animate">
+  {% for entry in journal.entries %}
+  <div class="journal-card">
+    <p class="journal-text">“{{ entry.text }}”</p>
+
+    {% if entry.author %}
+    <p class="journal-author">— {{ entry.author }}</p>
+    {% endif %}
+
+    {% if entry.tag %}
+    <p class="journal-tag {{ entry.tag }}">{{ entry.tag | capitalize }}</p>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+</div>

@@ -1,0 +1,27 @@
+---
+layout: layout.njk
+title: "Racing"
+---
+<script src="/assets/js/main.js" defer></script>
+
+<section class="portfolio-hero">
+  <h1>Racing & Athletics</h1>
+  <p class="tagline">A collection of races, personal records, and athletic milestones.</p>
+</section>
+
+<div class="portfolio-lower-wrapper">
+<div class="projects-list timeline-animate">
+  {% for race in racing.races %}
+  <div class="project-card">
+      {% if race.image %}
+        <img src="{{ race.image }}" alt="{{ race.location }}">
+      {% endif %}
+    <div class="project-content">
+      <h2>{{ race.title }}</h2>
+      <h3>{{ race.time }}</h2>
+      <p>{{ race.description }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>

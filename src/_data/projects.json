@@ -1,0 +1,42 @@
+[
+  {
+    "title": "This Portfolio",
+    "description": "A fully custom-built portfolio site designed to showcase my work, travel, and personal projects. Built with a focus on clean design, performance, and maintainability.",
+    "image": "/images/projects/PortfolioProject.png"
+  },
+  {
+    "title": "My Closet App",
+    "description": "A personal wardrobe management app that helps organize outfits, track clothing usage, and simplify daily decisions. Designed for both practicality and fun experimentation.",
+    "image": ""
+  },
+  {
+    "title": "Split Keyboard",
+    "description": "A hand-built split mechanical keyboard project focused on ergonomics, custom key mapping, and soldering practice.",
+    "image": "/images/projects/splitkeeb.jpg"
+  },
+  {
+    "title": "Macro Pad",
+    "description": "A custom macro pad designed for productivity and shortcuts, featuring programmable keys and a compact layout.",
+    "image": "/images/projects/macropad.jpg"
+  },
+  {
+    "title": "Leather Cardholder",
+    "description": "A handmade leather cardholder project exploring crafting techniques like saddle stitching, burnishing, and pattern design.",
+    "image": "/images/projects/leathercardholder.png"
+  },
+  {
+    "title": "Threshold Athletics",
+    "description": "A web project built for Threshold Athletics, focusing on clean UI, accessibility, and fast performance.",
+    "image": ""
+  },
+  {
+    "title": "Wader.ca",
+    "description": "A modern website built for Wader.ca, emphasizing simplicity, clarity, and mobile-first design.",
+    "image": ""
+  },
+  {
+    "title": "Desiety.com",
+    "description": "A multi-page website created for Desiety.com, focused on brand presentation and easy content management.",
+    "image": ""
+  }
+]

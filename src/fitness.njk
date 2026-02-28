@@ -1,0 +1,449 @@
+---
+layout: layout.njk
+title: "Fitness & Athletics"
+---
+
+<section class="portfolio-hero">
+  <h1>Fitness & Athletics</h1>
+  <p class="tagline">Tracking disciplines, volume, and personal bests.</p>
+</section>
+
+<div class="portfolio-lower-wrapper">
+  
+  <div class="dashboard-container timeline-animate">
+    
+    <!-- Weekly Volume Insights -->
+    <div class="dashboard-grid">
+      <section class="dashboard-card main-stats">
+        <h2 class="card-title">Weekly Summary</h2>
+        <div class="stats-row">
+          <div class="big-stat">
+            <span class="stat-value">{{ strava.weeklyTotalDistance }} <small>km</small></span>
+            <span class="stat-label">Total Distance</span>
+          </div>
+          <div class="big-stat">
+            <span class="stat-value">{{ strava.recentActivities.length }}</span>
+            <span class="stat-label">Activities</span>
+          </div>
+        </div>
+        
+        <!-- Volume Distribution Chart -->
+        <div class="distribution-chart">
+          <span class="chart-label">Discipline Mix</span>
+          <div class="bar-container">
+            {% for type, data in strava.weeklyVolume %}
+            <div class="bar-segment {{ type | lower }}" 
+                 style="width: {{ data.percentage }}%;" 
+                 title="{{ type }}: {{ data.percentage }}%">
+            </div>
+            {% endfor %}
+          </div>
+          <div class="bar-legend">
+            {% for type, data in strava.weeklyVolume %}
+            <div class="legend-item">
+              <span class="dot {{ type | lower }}"></span> {{ type }} ({{ data.percentage }}%)
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-card insights">
+        <h2 class="card-title">Weekly Insights</h2>
+        <div class="insights-list">
+          {% for type, data in strava.weeklyVolume %}
+          <div class="insight-row">
+             <span class="insight-icon">{% if type == 'Run' %}🏃{% elif type == 'Ride' %}🚴{% elif type == 'Swim' %}🏊{% elif type == 'WeightTraining' %}💪{% else %}✨{% endif %}</span>
+             <div class="insight-content">
+               <span class="insight-label">{{ type }} {% if data.isCardio %}Pace{% else %}Duration{% endif %}</span>
+               <span class="insight-value">{% if data.isCardio %}{{ data.avgPace }}{% else %}{{ data.formattedTime }}{% endif %}</span>
+             </div>
+          </div>
+          {% endfor %}
+          {% if not strava.weeklyVolume %}
+          <p class="no-data">Waiting for your first activity of the week!</p>
+          {% endif %}
+        </div>
+      </section>
+    </div>
+
+
+    <!-- Yearly & Lifetime Stats Grid -->
+    <div class="stats-comparison-grid">
+      <section class="dashboard-card stats-comparison-card">
+        <h2 class="card-title">This Year (YTD)</h2>
+        <div class="stats-mini-grid">
+          <div class="mini-stat">
+            <span class="m-val">{{ strava.ytdStats.run.distance or 0 }} <small>km</small></span>
+            <span class="m-lab">🏃 Run</span>
+          </div>
+          <div class="mini-stat">
+            <span class="m-val">{{ strava.ytdStats.ride.distance or 0 }} <small>km</small></span>
+            <span class="m-lab">🚴 Ride</span>
+          </div>
+          <div class="mini-stat">
+            <span class="m-val">{{ (strava.ytdStats.run.time or 0) + (strava.ytdStats.ride.time or 0) }} <small>hrs</small></span>
+            <span class="m-lab">⏱️ Total Time</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-card stats-comparison-card">
+        <h2 class="card-title">Lifetime Totals</h2>
+        <div class="stats-mini-grid">
+          <div class="mini-stat">
+            <span class="m-val">{{ strava.allTimeStats.run.distance or 0 }} <small>km</small></span>
+            <span class="m-lab">🏃 Run</span>
+          </div>
+          <div class="mini-stat">
+            <span class="m-val">{{ strava.allTimeStats.ride.distance or 0 }} <small>km</small></span>
+            <span class="m-lab">🚴 Ride</span>
+          </div>
+          <div class="mini-stat">
+            <span class="m-val">{{ (strava.allTimeStats.run.time or 0) + (strava.allTimeStats.ride.time or 0) }} <small>hrs</small></span>
+            <span class="m-lab">⏱️ Total Time</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="dashboard-card heatmap-card">
+      <h2 class="card-title">Activity Heatmap (Last 365 Days)</h2>
+      <div class="heatmap-wrapper">
+        <div class="heatmap-grid" id="heatmapGrid">
+          {% for day in strava.heatmap %}
+          <div class="heatmap-cell intensity-{{ day.intensity }}" 
+               data-date="{{ day.date }}"
+               data-count="{{ day.count }}"
+               title="{{ day.date }}: {{ day.count }} activities">
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="heatmap-info" id="heatmapInfo">
+        Click a square to see activity details
+      </div>
+      <div class="heatmap-legend">
+        <span>Less</span>
+        <div class="heatmap-cell intensity-0"></div>
+        <div class="heatmap-cell intensity-1"></div>
+        <div class="heatmap-cell intensity-2"></div>
+        <div class="heatmap-cell intensity-3"></div>
+        <div class="heatmap-cell intensity-4"></div>
+        <span>More</span>
+      </div>
+    </section>
+
+    <!-- Recent Activity Feed (Moved to bottom) -->
+    <section class="activity-section">
+      <h2 class="section-title">Recent Adventures</h2>
+      <div class="activity-list">
+        {% for activity in strava.recentActivities %}
+        <div class="activity-strip">
+          <div class="activity-type-badge {{ activity.type | lower }}">
+            {% if activity.type == 'Run' %}🏃{% elif activity.type == 'Ride' %}🚴{% elif activity.type == 'Swim' %}🏊{% else %}✨{% endif %}
+          </div>
+          <div class="activity-info">
+            <div class="activity-main-info">
+              <h3>{{ activity.name }}</h3>
+              <span class="date">{{ activity.startDate | dateFilter }}</span>
+            </div>
+            <div class="activity-metrics">
+              <div class="metric">
+                <span class="m-val">{{ activity.distance }} <small>km</small></span>
+                <span class="m-lab">Dist</span>
+              </div>
+              <div class="metric">
+                <span class="m-val">{{ activity.pace }}</span>
+                <span class="m-lab">Pace</span>
+              </div>
+              <div class="metric">
+                <span class="m-val">{{ activity.total_elevation_gain }} <small>m</small></span>
+                <span class="m-lab">Gain</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+
+    <p class="sync-footer">Last synced: {{ strava.lastUpdated | dateFilter }}</p>
+  </div>
+
+</div>
+
+<style>
+/* --- Dashboard Layout --- */
+.dashboard-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  color: white;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* --- Redesigned Cards (Global Align) --- */
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 2.25rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+  height: 100%;
+}
+
+.card-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 2rem;
+  opacity: 0.6;
+  font-weight: 700;
+}
+
+/* --- Stats Row --- */
+.stats-row {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.big-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.big-stat .stat-value {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1;
+}
+.big-stat .stat-value small { font-size: 1rem; opacity: 0.5; margin-left: 2px; }
+.big-stat .stat-label { font-size: 0.85rem; opacity: 0.6; margin-top: 0.5rem; font-weight: 500; }
+
+/* --- Volume Chart --- */
+.distribution-chart { margin-top: 0.5rem; }
+.chart-label { display: block; margin-bottom: 1rem; font-size: 0.85rem; opacity: 0.6; font-weight: 500; }
+.bar-container {
+  height: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 5px;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+.bar-segment { height: 100%; transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.bar-segment.run { background: #ff4d4d; }
+.bar-segment.ride { background: #4dabff; }
+.bar-segment.swim { background: #4dff88; }
+.bar-segment.weighttraining { background: #ff9f43; } /* Bold Orange for Lifting */
+.bar-segment.other { background: #ffcc4d; }
+
+.bar-legend { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; opacity: 0.7; }
+.legend-item .dot { width: 8px; height: 8px; border-radius: 50%; }
+.legend-item .dot.run { background: #ff4d4d; }
+.legend-item .dot.ride { background: #4dabff; }
+.legend-item .dot.swim { background: #4dff88; }
+.legend-item .dot.weighttraining { background: #ff9f43; }
+
+/* --- Weekly Insights --- */
+.insights-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.insight-row { display: flex; align-items: center; gap: 1.25rem; }
+.insight-icon { font-size: 1.4rem; background: rgba(255,255,255,0.08); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 14px; flex-shrink: 0; }
+.insight-content { display: flex; flex-direction: column; }
+.insight-label { font-size: 0.7rem; opacity: 0.5; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
+.insight-value { font-size: 1.15rem; font-weight: 700; }
+
+/* --- Stats Comparison Grid --- */
+.stats-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stats-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.mini-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-stat .m-val {
+  font-size: clamp(1.15rem, 3vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.mini-stat .m-val small {
+  font-size: 0.75rem;
+  opacity: 0.5;
+  font-weight: 500;
+}
+
+.mini-stat .m-lab {
+  font-size: 0.65rem;
+  opacity: 0.5;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* --- Heatmap --- */
+.heatmap-card {
+  margin-bottom: 2rem;
+}
+
+.heatmap-wrapper {
+  overflow-x: auto;
+  padding: 0.5rem 0 1.5rem;
+  scrollbar-width: none; /* Hide scrollbar for Chrome/Safari */
+}
+.heatmap-wrapper::-webkit-scrollbar { display: none; }
+
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(53, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-auto-flow: column;
+  gap: 4px;
+  width: max-content;
+}
+
+.heatmap-cell {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  transition: transform 0.1s ease;
+}
+.heatmap-cell:hover { transform: scale(1.2); z-index: 10; cursor: default; }
+
+.intensity-1 { background: #0e4429; }
+.intensity-2 { background: #006d32; }
+.intensity-3 { background: #26a641; }
+.intensity-4 { background: #39d353; }
+
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  opacity: 0.5;
+  font-weight: 500;
+}
+
+/* --- Activity Feed --- */
+.activity-section { margin-top: 2.5rem; }
+.section-title { font-size: 1.6rem; margin-bottom: 1.75rem; font-weight: 800; border-left: 5px solid white; padding-left: 1.25rem; line-height: 1; }
+.activity-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.activity-strip {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.activity-strip:hover { background: rgba(255, 255, 255, 0.09); transform: translateX(8px); border-color: rgba(255,255,255,0.15); }
+
+.activity-type-badge { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; background: rgba(255,255,255,0.1); flex-shrink: 0; }
+.activity-type-badge.run { color: #ff6e6e; }
+.activity-type-badge.ride { color: #6bb9ff; }
+
+.activity-info { flex: 1; display: flex; justify-content: space-between; align-items: center; }
+.activity-main-info h3 { margin: 0 0 0.25rem; font-size: 1.25rem; font-weight: 700; color: #fff; }
+.activity-main-info .date { font-size: 0.85rem; opacity: 0.5; font-weight: 500; }
+
+.activity-metrics { display: flex; gap: 2.5rem; }
+.metric { display: flex; flex-direction: column; align-items: flex-end; }
+.m-val { font-size: 1.15rem; font-weight: 700; color: #fff; }
+.m-val small { font-size: 0.75rem; opacity: 0.5; font-weight: 500; margin-left: 1px; }
+.m-lab { font-size: 0.65rem; opacity: 0.45; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-top: 0.2rem; }
+
+/* --- Mobile Responsiveness (Crit-fix) --- */
+@media (max-width: 850px) {
+  .dashboard-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .stats-comparison-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .activity-info { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .activity-metrics { width: 100%; justify-content: space-between; gap: 0; }
+  .stats-row { gap: 2rem; justify-content: space-between; }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container { padding: 0 1rem; }
+  .dashboard-card { padding: 1.75rem; }
+  .stats-mini-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .mini-stat:last-child { grid-column: span 2; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.05); }
+}
+
+/* --- Final Polish --- */
+.sync-footer { text-align: center; margin-top: 5rem; font-size: 0.8rem; opacity: 0.35; padding-bottom: 2rem; }
+
+.heatmap-info {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.heatmap-cell.is-selected {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('heatmapGrid');
+  const info = document.getElementById('heatmapInfo');
+  
+  grid.addEventListener('click', (e) => {
+    const cell = e.target.closest('.heatmap-cell');
+    if (!cell) return;
+    
+    // Clear previous selection
+    document.querySelectorAll('.heatmap-cell').forEach(c => c.classList.remove('is-selected'));
+    
+    // Mark as selected
+    cell.classList.add('is-selected');
+    
+    // Update data details
+    const date = cell.getAttribute('data-date');
+    const count = cell.getAttribute('data-count');
+    
+    // Format date nicely
+    const d = new Date(date);
+    const formattedDate = d.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    
+    info.innerHTML = `<strong>${formattedDate}</strong>: ${count} activity${count == 1 ? '' : 'ies'}`;
+  });
+});
+</script>

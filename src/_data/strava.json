@@ -1,11 +1,21 @@
 {
-  "lastUpdated": "2026-02-28T18:29:02.522Z",
+  "lastUpdated": "2026-03-02T13:17:21.218Z",
   "athlete": {
     "firstname": "Aamir",
     "lastname": "Dhanani",
     "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/66377789/19961150/1/large.jpg"
   },
   "recentActivities": [
+    {
+      "id": 17568926481,
+      "name": "2026 Chilly Half",
+      "type": "Run",
+      "distance": "21.20",
+      "movingTime": 8167,
+      "pace": "6:25 /km",
+      "startDate": "2026-03-01T15:11:44Z",
+      "total_elevation_gain": 98
+    },
     {
       "id": 17546452606,
       "name": "Afternoon Run",
@@ -55,52 +65,22 @@
       "pace": "7:06 /km",
       "startDate": "2026-02-22T18:21:48Z",
       "total_elevation_gain": 0
-    },
-    {
-      "id": 17474764230,
-      "name": "Morning Run",
-      "type": "Run",
-      "distance": "19.11",
-      "movingTime": 8151,
-      "pace": "7:06 /km",
-      "startDate": "2026-02-21T14:53:27Z",
-      "total_elevation_gain": 0
     }
   ],
   "weeklyVolume": {
     "Run": {
-      "distance": 25766,
-      "time": 10504,
-      "count": 4,
-      "distanceKm": "25.77",
-      "formattedTime": "2h 55m",
-      "percentage": "70",
-      "isCardio": true,
-      "avgPace": "6:47 /km"
-    },
-    "WeightTraining": {
-      "distance": 0,
-      "time": 4462,
+      "distance": 21202.2,
+      "time": 8167,
       "count": 1,
-      "distanceKm": "0.00",
-      "formattedTime": "1h 14m",
-      "percentage": "30",
-      "isCardio": false,
-      "avgPace": ""
+      "distanceKm": "21.20",
+      "formattedTime": "2h 16m",
+      "percentage": "100",
+      "isCardio": true,
+      "avgPace": "6:25 /km"
     }
   },
-  "weeklyTotalDistance": "25.77",
+  "weeklyTotalDistance": "21.20",
   "heatmap": [
-    {
-      "date": "2025-03-01",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-03-02",
-      "count": 1,
-      "intensity": 1
-    },
     {
       "date": "2025-03-03",
       "count": 1,
@@ -1915,13 +1895,23 @@
       "date": "2026-02-28",
       "count": 0,
       "intensity": 0
+    },
+    {
+      "date": "2026-03-01",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-03-02",
+      "count": 0,
+      "intensity": 0
     }
   ],
   "ytdStats": {
     "run": {
-      "count": 33,
-      "distance": "216",
-      "time": 25
+      "count": 34,
+      "distance": "238",
+      "time": 27
     },
     "ride": {
       "count": 0,
@@ -1936,9 +1926,9 @@
   },
   "allTimeStats": {
     "run": {
-      "count": 521,
-      "distance": "4262",
-      "time": 473
+      "count": 522,
+      "distance": "4283",
+      "time": 475
     },
     "ride": {
       "count": 134,

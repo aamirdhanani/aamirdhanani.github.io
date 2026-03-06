@@ -47,7 +47,7 @@
         <h2 class="card-title">Weekly Summary</h2>
         <div class="stats-row">
           <div class="big-stat">
-            <span class="stat-value">35.08 <small>km</small></span>
+            <span class="stat-value">35.53 <small>km</small></span>
             <span class="stat-label">Total Distance</span>
           </div>
           <div class="big-stat">
@@ -61,16 +61,25 @@
           <span class="chart-label">Discipline Mix</span>
           <div class="bar-container">
             
+            <div class="bar-segment swim" 
+                 style="width: 11%;" 
+                 title="Swim: 11%">
+            </div>
+            
             <div class="bar-segment run" 
-                 style="width: 100%;" 
-                 title="Run: 100%">
+                 style="width: 89%;" 
+                 title="Run: 89%">
             </div>
             
           </div>
           <div class="bar-legend">
             
             <div class="legend-item">
-              <span class="dot run"></span> Run (100%)
+              <span class="dot swim"></span> Swim (11%)
+            </div>
+            
+            <div class="legend-item">
+              <span class="dot run"></span> Run (89%)
             </div>
             
           </div>
@@ -80,6 +89,14 @@
       <section class="dashboard-card insights">
         <h2 class="card-title">Weekly Insights</h2>
         <div class="insights-list">
+          
+          <div class="insight-row">
+             <span class="insight-icon">🏊</span>
+             <div class="insight-content">
+               <span class="insight-label">Swim Pace</span>
+               <span class="insight-value"></span>
+             </div>
+          </div>
           
           <div class="insight-row">
              <span class="insight-icon">🏃</span>
@@ -138,12 +155,6 @@
       <h2 class="card-title">Activity Heatmap (Last 365 Days)</h2>
       <div class="heatmap-wrapper">
         <div class="heatmap-grid" id="heatmapGrid">
-          
-          <div class="heatmap-cell intensity-1" 
-               data-date="2025-03-06"
-               data-count="1"
-               title="2025-03-06: 1 activities">
-          </div>
           
           <div class="heatmap-cell intensity-0" 
                data-date="2025-03-07"
@@ -2323,10 +2334,16 @@
                title="2026-03-04: 1 activities">
           </div>
           
-          <div class="heatmap-cell intensity-0" 
+          <div class="heatmap-cell intensity-1" 
                data-date="2026-03-05"
+               data-count="1"
+               title="2026-03-05: 1 activities">
+          </div>
+          
+          <div class="heatmap-cell intensity-0" 
+               data-date="2026-03-06"
                data-count="0"
-               title="2026-03-05: 0 activities">
+               title="2026-03-06: 0 activities">
           </div>
           
         </div>
@@ -2349,6 +2366,32 @@
     <section class="activity-section">
       <h2 class="section-title">Recent Adventures</h2>
       <div class="activity-list">
+        
+        <div class="activity-strip">
+          <div class="activity-type-badge swim">
+            🏊
+          </div>
+          <div class="activity-info">
+            <div class="activity-main-info">
+              <h3>Afternoon Swim</h3>
+              <span class="date">Mar 5, 2026</span>
+            </div>
+            <div class="activity-metrics">
+              <div class="metric">
+                <span class="m-val">0.45 <small>km</small></span>
+                <span class="m-lab">Dist</span>
+              </div>
+              <div class="metric">
+                <span class="m-val"></span>
+                <span class="m-lab">Pace</span>
+              </div>
+              <div class="metric">
+                <span class="m-val">0 <small>m</small></span>
+                <span class="m-lab">Gain</span>
+              </div>
+            </div>
+          </div>
+        </div>
         
         <div class="activity-strip">
           <div class="activity-type-badge run">
@@ -2480,37 +2523,11 @@
           </div>
         </div>
         
-        <div class="activity-strip">
-          <div class="activity-type-badge run">
-            🏃
-          </div>
-          <div class="activity-info">
-            <div class="activity-main-info">
-              <h3>Evening Run</h3>
-              <span class="date">Feb 25, 2026</span>
-            </div>
-            <div class="activity-metrics">
-              <div class="metric">
-                <span class="m-val">7.74 <small>km</small></span>
-                <span class="m-lab">Dist</span>
-              </div>
-              <div class="metric">
-                <span class="m-val">7:08 /km</span>
-                <span class="m-lab">Pace</span>
-              </div>
-              <div class="metric">
-                <span class="m-val">0 <small>m</small></span>
-                <span class="m-lab">Gain</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
       </div>
     </section>
 
 
-    <p class="sync-footer">Last synced: Mar 5, 2026</p>
+    <p class="sync-footer">Last synced: Mar 6, 2026</p>
   </div>
 
 </div>

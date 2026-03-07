@@ -1,11 +1,21 @@
 {
-  "lastUpdated": "2026-03-07T02:05:28.510Z",
+  "lastUpdated": "2026-03-07T06:43:55.586Z",
   "athlete": {
     "firstname": "Aamir",
     "lastname": "Dhanani",
     "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/66377789/19961150/1/large.jpg"
   },
   "recentActivities": [
+    {
+      "id": 17631041481,
+      "name": "Night Swim",
+      "type": "Swim",
+      "distance": "0.43",
+      "movingTime": 1325,
+      "pace": "",
+      "startDate": "2026-03-07T02:06:14Z",
+      "total_elevation_gain": 0
+    },
     {
       "id": 17619148840,
       "name": "Afternoon Swim",
@@ -55,26 +65,16 @@
       "pace": "6:21 /km",
       "startDate": "2026-02-27T22:25:59Z",
       "total_elevation_gain": 32
-    },
-    {
-      "id": 17530362456,
-      "name": "Morning Weight Training",
-      "type": "WeightTraining",
-      "distance": "0.00",
-      "movingTime": 4462,
-      "pace": "0:00",
-      "startDate": "2026-02-26T12:56:05Z",
-      "total_elevation_gain": 0
     }
   ],
   "weeklyVolume": {
     "Swim": {
-      "distance": 448,
-      "time": 1715,
-      "count": 1,
-      "distanceKm": "0.45",
-      "formattedTime": "0h 28m",
-      "percentage": "11",
+      "distance": 882,
+      "time": 3040,
+      "count": 2,
+      "distanceKm": "0.88",
+      "formattedTime": "0h 50m",
+      "percentage": "18",
       "isCardio": true,
       "avgPace": ""
     },
@@ -84,12 +84,12 @@
       "count": 3,
       "distanceKm": "35.08",
       "formattedTime": "3h 52m",
-      "percentage": "89",
+      "percentage": "82",
       "isCardio": true,
       "avgPace": "6:37 /km"
     }
   },
-  "weeklyTotalDistance": "35.53",
+  "weeklyTotalDistance": "35.96",
   "heatmap": [
     {
       "date": "2025-03-08",
@@ -1913,8 +1913,8 @@
     },
     {
       "date": "2026-03-07",
-      "count": 0,
-      "intensity": 0
+      "count": 1,
+      "intensity": 1
     }
   ],
   "ytdStats": {
@@ -1929,8 +1929,8 @@
       "time": 0
     },
     "swim": {
-      "count": 7,
-      "distance": "2",
+      "count": 8,
+      "distance": "3",
       "time": 4
     }
   },
@@ -1946,7 +1946,7 @@
       "time": 140
     },
     "swim": {
-      "count": 11,
+      "count": 12,
       "distance": "3",
       "time": 6
     }

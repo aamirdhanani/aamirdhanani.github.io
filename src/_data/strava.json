@@ -1,11 +1,21 @@
 {
-  "lastUpdated": "2026-03-12T19:02:24.553Z",
+  "lastUpdated": "2026-03-13T02:12:13.436Z",
   "athlete": {
     "firstname": "Aamir",
     "lastname": "Dhanani",
     "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/66377789/19961150/1/large.jpg"
   },
   "recentActivities": [
+    {
+      "id": 17702269532,
+      "name": "Afternoon Swim",
+      "type": "Swim",
+      "distance": "0.31",
+      "movingTime": 1775,
+      "pace": "",
+      "startDate": "2026-03-12T21:58:26Z",
+      "total_elevation_gain": 0
+    },
     {
       "id": 17695948436,
       "name": "Morning Weight Training",
@@ -55,26 +65,26 @@
       "pace": "",
       "startDate": "2026-03-05T22:59:59Z",
       "total_elevation_gain": 0
-    },
-    {
-      "id": 17607401016,
-      "name": "Afternoon Run",
-      "type": "Run",
-      "distance": "7.70",
-      "movingTime": 3222,
-      "pace": "6:58 /km",
-      "startDate": "2026-03-04T22:49:42Z",
-      "total_elevation_gain": 27
     }
   ],
   "weeklyVolume": {
+    "Swim": {
+      "distance": 308,
+      "time": 1775,
+      "count": 1,
+      "distanceKm": "0.31",
+      "formattedTime": "0h 29m",
+      "percentage": "18",
+      "isCardio": true,
+      "avgPace": ""
+    },
     "WeightTraining": {
       "distance": 0,
       "time": 4024,
       "count": 1,
       "distanceKm": "0.00",
       "formattedTime": "1h 7m",
-      "percentage": "48",
+      "percentage": "40",
       "isCardio": false,
       "avgPace": ""
     },
@@ -84,18 +94,13 @@
       "count": 2,
       "distanceKm": "11.21",
       "formattedTime": "1h 11m",
-      "percentage": "52",
+      "percentage": "43",
       "isCardio": true,
       "avgPace": "6:24 /km"
     }
   },
-  "weeklyTotalDistance": "11.21",
+  "weeklyTotalDistance": "11.52",
   "heatmap": [
-    {
-      "date": "2025-03-13",
-      "count": 3,
-      "intensity": 3
-    },
     {
       "date": "2025-03-14",
       "count": 1,
@@ -1913,8 +1918,13 @@
     },
     {
       "date": "2026-03-12",
-      "count": 1,
-      "intensity": 1
+      "count": 2,
+      "intensity": 2
+    },
+    {
+      "date": "2026-03-13",
+      "count": 0,
+      "intensity": 0
     }
   ],
   "ytdStats": {
@@ -1929,7 +1939,7 @@
       "time": 0
     },
     "swim": {
-      "count": 8,
+      "count": 9,
       "distance": "3",
       "time": 4
     }
@@ -1946,8 +1956,8 @@
       "time": 140
     },
     "swim": {
-      "count": 12,
-      "distance": "3",
+      "count": 13,
+      "distance": "4",
       "time": 6
     }
   }

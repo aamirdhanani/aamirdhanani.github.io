@@ -1,11 +1,21 @@
 {
-  "lastUpdated": "2026-03-17T19:05:30.349Z",
+  "lastUpdated": "2026-03-18T02:26:57.385Z",
   "athlete": {
     "firstname": "Aamir",
     "lastname": "Dhanani",
     "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/66377789/19961150/1/large.jpg"
   },
   "recentActivities": [
+    {
+      "id": 17760266234,
+      "name": "Afternoon Swim",
+      "type": "Swim",
+      "distance": "0.13",
+      "movingTime": 1751,
+      "pace": "",
+      "startDate": "2026-03-17T21:59:20Z",
+      "total_elevation_gain": 0
+    },
     {
       "id": 17721746644,
       "name": "Morning Run",
@@ -55,26 +65,22 @@
       "pace": "6:36 /km",
       "startDate": "2026-03-11T21:34:46Z",
       "total_elevation_gain": 23
-    },
-    {
-      "id": 17678490732,
-      "name": "Afternoon Run",
-      "type": "Run",
-      "distance": "5.13",
-      "movingTime": 1896,
-      "pace": "6:09 /km",
-      "startDate": "2026-03-10T21:45:53Z",
-      "total_elevation_gain": 7.8
     }
   ],
-  "weeklyVolume": {},
-  "weeklyTotalDistance": "0.00",
-  "heatmap": [
-    {
-      "date": "2025-03-18",
+  "weeklyVolume": {
+    "Swim": {
+      "distance": 126,
+      "time": 1751,
       "count": 1,
-      "intensity": 1
-    },
+      "distanceKm": "0.13",
+      "formattedTime": "0h 29m",
+      "percentage": "100",
+      "isCardio": true,
+      "avgPace": ""
+    }
+  },
+  "weeklyTotalDistance": "0.13",
+  "heatmap": [
     {
       "date": "2025-03-19",
       "count": 1,
@@ -1892,6 +1898,11 @@
     },
     {
       "date": "2026-03-17",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-03-18",
       "count": 0,
       "intensity": 0
     }
@@ -1908,9 +1919,9 @@
       "time": 0
     },
     "swim": {
-      "count": 9,
+      "count": 10,
       "distance": "3",
-      "time": 4
+      "time": 5
     }
   },
   "allTimeStats": {
@@ -1925,9 +1936,9 @@
       "time": 140
     },
     "swim": {
-      "count": 13,
+      "count": 14,
       "distance": "4",
-      "time": 6
+      "time": 7
     }
   }
 }

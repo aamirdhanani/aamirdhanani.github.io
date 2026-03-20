@@ -1,11 +1,21 @@
 {
-  "lastUpdated": "2026-03-19T19:01:24.865Z",
+  "lastUpdated": "2026-03-20T02:13:23.626Z",
   "athlete": {
     "firstname": "Aamir",
     "lastname": "Dhanani",
     "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/66377789/19961150/1/large.jpg"
   },
   "recentActivities": [
+    {
+      "id": 17785055783,
+      "name": "Evening Swim",
+      "type": "Swim",
+      "distance": "0.01",
+      "movingTime": 1597,
+      "pace": "",
+      "startDate": "2026-03-19T22:02:23Z",
+      "total_elevation_gain": 0
+    },
     {
       "id": 17760266234,
       "name": "Afternoon Swim",
@@ -55,37 +65,22 @@
       "pace": "0:00",
       "startDate": "2026-03-12T10:57:43Z",
       "total_elevation_gain": 0
-    },
-    {
-      "id": 17690692724,
-      "name": "Afternoon Run",
-      "type": "Run",
-      "distance": "6.08",
-      "movingTime": 2409,
-      "pace": "6:36 /km",
-      "startDate": "2026-03-11T21:34:46Z",
-      "total_elevation_gain": 23
     }
   ],
   "weeklyVolume": {
     "Swim": {
-      "distance": 126,
-      "time": 1751,
-      "count": 1,
-      "distanceKm": "0.13",
-      "formattedTime": "0h 29m",
+      "distance": 140,
+      "time": 3348,
+      "count": 2,
+      "distanceKm": "0.14",
+      "formattedTime": "0h 55m",
       "percentage": "100",
       "isCardio": true,
       "avgPace": ""
     }
   },
-  "weeklyTotalDistance": "0.13",
+  "weeklyTotalDistance": "0.14",
   "heatmap": [
-    {
-      "date": "2025-03-20",
-      "count": 1,
-      "intensity": 1
-    },
     {
       "date": "2025-03-21",
       "count": 0,
@@ -1903,6 +1898,11 @@
     },
     {
       "date": "2026-03-19",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-03-20",
       "count": 0,
       "intensity": 0
     }
@@ -1919,7 +1919,7 @@
       "time": 0
     },
     "swim": {
-      "count": 10,
+      "count": 11,
       "distance": "3",
       "time": 5
     }
@@ -1936,7 +1936,7 @@
       "time": 140
     },
     "swim": {
-      "count": 14,
+      "count": 15,
       "distance": "4",
       "time": 7
     }

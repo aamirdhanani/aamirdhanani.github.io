@@ -1,11 +1,21 @@
 {
-  "lastUpdated": "2026-04-21T19:15:43.871Z",
+  "lastUpdated": "2026-04-22T02:43:47.257Z",
   "athlete": {
     "firstname": "Aamir",
     "lastname": "Dhanani",
     "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/66377789/19961150/1/large.jpg"
   },
   "recentActivities": [
+    {
+      "id": 18203841935,
+      "name": "Morning Weight Training",
+      "type": "WeightTraining",
+      "distance": "0.00",
+      "movingTime": 2854,
+      "pace": "0:00",
+      "startDate": "2026-04-21T12:11:34Z",
+      "total_elevation_gain": 0
+    },
     {
       "id": 18124453335,
       "name": "Afternoon Run",
@@ -55,26 +65,22 @@
       "pace": "9:12 /km",
       "startDate": "2026-03-28T12:32:06Z",
       "total_elevation_gain": 0
-    },
-    {
-      "id": 17875890904,
-      "name": "Morning Run",
-      "type": "Run",
-      "distance": "6.61",
-      "movingTime": 3000,
-      "pace": "7:33 /km",
-      "startDate": "2026-03-27T10:51:31Z",
-      "total_elevation_gain": 0
     }
   ],
-  "weeklyVolume": {},
+  "weeklyVolume": {
+    "WeightTraining": {
+      "distance": 0,
+      "time": 2854,
+      "count": 1,
+      "distanceKm": "0.00",
+      "formattedTime": "0h 47m",
+      "percentage": "100",
+      "isCardio": false,
+      "avgPace": ""
+    }
+  },
   "weeklyTotalDistance": "0.00",
   "heatmap": [
-    {
-      "date": "2025-04-22",
-      "count": 2,
-      "intensity": 2
-    },
     {
       "date": "2025-04-23",
       "count": 1,
@@ -1892,6 +1898,11 @@
     },
     {
       "date": "2026-04-21",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-04-22",
       "count": 0,
       "intensity": 0
     }

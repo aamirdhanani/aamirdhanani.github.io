@@ -1,11 +1,21 @@
 {
-  "lastUpdated": "2026-04-22T19:16:41.669Z",
+  "lastUpdated": "2026-04-23T02:46:55.097Z",
   "athlete": {
     "firstname": "Aamir",
     "lastname": "Dhanani",
     "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/66377789/19961150/1/large.jpg"
   },
   "recentActivities": [
+    {
+      "id": 18218478871,
+      "name": "Afternoon Run",
+      "type": "Run",
+      "distance": "4.82",
+      "movingTime": 2196,
+      "pace": "7:35 /km",
+      "startDate": "2026-04-22T21:56:01Z",
+      "total_elevation_gain": 28
+    },
     {
       "id": 18203841935,
       "name": "Morning Weight Training",
@@ -55,37 +65,32 @@
       "pace": "0:00",
       "startDate": "2026-04-08T11:20:15Z",
       "total_elevation_gain": 0
-    },
-    {
-      "id": 17888711307,
-      "name": "Morning Run",
-      "type": "Run",
-      "distance": "5.31",
-      "movingTime": 2932,
-      "pace": "9:12 /km",
-      "startDate": "2026-03-28T12:32:06Z",
-      "total_elevation_gain": 0
     }
   ],
   "weeklyVolume": {
+    "Run": {
+      "distance": 4819.4,
+      "time": 2196,
+      "count": 1,
+      "distanceKm": "4.82",
+      "formattedTime": "0h 36m",
+      "percentage": "43",
+      "isCardio": true,
+      "avgPace": "7:35 /km"
+    },
     "WeightTraining": {
       "distance": 0,
       "time": 2854,
       "count": 1,
       "distanceKm": "0.00",
       "formattedTime": "0h 47m",
-      "percentage": "100",
+      "percentage": "57",
       "isCardio": false,
       "avgPace": ""
     }
   },
-  "weeklyTotalDistance": "0.00",
+  "weeklyTotalDistance": "4.82",
   "heatmap": [
-    {
-      "date": "2025-04-23",
-      "count": 1,
-      "intensity": 1
-    },
     {
       "date": "2025-04-24",
       "count": 0,
@@ -1903,15 +1908,20 @@
     },
     {
       "date": "2026-04-22",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-04-23",
       "count": 0,
       "intensity": 0
     }
   ],
   "ytdStats": {
     "run": {
-      "count": 47,
-      "distance": "343",
-      "time": 40
+      "count": 48,
+      "distance": "348",
+      "time": 41
     },
     "ride": {
       "count": 0,
@@ -1926,9 +1936,9 @@
   },
   "allTimeStats": {
     "run": {
-      "count": 535,
-      "distance": "4389",
-      "time": 488
+      "count": 536,
+      "distance": "4394",
+      "time": 489
     },
     "ride": {
       "count": 134,

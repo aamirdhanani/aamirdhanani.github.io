@@ -1,11 +1,21 @@
 {
-  "lastUpdated": "2026-04-27T19:25:42.521Z",
+  "lastUpdated": "2026-04-28T03:25:16.683Z",
   "athlete": {
     "firstname": "Aamir",
     "lastname": "Dhanani",
     "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/66377789/19961150/1/large.jpg"
   },
   "recentActivities": [
+    {
+      "id": 18284313460,
+      "name": "Afternoon Run",
+      "type": "Run",
+      "distance": "4.51",
+      "movingTime": 1712,
+      "pace": "6:19 /km",
+      "startDate": "2026-04-27T21:23:07Z",
+      "total_elevation_gain": 18
+    },
     {
       "id": 18232042193,
       "name": "Afternoon Swim",
@@ -55,26 +65,22 @@
       "pace": "7:07 /km",
       "startDate": "2026-04-11T13:30:27Z",
       "total_elevation_gain": 126
-    },
-    {
-      "id": 18047017298,
-      "name": "Afternoon Swim",
-      "type": "Swim",
-      "distance": "0.22",
-      "movingTime": 1897,
-      "pace": "",
-      "startDate": "2026-04-09T21:59:47Z",
-      "total_elevation_gain": 0
     }
   ],
-  "weeklyVolume": {},
-  "weeklyTotalDistance": "0.00",
+  "weeklyVolume": {
+    "Run": {
+      "distance": 4507.1,
+      "time": 1712,
+      "count": 1,
+      "distanceKm": "4.51",
+      "formattedTime": "0h 28m",
+      "percentage": "100",
+      "isCardio": true,
+      "avgPace": "6:19 /km"
+    }
+  },
+  "weeklyTotalDistance": "4.51",
   "heatmap": [
-    {
-      "date": "2025-04-28",
-      "count": 0,
-      "intensity": 0
-    },
     {
       "date": "2025-04-29",
       "count": 0,
@@ -1892,14 +1898,19 @@
     },
     {
       "date": "2026-04-27",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-04-28",
       "count": 0,
       "intensity": 0
     }
   ],
   "ytdStats": {
     "run": {
-      "count": 48,
-      "distance": "348",
+      "count": 49,
+      "distance": "352",
       "time": 41
     },
     "ride": {
@@ -1915,8 +1926,8 @@
   },
   "allTimeStats": {
     "run": {
-      "count": 536,
-      "distance": "4394",
+      "count": 537,
+      "distance": "4398",
       "time": 489
     },
     "ride": {

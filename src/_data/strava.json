@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-02T19:02:06.939Z",
+  "lastUpdated": "2026-05-03T03:25:55.064Z",
   "athlete": {
     "firstname": "Aamir",
     "lastname": "Dhanani",
@@ -67,25 +67,9 @@
       "total_elevation_gain": 126
     }
   ],
-  "weeklyVolume": {
-    "Run": {
-      "distance": 4507.1,
-      "time": 1712,
-      "count": 1,
-      "distanceKm": "4.51",
-      "formattedTime": "0h 28m",
-      "percentage": "100",
-      "isCardio": true,
-      "avgPace": "6:19 /km"
-    }
-  },
-  "weeklyTotalDistance": "4.51",
+  "weeklyVolume": {},
+  "weeklyTotalDistance": "0.00",
   "heatmap": [
-    {
-      "date": "2025-05-03",
-      "count": 0,
-      "intensity": 0
-    },
     {
       "date": "2025-05-04",
       "count": 1,
@@ -1903,6 +1887,11 @@
     },
     {
       "date": "2026-05-02",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-05-03",
       "count": 0,
       "intensity": 0
     }

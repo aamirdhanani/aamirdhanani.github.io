@@ -47,7 +47,7 @@
         <h2 class="card-title">Weekly Summary</h2>
         <div class="stats-row">
           <div class="big-stat">
-            <span class="stat-value">13.71 <small>km</small></span>
+            <span class="stat-value">20.23 <small>km</small></span>
             <span class="stat-label">Total Distance</span>
           </div>
           <div class="big-stat">
@@ -62,24 +62,24 @@
           <div class="bar-container">
             
             <div class="bar-segment run" 
-                 style="width: 77%;" 
-                 title="Run: 77%">
+                 style="width: 83%;" 
+                 title="Run: 83%">
             </div>
             
             <div class="bar-segment swim" 
-                 style="width: 23%;" 
-                 title="Swim: 23%">
+                 style="width: 17%;" 
+                 title="Swim: 17%">
             </div>
             
           </div>
           <div class="bar-legend">
             
             <div class="legend-item">
-              <span class="dot run"></span> Run (77%)
+              <span class="dot run"></span> Run (83%)
             </div>
             
             <div class="legend-item">
-              <span class="dot swim"></span> Swim (23%)
+              <span class="dot swim"></span> Swim (17%)
             </div>
             
           </div>
@@ -94,7 +94,7 @@
              <span class="insight-icon">🏃</span>
              <div class="insight-content">
                <span class="insight-label">Run Pace</span>
-               <span class="insight-value">6:37 /km</span>
+               <span class="insight-value">6:27 /km</span>
              </div>
           </div>
           
@@ -118,7 +118,7 @@
         <h2 class="card-title">This Year (YTD)</h2>
         <div class="stats-mini-grid">
           <div class="mini-stat">
-            <span class="m-val">404 <small>km</small></span>
+            <span class="m-val">410 <small>km</small></span>
             <span class="m-lab">🏃 Run</span>
           </div>
           <div class="mini-stat">
@@ -126,7 +126,7 @@
             <span class="m-lab">🚴 Ride</span>
           </div>
           <div class="mini-stat">
-            <span class="m-val">47 <small>hrs</small></span>
+            <span class="m-val">48 <small>hrs</small></span>
             <span class="m-lab">⏱️ Total Time</span>
           </div>
         </div>
@@ -136,7 +136,7 @@
         <h2 class="card-title">Lifetime Totals</h2>
         <div class="stats-mini-grid">
           <div class="mini-stat">
-            <span class="m-val">4450 <small>km</small></span>
+            <span class="m-val">4456 <small>km</small></span>
             <span class="m-lab">🏃 Run</span>
           </div>
           <div class="mini-stat">
@@ -144,7 +144,7 @@
             <span class="m-lab">🚴 Ride</span>
           </div>
           <div class="mini-stat">
-            <span class="m-val">635 <small>hrs</small></span>
+            <span class="m-val">636 <small>hrs</small></span>
             <span class="m-lab">⏱️ Total Time</span>
           </div>
         </div>
@@ -155,12 +155,6 @@
       <h2 class="card-title">Activity Heatmap (Last 365 Days)</h2>
       <div class="heatmap-wrapper">
         <div class="heatmap-grid" id="heatmapGrid">
-          
-          <div class="heatmap-cell intensity-2" 
-               data-date="2025-05-23"
-               data-count="2"
-               title="2025-05-23: 2 activities">
-          </div>
           
           <div class="heatmap-cell intensity-1" 
                data-date="2025-05-24"
@@ -2340,10 +2334,16 @@
                title="2026-05-21: 2 activities">
           </div>
           
-          <div class="heatmap-cell intensity-0" 
+          <div class="heatmap-cell intensity-1" 
                data-date="2026-05-22"
+               data-count="1"
+               title="2026-05-22: 1 activities">
+          </div>
+          
+          <div class="heatmap-cell intensity-0" 
+               data-date="2026-05-23"
                data-count="0"
-               title="2026-05-22: 0 activities">
+               title="2026-05-23: 0 activities">
           </div>
           
         </div>
@@ -2366,6 +2366,32 @@
     <section class="activity-section">
       <h2 class="section-title">Recent Adventures</h2>
       <div class="activity-list">
+        
+        <div class="activity-strip">
+          <div class="activity-type-badge run">
+            🏃
+          </div>
+          <div class="activity-info">
+            <div class="activity-main-info">
+              <h3>Afternoon Run</h3>
+              <span class="date">May 22, 2026</span>
+            </div>
+            <div class="activity-metrics">
+              <div class="metric">
+                <span class="m-val">6.52 <small>km</small></span>
+                <span class="m-lab">Dist</span>
+              </div>
+              <div class="metric">
+                <span class="m-val">6:05 /km</span>
+                <span class="m-lab">Pace</span>
+              </div>
+              <div class="metric">
+                <span class="m-val">23 <small>m</small></span>
+                <span class="m-lab">Gain</span>
+              </div>
+            </div>
+          </div>
+        </div>
         
         <div class="activity-strip">
           <div class="activity-type-badge run">
@@ -2497,37 +2523,11 @@
           </div>
         </div>
         
-        <div class="activity-strip">
-          <div class="activity-type-badge run">
-            🏃
-          </div>
-          <div class="activity-info">
-            <div class="activity-main-info">
-              <h3>Lunch Run</h3>
-              <span class="date">May 16, 2026</span>
-            </div>
-            <div class="activity-metrics">
-              <div class="metric">
-                <span class="m-val">18.83 <small>km</small></span>
-                <span class="m-lab">Dist</span>
-              </div>
-              <div class="metric">
-                <span class="m-val">8:38 /km</span>
-                <span class="m-lab">Pace</span>
-              </div>
-              <div class="metric">
-                <span class="m-val">137 <small>m</small></span>
-                <span class="m-lab">Gain</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
       </div>
     </section>
 
 
-    <p class="sync-footer">Last synced: May 22, 2026</p>
+    <p class="sync-footer">Last synced: May 23, 2026</p>
   </div>
 
 </div>

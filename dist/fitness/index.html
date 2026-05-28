@@ -61,25 +61,34 @@
           <span class="chart-label">Discipline Mix</span>
           <div class="bar-container">
             
+            <div class="bar-segment weighttraining" 
+                 style="width: 35%;" 
+                 title="WeightTraining: 35%">
+            </div>
+            
             <div class="bar-segment workout" 
-                 style="width: 37%;" 
-                 title="Workout: 37%">
+                 style="width: 24%;" 
+                 title="Workout: 24%">
             </div>
             
             <div class="bar-segment run" 
-                 style="width: 63%;" 
-                 title="Run: 63%">
+                 style="width: 41%;" 
+                 title="Run: 41%">
             </div>
             
           </div>
           <div class="bar-legend">
             
             <div class="legend-item">
-              <span class="dot workout"></span> Workout (37%)
+              <span class="dot weighttraining"></span> WeightTraining (35%)
             </div>
             
             <div class="legend-item">
-              <span class="dot run"></span> Run (63%)
+              <span class="dot workout"></span> Workout (24%)
+            </div>
+            
+            <div class="legend-item">
+              <span class="dot run"></span> Run (41%)
             </div>
             
           </div>
@@ -89,6 +98,14 @@
       <section class="dashboard-card insights">
         <h2 class="card-title">Weekly Insights</h2>
         <div class="insights-list">
+          
+          <div class="insight-row">
+             <span class="insight-icon">💪</span>
+             <div class="insight-content">
+               <span class="insight-label">WeightTraining Duration</span>
+               <span class="insight-value">1h 5m</span>
+             </div>
+          </div>
           
           <div class="insight-row">
              <span class="insight-icon">✨</span>
@@ -2340,10 +2357,10 @@
                title="2026-05-27: 1 activities">
           </div>
           
-          <div class="heatmap-cell intensity-0" 
+          <div class="heatmap-cell intensity-1" 
                data-date="2026-05-28"
-               data-count="0"
-               title="2026-05-28: 0 activities">
+               data-count="1"
+               title="2026-05-28: 1 activities">
           </div>
           
         </div>
@@ -2366,6 +2383,32 @@
     <section class="activity-section">
       <h2 class="section-title">Recent Adventures</h2>
       <div class="activity-list">
+        
+        <div class="activity-strip">
+          <div class="activity-type-badge weighttraining">
+            ✨
+          </div>
+          <div class="activity-info">
+            <div class="activity-main-info">
+              <h3>Morning Weight Training</h3>
+              <span class="date">May 28, 2026</span>
+            </div>
+            <div class="activity-metrics">
+              <div class="metric">
+                <span class="m-val">0.00 <small>km</small></span>
+                <span class="m-lab">Dist</span>
+              </div>
+              <div class="metric">
+                <span class="m-val">0:00</span>
+                <span class="m-lab">Pace</span>
+              </div>
+              <div class="metric">
+                <span class="m-val">0 <small>m</small></span>
+                <span class="m-lab">Gain</span>
+              </div>
+            </div>
+          </div>
+        </div>
         
         <div class="activity-strip">
           <div class="activity-type-badge workout">
@@ -2491,32 +2534,6 @@
               </div>
               <div class="metric">
                 <span class="m-val">23 <small>m</small></span>
-                <span class="m-lab">Gain</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="activity-strip">
-          <div class="activity-type-badge run">
-            🏃
-          </div>
-          <div class="activity-info">
-            <div class="activity-main-info">
-              <h3>Evening Run</h3>
-              <span class="date">May 21, 2026</span>
-            </div>
-            <div class="activity-metrics">
-              <div class="metric">
-                <span class="m-val">2.05 <small>km</small></span>
-                <span class="m-lab">Dist</span>
-              </div>
-              <div class="metric">
-                <span class="m-val">5:03 /km</span>
-                <span class="m-lab">Pace</span>
-              </div>
-              <div class="metric">
-                <span class="m-val">2.2 <small>m</small></span>
                 <span class="m-lab">Gain</span>
               </div>
             </div>

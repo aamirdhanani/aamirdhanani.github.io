@@ -1,11 +1,21 @@
 {
-  "lastUpdated": "2026-05-27T20:20:47.083Z",
+  "lastUpdated": "2026-05-28T03:47:14.931Z",
   "athlete": {
     "firstname": "Aamir",
     "lastname": "Dhanani",
     "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/66377789/19961150/2/large.jpg"
   },
   "recentActivities": [
+    {
+      "id": 18682852905,
+      "name": "Evening Tennis",
+      "type": "Workout",
+      "distance": "1.82",
+      "movingTime": 2733,
+      "pace": "",
+      "startDate": "2026-05-27T23:17:05Z",
+      "total_elevation_gain": 0
+    },
     {
       "id": 18667463256,
       "name": "Afternoon Run",
@@ -55,37 +65,32 @@
       "pace": "5:03 /km",
       "startDate": "2026-05-21T22:50:57Z",
       "total_elevation_gain": 2.2
-    },
-    {
-      "id": 18601488772,
-      "name": "Evening Swim",
-      "type": "Swim",
-      "distance": "0.25",
-      "movingTime": 1606,
-      "pace": "",
-      "startDate": "2026-05-21T22:01:49Z",
-      "total_elevation_gain": 0
     }
   ],
   "weeklyVolume": {
+    "Workout": {
+      "distance": 1818.5,
+      "time": 2733,
+      "count": 1,
+      "distanceKm": "1.82",
+      "formattedTime": "0h 45m",
+      "percentage": "37",
+      "isCardio": false,
+      "avgPace": ""
+    },
     "Run": {
       "distance": 12825.3,
       "time": 4715,
       "count": 2,
       "distanceKm": "12.83",
       "formattedTime": "1h 18m",
-      "percentage": "100",
+      "percentage": "63",
       "isCardio": true,
       "avgPace": "6:07 /km"
     }
   },
-  "weeklyTotalDistance": "12.83",
+  "weeklyTotalDistance": "14.64",
   "heatmap": [
-    {
-      "date": "2025-05-28",
-      "count": 3,
-      "intensity": 3
-    },
     {
       "date": "2025-05-29",
       "count": 2,
@@ -1903,6 +1908,11 @@
     },
     {
       "date": "2026-05-27",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-05-28",
       "count": 0,
       "intensity": 0
     }

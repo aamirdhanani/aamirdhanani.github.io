@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-29T20:27:44.620Z",
+  "lastUpdated": "2026-05-30T03:34:23.122Z",
   "athlete": {
     "firstname": "Aamir",
     "lastname": "Dhanani",
@@ -111,11 +111,6 @@
   },
   "weeklyTotalDistance": "16.71",
   "heatmap": [
-    {
-      "date": "2025-05-30",
-      "count": 2,
-      "intensity": 2
-    },
     {
       "date": "2025-05-31",
       "count": 2,
@@ -1933,6 +1928,11 @@
     },
     {
       "date": "2026-05-29",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-05-30",
       "count": 0,
       "intensity": 0
     }

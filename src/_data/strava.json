@@ -1,11 +1,21 @@
 {
-  "lastUpdated": "2026-06-16T20:53:31.666Z",
+  "lastUpdated": "2026-06-17T04:16:30.375Z",
   "athlete": {
     "firstname": "Aamir",
     "lastname": "Dhanani",
     "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/66377789/19961150/2/large.jpg"
   },
   "recentActivities": [
+    {
+      "id": 18950984111,
+      "name": "Evening Run",
+      "type": "Run",
+      "distance": "1.09",
+      "movingTime": 403,
+      "pace": "6:11 /km",
+      "startDate": "2026-06-16T23:13:15Z",
+      "total_elevation_gain": 7
+    },
     {
       "id": 18762360809,
       "name": "Afternoon Run",
@@ -55,26 +65,22 @@
       "pace": "",
       "startDate": "2026-05-28T22:01:29Z",
       "total_elevation_gain": 0
-    },
-    {
-      "id": 18688858558,
-      "name": "Morning Weight Training",
-      "type": "WeightTraining",
-      "distance": "0.00",
-      "movingTime": 3955,
-      "pace": "0:00",
-      "startDate": "2026-05-28T11:59:16Z",
-      "total_elevation_gain": 0
     }
   ],
-  "weeklyVolume": {},
-  "weeklyTotalDistance": "0.00",
+  "weeklyVolume": {
+    "Run": {
+      "distance": 1085.3,
+      "time": 403,
+      "count": 1,
+      "distanceKm": "1.09",
+      "formattedTime": "0h 6m",
+      "percentage": "100",
+      "isCardio": true,
+      "avgPace": "6:11 /km"
+    }
+  },
+  "weeklyTotalDistance": "1.09",
   "heatmap": [
-    {
-      "date": "2025-06-17",
-      "count": 0,
-      "intensity": 0
-    },
     {
       "date": "2025-06-18",
       "count": 0,
@@ -1892,14 +1898,19 @@
     },
     {
       "date": "2026-06-16",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-06-17",
       "count": 0,
       "intensity": 0
     }
   ],
   "ytdStats": {
     "run": {
-      "count": 65,
-      "distance": "487",
+      "count": 66,
+      "distance": "488",
       "time": 59
     },
     "ride": {
@@ -1915,8 +1926,8 @@
   },
   "allTimeStats": {
     "run": {
-      "count": 553,
-      "distance": "4533",
+      "count": 554,
+      "distance": "4534",
       "time": 507
     },
     "ride": {

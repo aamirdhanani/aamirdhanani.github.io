@@ -173,6 +173,40 @@ body {
   transform: translateY(-3px);
 }
 
+/* ---------- Travel map ---------- */
+.portfolio-hero .hero-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.travel-map {
+  position: relative;
+  z-index: 0; /* contain Leaflet's internal layers below the sticky navbar */
+  height: 460px;
+  max-width: var(--max-width);
+  margin: 1.5rem auto 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.travel-map[hidden] {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .travel-map {
+    height: 360px;
+    border-radius: 12px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
 /* ---------- Portfolio landing (cards) ---------- */
 .portfolio-hero {
   text-align: center;

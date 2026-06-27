@@ -4,6 +4,12 @@
       "year": "2026",
       "items": [
         {
+          "month": "June",
+          "location": "Italy → France → Monaco → Switzerland → Germany → Austria → Italy → New York, USA",
+          "description": "Went for the Formula 1 Grand Prix and some Alpine road drives.",
+          "image": ""
+        },
+        {
           "month": "March",
           "location": "Montreal",
           "description": "Trip to visit my brother with friends!",
@@ -11,7 +17,7 @@
         },
         {
           "month": "February",
-          "location": "Ellicotevee",
+          "location": "Ellicottville, New York, USA",
           "description": "Family day Ski Trip",
           "image": ""
         }

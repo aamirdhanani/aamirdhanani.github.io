@@ -53,6 +53,7 @@
     { "name": "La Gaude, France", "lat": 43.7156, "lng": 7.1700, "note": "Jun 2026 — F1 & Alpine drives" },
     { "name": "Kolkata, India", "lat": 22.5726, "lng": 88.3639, "note": "Childhood trip" },
     { "name": "Mumbai, India", "lat": 19.0760, "lng": 72.8777, "note": "Childhood trip" },
-    { "name": "Ahmedabad, India", "lat": 23.0225, "lng": 72.5714, "note": "Childhood trip" }
+    { "name": "Ahmedabad, India", "lat": 23.0225, "lng": 72.5714, "note": "Childhood trip" },
+    { "name": "Washington, D.C., USA", "lat": 38.9072, "lng": -77.0369, "note": "Childhood trip" }
   ]
 }

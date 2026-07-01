@@ -23,6 +23,9 @@ module.exports = () => {
     });
 
   return {
-    categories
+    categories,
+    eleventyComputed: {
+      title: (data) => data.category ? `${data.category.name.charAt(0).toUpperCase()}${data.category.name.slice(1)} Photography` : "Photography"
+    }
   };
 };

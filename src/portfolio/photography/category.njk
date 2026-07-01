@@ -6,6 +6,7 @@ pagination:
   alias: category
 permalink: "/portfolio/photography/{{ category.name }}/"
 ---
+<script src="/assets/js/main.js" defer></script>
 
 <section class="portfolio-hero">
   <a href="/portfolio/photography/" class="breadcrumb-link">&larr; Photography</a>
@@ -13,9 +14,9 @@ permalink: "/portfolio/photography/{{ category.name }}/"
 </section>
 
 <div class="portfolio-lower-wrapper">
-  <div class="photo-grid">
+  <div class="photo-grid timeline-animate">
     {% for img in category.images %}
-      <a href="/portfolio/photography/{{ category.name }}/{{ img }}" 
+      <a href="/portfolio/photography/{{ category.name }}/{{ img }}"
          class="photo-item"
          data-lightbox="gallery">
         <img src="/portfolio/photography/{{ category.name }}/{{ img }}" alt="">

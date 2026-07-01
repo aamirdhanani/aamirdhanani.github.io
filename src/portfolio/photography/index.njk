@@ -2,6 +2,7 @@
 layout: layout.njk
 title: Photography
 ---
+<script src="/assets/js/main.js" defer></script>
 
 <section class="portfolio-hero">
   <a href="/portfolio/" class="breadcrumb-link">&larr; Portfolio</a>
@@ -10,7 +11,7 @@ title: Photography
 </section>
 
 <div class="portfolio-lower-wrapper">
-<section class="photo-category-grid">
+<section class="photo-category-grid timeline-animate">
   {% for cat in categories %}
   <a class="photo-category-card" href="{{ cat.url }}">
     <div class="photo-thumb" style="background-image: url('/portfolio/photography/{{ cat.name }}/{{ cat.cover }}')"></div>

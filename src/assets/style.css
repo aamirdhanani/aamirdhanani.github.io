@@ -40,6 +40,26 @@ body {
   width: 100%;
 }
 
+/* ---------- Scroll-triggered fade-in ---------- */
+.timeline-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.timeline-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ---------- Header / Nav ---------- */
 .site-header {
   position: sticky;

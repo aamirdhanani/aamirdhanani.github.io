@@ -15,7 +15,7 @@ title: "Racing"
   {% for race in racing.races %}
   <div class="project-card">
       {% if race.image %}
-        <img src="{{ race.image }}" alt="{{ race.location }}">
+        <img src="{{ race.image }}" alt="{{ race.title }}">
       {% endif %}
     <div class="project-content">
       <h2>{{ race.title }}</h2>

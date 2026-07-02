@@ -16,6 +16,8 @@ title: "Racing"
   <div class="project-card">
       {% if race.image %}
         <img src="{{ race.image }}" alt="{{ race.title }}">
+      {% else %}
+        <div class="project-media-placeholder" aria-hidden="true"><span>{{ race.title | truncate(4, true, "") }}</span></div>
       {% endif %}
     <div class="project-content">
       <h2>{{ race.title }}</h2>

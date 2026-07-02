@@ -469,8 +469,8 @@ body.lightbox-active {
   gap: 2rem;
   padding: 2rem;
   align-items: flex-start;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
   border-radius: 20px;
   backdrop-filter: blur(15px);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -478,7 +478,7 @@ body.lightbox-active {
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 30px rgba(30, 30, 30, 0.06);
 }
 
 .project-card img,
@@ -494,14 +494,14 @@ body.lightbox-active {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(0, 112, 243, 0.35), rgba(0, 112, 243, 0.08));
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(0, 112, 243, 0.18), rgba(0, 112, 243, 0.05));
+  border: 1px solid var(--glass-border);
 }
 
 .project-media-placeholder span {
   font-size: 3.5rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 112, 243, 0.55);
 }
 
 .project-content {
@@ -513,19 +513,19 @@ body.lightbox-active {
 
 .project-content h2 {
   font-size: clamp(1.6rem, 3.5vw, 1.9rem);
-  color: #fff;
+  color: var(--text);
   margin: 0;
 }
 
 .project-content h3 {
   font-size: clamp(1.2rem, 3.5vw, 1.5rem);
-  color: #fff;
+  color: var(--accent);
   margin: 0;
 }
 
 .project-content p {
   font-size: clamp(1rem, 2.8vw, 1.15rem);
-  color: #d7d7d7;
+  color: var(--muted);
   line-height: 1.55;
 }
 

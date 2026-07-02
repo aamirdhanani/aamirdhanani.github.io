@@ -238,6 +238,73 @@ body {
   display: none;
 }
 
+/* Leaflet controls default to plain white/boxy UI; retheme to match the site's glass-card look. */
+.travel-map .leaflet-bar {
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(30, 30, 30, 0.08);
+}
+
+.travel-map .leaflet-bar a {
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  color: var(--text);
+  font-family: inherit;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.travel-map .leaflet-bar a:last-child {
+  border-bottom: none;
+}
+
+.travel-map .leaflet-bar a:hover {
+  background: rgba(0, 112, 243, 0.1);
+  color: var(--accent);
+}
+
+.travel-map .leaflet-control-attribution {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 0.7rem;
+  border-radius: 8px 0 0 0;
+  padding: 2px 8px;
+}
+
+.travel-map .leaflet-control-attribution a {
+  color: var(--accent);
+}
+
+.travel-map .leaflet-popup-content-wrapper {
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(30, 30, 30, 0.1);
+}
+
+.travel-map .leaflet-popup-content {
+  color: var(--text);
+  font-family: inherit;
+  margin: 0.8rem 1rem;
+}
+
+.travel-map .leaflet-popup-tip {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: none;
+}
+
+.travel-map .leaflet-popup-close-button {
+  color: var(--muted);
+}
+
+.travel-map .leaflet-popup-close-button:hover {
+  color: var(--accent);
+}
+
 @media (max-width: 700px) {
   .travel-map {
     height: 360px;
@@ -515,14 +582,28 @@ body.lightbox-active {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(0, 112, 243, 0.18), rgba(0, 112, 243, 0.05));
+  background:
+    radial-gradient(circle at 30% 24%, rgba(0, 112, 243, 0.12), transparent 60%),
+    linear-gradient(135deg, rgba(0, 112, 243, 0.09), rgba(0, 112, 243, 0.02));
   border: 1px solid var(--glass-border);
 }
 
-.project-media-placeholder span {
-  font-size: 3.5rem;
-  font-weight: 600;
-  color: rgba(0, 112, 243, 0.55);
+.project-media-placeholder .placeholder-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 14px rgba(30, 30, 30, 0.05);
+}
+
+.project-media-placeholder svg {
+  width: 1.9rem;
+  height: 1.9rem;
+  color: rgba(0, 112, 243, 0.5);
 }
 
 .project-content {

@@ -347,6 +347,7 @@ body {
   text-decoration: none;
   color: var(--text);
   border: 1px solid var(--glass-border);
+  box-shadow: 0 6px 18px rgba(30, 30, 30, 0.04);
   display: block;
   transition: transform .25s ease, box-shadow .25s ease;
 }
@@ -717,56 +718,6 @@ body.lightbox-active {
   font-size: 0.95rem;
   color: #555;
   /* Explicit muted dark color */
-}
-
-.contact-form-card {
-  flex: 1 1 350px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(18px);
-  border-radius: 20px;
-  padding: 2.5rem;
-  max-width: 400px;
-  min-width: 320px;
-}
-
-.contact-form-card h2 {
-  margin-bottom: 1.5rem;
-}
-
-.contact-form-card label {
-  display: block;
-  margin-bottom: .25rem;
-  font-weight: 500;
-  color: #fff;
-}
-
-.contact-form-card input,
-.contact-form-card textarea {
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: .75rem 1rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
-  font-size: 1rem;
-}
-
-.contact-form-card button {
-  padding: .75rem 1.5rem;
-  border-radius: 10px;
-  border: none;
-  background: #0070f3;
-  color: #fff;
-  font-weight: 500;
-  cursor: pointer;
-  transition: transform .2s ease, opacity .2s ease;
-}
-
-.contact-form-card button:hover {
-  transform: translateY(-2px);
-  opacity: .9;
 }
 
 /* Contact links wrapper */

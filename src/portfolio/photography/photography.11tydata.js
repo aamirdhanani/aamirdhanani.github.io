@@ -16,9 +16,10 @@ module.exports = () => {
 
       return {
         name,
+        encodedName: encodeURIComponent(name),
         images,
         cover: images.includes("cover.jpg") ? "cover.jpg" : images[0],
-        url: `/portfolio/photography/${name}/`
+        url: `/portfolio/photography/${encodeURIComponent(name)}/`
       };
     });
 

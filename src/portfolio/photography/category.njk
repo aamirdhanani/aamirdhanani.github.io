@@ -17,10 +17,10 @@ permalink: "/portfolio/photography/{{ category.name }}/"
 <div class="portfolio-lower-wrapper">
   <div class="photo-grid timeline-animate">
     {% for img in category.images %}
-      <a href="/portfolio/photography/{{ category.name }}/{{ img }}"
+      <a href="/portfolio/photography/{{ category.encodedName }}/{{ img }}"
          class="photo-item"
          data-lightbox="gallery">
-        <img src="/portfolio/photography/{{ category.name }}/{{ img }}" alt="{{ category.name | capitalize }} photo" loading="lazy">
+        <img src="/portfolio/photography/{{ category.encodedName }}/{{ img }}" alt="{{ category.name | capitalize }} photo" loading="lazy">
       </a>
     {% endfor %}
   </div>

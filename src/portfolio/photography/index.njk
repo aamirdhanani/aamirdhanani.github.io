@@ -14,7 +14,7 @@ title: Photography
 <section class="photo-category-grid timeline-animate">
   {% for cat in categories %}
   <a class="photo-category-card" href="{{ cat.url }}">
-    <div class="photo-thumb" style="background-image: url('/portfolio/photography/{{ cat.name }}/{{ cat.cover }}')"></div>
+    <div class="photo-thumb" style="background-image: url('/portfolio/photography/{{ cat.encodedName }}/{{ cat.cover }}')"></div>
     <h2>{{ cat.name | capitalize }}</h2>
   </a>
   {% endfor %}

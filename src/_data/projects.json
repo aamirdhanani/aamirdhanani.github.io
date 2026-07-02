@@ -2,12 +2,14 @@
   {
     "title": "Lisant",
     "description": "An AI-powered news aggregator (lisant.aamirdhanani.com) that curates and summarizes the world's most important stories. Designed to deliver factual, personalized content tailored to user interests without clutter or clickbait.",
-    "image": ""
+    "image": "",
+    "url": "https://lisant.aamirdhanani.com"
   },
   {
     "title": "Agreement Archive",
     "description": "A secure document storage and management platform (archive.aamirdhanani.com). It features quick note-taking capabilities and an integrated AI chat to easily query and extract information directly from your stored files.",
-    "image": ""
+    "image": "",
+    "url": "https://archive.aamirdhanani.com"
   },
   {
     "title": "This Portfolio",

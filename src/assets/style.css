@@ -550,6 +550,22 @@ body.lightbox-active {
   line-height: 1.55;
 }
 
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  margin-top: .25rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: gap .2s ease;
+}
+
+.project-link:hover {
+  gap: .5rem;
+}
+
 /* ---------- Journal ---------- */
 .journal-list {
   max-width: 800px;

@@ -238,15 +238,20 @@ body {
   display: none;
 }
 
-/* Leaflet controls default to plain white/boxy UI; retheme to match the site's glass-card look. */
-.travel-map .leaflet-bar {
+/* Leaflet controls default to plain white/boxy UI; retheme to match the site's glass-card look.
+   Selectors are scoped under the #travelMap id (not just .travel-map) because Leaflet's own
+   leaflet.css is loaded via a <link> further down the page and several of its rules (e.g.
+   ".leaflet-touch .leaflet-bar", ".leaflet-container a.leaflet-popup-close-button") match at
+   the same or higher specificity than a two-class selector - an id selector is the reliable way
+   to win the cascade regardless of stylesheet load order. */
+#travelMap .leaflet-bar {
   border: 1px solid var(--glass-border);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(30, 30, 30, 0.08);
 }
 
-.travel-map .leaflet-bar a {
+#travelMap .leaflet-bar a {
   background: var(--card-bg);
   backdrop-filter: blur(15px);
   color: var(--text);
@@ -254,16 +259,16 @@ body {
   border-bottom: 1px solid var(--glass-border);
 }
 
-.travel-map .leaflet-bar a:last-child {
+#travelMap .leaflet-bar a:last-child {
   border-bottom: none;
 }
 
-.travel-map .leaflet-bar a:hover {
+#travelMap .leaflet-bar a:hover {
   background: rgba(0, 112, 243, 0.1);
   color: var(--accent);
 }
 
-.travel-map .leaflet-control-attribution {
+#travelMap .leaflet-control-attribution {
   background: var(--card-bg);
   backdrop-filter: blur(10px);
   color: var(--muted);
@@ -273,11 +278,11 @@ body {
   padding: 2px 8px;
 }
 
-.travel-map .leaflet-control-attribution a {
+#travelMap .leaflet-control-attribution a {
   color: var(--accent);
 }
 
-.travel-map .leaflet-popup-content-wrapper {
+#travelMap .leaflet-popup-content-wrapper {
   background: var(--card-bg);
   backdrop-filter: blur(15px);
   border: 1px solid var(--glass-border);
@@ -285,23 +290,23 @@ body {
   box-shadow: 0 8px 24px rgba(30, 30, 30, 0.1);
 }
 
-.travel-map .leaflet-popup-content {
+#travelMap .leaflet-popup-content {
   color: var(--text);
   font-family: inherit;
   margin: 0.8rem 1rem;
 }
 
-.travel-map .leaflet-popup-tip {
+#travelMap .leaflet-popup-tip {
   background: var(--card-bg);
   border: 1px solid var(--glass-border);
   box-shadow: none;
 }
 
-.travel-map .leaflet-popup-close-button {
+#travelMap a.leaflet-popup-close-button {
   color: var(--muted);
 }
 
-.travel-map .leaflet-popup-close-button:hover {
+#travelMap a.leaflet-popup-close-button:hover {
   color: var(--accent);
 }
 

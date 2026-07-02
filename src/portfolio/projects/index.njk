@@ -19,7 +19,7 @@ title: "Projects"
     <article class="project-card timeline-animate">
 
       {% if project.image %}
-        <img src="{{ project.image }}" alt="{{ project.title }}">
+        <img src="{{ project.image }}" alt="{{ project.title }}" loading="lazy">
       {% else %}
         <div class="project-media-placeholder" aria-hidden="true"><span>{{ project.title[0] }}</span></div>
       {% endif %}

@@ -20,7 +20,7 @@ permalink: "/portfolio/photography/{{ category.name }}/"
       <a href="/portfolio/photography/{{ category.name }}/{{ img }}"
          class="photo-item"
          data-lightbox="gallery">
-        <img src="/portfolio/photography/{{ category.name }}/{{ img }}" alt="{{ category.name | capitalize }} photo">
+        <img src="/portfolio/photography/{{ category.name }}/{{ img }}" alt="{{ category.name | capitalize }} photo" loading="lazy">
       </a>
     {% endfor %}
   </div>

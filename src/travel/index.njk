@@ -33,7 +33,7 @@ title: "Travel"
           <p>{{ item.description }}</p>
 
           {% if item.image %}
-            <img src="{{ item.image }}" alt="{{ item.location }}">
+            <img src="{{ item.image }}" alt="{{ item.location }}" loading="lazy">
           {% endif %}
         </div>
       </div>

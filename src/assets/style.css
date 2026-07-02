@@ -498,7 +498,7 @@ body.lightbox-active {
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(30, 30, 30, 0.06);
 }
 

@@ -1,5 +1,5 @@
 ---
-layout: layout.njk
+layout: /layout.njk
 title: "Hobbies and Interests"
 ---
 <script src="/assets/js/main.js" defer></script>
@@ -18,7 +18,9 @@ title: "Hobbies and Interests"
     <div class="project-card">
 
       {% if hobby.image %}
-        <img src="{{ hobby.image }}" alt="{{ hobby.location }}">
+        <img src="{{ hobby.image }}" alt="{{ hobby.title }}" loading="lazy">
+      {% else %}
+        <div class="project-media-placeholder" aria-hidden="true"><span>{{ hobby.title[0] }}</span></div>
       {% endif %}
 
       <div class="project-content">

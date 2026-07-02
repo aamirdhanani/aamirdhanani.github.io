@@ -2,12 +2,12 @@
   <nav class="navbar">
     <a href="/" class="logo">Aamir<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="/portfolio/">Portfolio</a></li>
+      <li><a href="/portfolio/" {% if page.url.startsWith('/portfolio/') %}class="active" aria-current="page"{% endif %}>Portfolio</a></li>
 <!--  <li><a href="/journal/">Journal</a></li> -->
-      <li><a href="/hobbies/">Hobbies</a></li>
-      <li><a href="/fitness/">Fitness</a></li>
-      <li><a href="/travel/">Travel</a></li>
-      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/hobbies/" {% if page.url.startsWith('/hobbies/') %}class="active" aria-current="page"{% endif %}>Hobbies</a></li>
+      <li><a href="/fitness/" {% if page.url.startsWith('/fitness/') %}class="active" aria-current="page"{% endif %}>Fitness</a></li>
+      <li><a href="/travel/" {% if page.url.startsWith('/travel/') %}class="active" aria-current="page"{% endif %}>Travel</a></li>
+      <li><a href="/contact/" {% if page.url.startsWith('/contact/') %}class="active" aria-current="page"{% endif %}>Contact</a></li>
     </ul>
   </nav>
 </header>

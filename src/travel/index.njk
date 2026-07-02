@@ -1,6 +1,6 @@
 ---
 layout: /layout.njk
-title: "Aamir Dhanani"
+title: "Travel"
 ---
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -33,7 +33,7 @@ title: "Aamir Dhanani"
           <p>{{ item.description }}</p>
 
           {% if item.image %}
-            <img src="{{ item.image }}" alt="{{ item.location }}">
+            <img src="{{ item.image }}" alt="{{ item.location }}" loading="lazy">
           {% endif %}
         </div>
       </div>

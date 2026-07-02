@@ -1,10 +1,11 @@
 ---
 layout: /layout.njk
-title: "Aamir Dhanani"
+title: "Projects"
 ---
 <script src="/assets/js/main.js" defer></script>
 
 <section class="portfolio-hero">
+  <a href="/portfolio/" class="breadcrumb-link">&larr; Portfolio</a>
   <h1>Projects</h1>
   <p class="tagline">Things I've built, explored, and shared.</p>
 </section>
@@ -18,12 +19,17 @@ title: "Aamir Dhanani"
     <article class="project-card timeline-animate">
 
       {% if project.image %}
-        <img src="{{ project.image }}" alt="{{ project.location }}">
+        <img src="{{ project.image }}" alt="{{ project.title }}" loading="lazy">
+      {% else %}
+        <div class="project-media-placeholder" aria-hidden="true"><span>{{ project.title[0] }}</span></div>
       {% endif %}
 
       <div class="project-content">
         <h2>{{ project.title }}</h2>
         <p>{{ project.description }}</p>
+        {% if project.url %}
+        <a href="{{ project.url }}" class="project-link" target="_blank" rel="noopener noreferrer">Visit project &rarr;</a>
+        {% endif %}
       </div>
 
     </article>

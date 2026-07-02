@@ -1,10 +1,11 @@
 ---
-layout: layout.njk
-title: "Racing"
+layout: /layout.njk
+title: "Racing & Athletics"
 ---
 <script src="/assets/js/main.js" defer></script>
 
 <section class="portfolio-hero">
+  <a href="/portfolio/" class="breadcrumb-link">&larr; Portfolio</a>
   <h1>Racing & Athletics</h1>
   <p class="tagline">A collection of races, personal records, and athletic milestones.</p>
 </section>
@@ -14,11 +15,13 @@ title: "Racing"
   {% for race in racing.races %}
   <div class="project-card">
       {% if race.image %}
-        <img src="{{ race.image }}" alt="{{ race.location }}">
+        <img src="{{ race.image }}" alt="{{ race.title }}" loading="lazy">
+      {% else %}
+        <div class="project-media-placeholder" aria-hidden="true"><span>{{ race.title | truncate(4, true, "") }}</span></div>
       {% endif %}
     <div class="project-content">
       <h2>{{ race.title }}</h2>
-      <h3>{{ race.time }}</h2>
+      <h3>{{ race.time }}</h3>
       <p>{{ race.description }}</p>
     </div>
   </div>

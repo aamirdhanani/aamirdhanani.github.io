@@ -16,13 +16,17 @@ module.exports = () => {
 
       return {
         name,
+        encodedName: encodeURIComponent(name),
         images,
         cover: images.includes("cover.jpg") ? "cover.jpg" : images[0],
-        url: `/portfolio/photography/${name}/`
+        url: `/portfolio/photography/${encodeURIComponent(name)}/`
       };
     });
 
   return {
-    categories
+    categories,
+    eleventyComputed: {
+      title: (data) => data.category ? `${data.category.name.charAt(0).toUpperCase()}${data.category.name.slice(1)} Photography` : "Photography"
+    }
   };
 };

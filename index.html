@@ -1,108 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aamir Dhanani</title>
+  <meta name="description" content="Aamir Dhanani — software developer, avid runner, and photographer based in Ontario, Canada. Builder of things, chaser of light.">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/home.css">
 </head>
-
-
 <body>
-  <div class="page-container">
-    <header class="site-header">
-  <nav class="navbar">
-    <a href="/" class="logo">Aamir<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="/portfolio/" >Portfolio</a></li>
-<!--  <li><a href="/journal/">Journal</a></li> -->
-      <li><a href="/hobbies/" >Hobbies</a></li>
-      <li><a href="/fitness/" >Fitness</a></li>
-      <li><a href="/travel/" >Travel</a></li>
-      <li><a href="/contact/" >Contact</a></li>
-    </ul>
+  <script>document.documentElement.classList.add('js')</script>
+
+  <nav class="nav" id="nav">
+    <div class="shell nav-in">
+      <a href="/" class="brand">Aamir Dhanani</a>
+      <div class="nav-links" id="navlinks">
+        <a href="#photo">Photography</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#work">Projects</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <button class="theme" id="theme" type="button" aria-label="Toggle dark mode">
+          <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="burger" id="burger" type="button" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
   </nav>
+
+  <main>
+    <h1 class="sr-only">Aamir Dhanani. Builder, avid runner, and photographer.</h1>
+    <!-- HERO -->
+<header class="hero shell">
+  <div class="tick-row">
+    <span class="u-mono">A public journal</span>
+    <div class="ticks" aria-hidden="true"></div>
+    <span class="u-mono">Ontario, Canada</span>
+  </div>
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow u-mono anim-up"><span class="d">&#9670;</span> Builder &middot; Avid runner &middot; Photographer &middot; Cool guy</span>
+      <p class="h1 anim-clip">Hi, I'm Aamir.<br>I build things and <i>chase&nbsp;light.</i></p>
+      <p class="lede anim-up">Software developer by day, maker and distance runner by choice. This is the short version of who I am, and the easiest way to reach me.</p>
+      <div class="hero-actions anim-up">
+        <a href="#contact" class="btn">Get in touch <span class="arw">&rarr;</span></a>
+        <a href="#photo" class="btn ghost">See my photos</a>
+      </div>
+      <div class="scrollcue anim-up"><span class="bar"></span> Scroll to explore</div>
+    </div>
+    <figure class="frame anim-up anim-frame" style="margin:0">
+      <img class="shot" src="/images/homepage/me.jpg" alt="Aamir Dhanani" width="800" height="1000">
+      <div class="ov"></div>
+      <span class="exif">&fnof;/1.8 &middot; 1/250s &middot; ISO 100 &middot; 35mm</span>
+    </figure>
+  </div>
 </header>
 
-    <main class="content">
-      <script src="/assets/js/main.js" defer></script>
-
-<section class="hero">
-  <h1>Hi, I’m Aamir.</h1>
-  <p class="tagline">I like building, exploring, and capturing moments.</p>
-
-  <div class="hero-links">
-    <a href="/portfolio/" class="hero-button">Portfolio</a>
-    <a href="/contact/" class="hero-button secondary">Contact</a>
+<!-- ABOUT -->
+<section class="sec shell" id="about">
+  <div class="sec-head">
+    <h2 class="sec-title rev rev-clip">The short version</h2>
+    <span class="sec-kicker rev">Who, what, where</span>
   </div>
-</section>
-
-<div class="portfolio-lower-wrapper">
-  <section class="projects-list">
-    <article class="home-feature-card">
-      <img src="/images/homepage/me.jpg" alt="Picture of me!">
-
-      <div class="home-feature-content">
-        <h2>Don't be shy!</h2>
-        <p>
-          The goal of this site is to serve almost as a public journal.
-          Ideally I keep this updated with everything that I have done and enjoy.
-          If you see anything that you would like to chat about, reach out!
-        </p>
-      </div>
-    </article>
-  </section>
-</div>
-
-
-
-<section class="about-cards">
-
-  <div class="info-card">
-    <h2>Education & Courses</h2>
-    <ul>
-      <li>MSc Management in Business Analytics – Ivey Business School</li>
-      <li>BSc Computer Science – Brock University</li>
-      <li>Architecting Solutions on AWS</li>
-      <li>Tiny Machine Learning (TinyML) </li>
-    </ul>
-  </div>
-
-  <div class="info-card">
-    <h2>Work Experience</h2>
-    <ul>
-      <li>Software Developer – Niagara Clifton Group</li>
-      <li>Information System Technician – Niagara Clifton Group</li>
-    </ul>
-  </div>
-
-</section>
-
-    </main>
-    <footer class="site-footer">
-
-
-  <div class="footer-left">
-    <a href="/contact/">Contact</a>
-  </div>
-
-  <div class="footer-right">
-    <a href="mailto:contact@aamirdhanani.com" class="email-icon">✉️</a>
-  </div>
-
-</footer>
-
+  <div class="about-grid">
+    <p class="statement rev">I like <em>building</em> things, exploring new places, and capturing the moments in between. Split keyboards, long runs, the view from a few thousand&nbsp;feet.</p>
+    <div class="facts rev" data-d="1">
+      <div class="fact"><span class="k">Education</span><span class="v">MSc Business Analytics<small>Ivey Business School</small></span></div>
+      <div class="fact"><span class="k">&nbsp;</span><span class="v">BSc Computer Science<small>Brock University</small></span></div>
+      <div class="fact"><span class="k">Now</span><span class="v">Software Developer<small>Niagara Clifton Group</small></span></div>
+      <div class="fact"><span class="k">Based</span><span class="v">Ontario, Canada</span></div>
     </div>
+  </div>
+</section>
+
+<!-- PHOTOGRAPHY (leads the visual half) -->
+<section class="sec shell" id="photo">
+  <div class="sec-head">
+    <h2 class="sec-title rev rev-clip">Photography</h2>
+    <span class="sec-kicker rev">Selected series. <a href="/portfolio/photography/">Full galleries &rarr;</a></span>
+  </div>
+  <div class="series">
+    <a class="serie rev" href="/portfolio/photography/"><span class="sn">01</span><h4>Automotive</h4><span class="peek" style="background-image:url(/images/photography/automotive.jpg)"></span><span class="cnt">36 frames</span></a>
+    <a class="serie rev" href="/portfolio/photography/"><span class="sn">02</span><h4>Formula 1</h4><span class="peek" style="background-image:url(/images/photography/formula1.jpg)"></span><span class="cnt">69 frames</span></a>
+    <a class="serie rev" href="/portfolio/photography/"><span class="sn">03</span><h4>City</h4><span class="peek" style="background-image:url(/images/photography/city.jpg)"></span><span class="cnt">35 frames</span></a>
+    <a class="serie rev" href="/portfolio/photography/"><span class="sn">04</span><h4>Nature</h4><span class="peek" style="background-image:url(/images/photography/nature.jpg)"></span><span class="cnt">9 frames</span></a>
+    <a class="serie rev" href="/portfolio/photography/"><span class="sn">05</span><h4>Still Life</h4><span class="peek" style="background-image:url(/images/photography/stilllife.jpg)"></span><span class="cnt">4 frames</span></a>
+    <a class="serie rev" href="/portfolio/photography/"><span class="sn">06</span><h4>Food</h4><span class="peek" style="background-image:url(/images/photography/food.jpg)"></span><span class="cnt">4 frames</span></a>
+  </div>
+</section>
+
+<!-- TOP HOBBIES -->
+<section class="sec shell" id="hobbies">
+  <div class="sec-head">
+    <h2 class="sec-title rev rev-clip">Off the clock</h2>
+    <span class="sec-kicker rev">A few favourites. <a href="/hobbies/">See all 20 &rarr;</a></span>
+  </div>
+  <div class="hobs">
+    <a class="hob rev" href="/hobbies/"><span class="hn">Photography</span><span class="hm">Five cameras, one habit</span></a>
+    <a class="hob rev" href="/hobbies/"><span class="hn">Running</span><span class="hm">Half marathons and ultras</span></a>
+    <a class="hob rev" href="/hobbies/"><span class="hn">3D Printing</span><span class="hm">Keyboards and gadgets</span></a>
+    <a class="hob rev" href="/hobbies/"><span class="hn">Sim Racing</span><span class="hm">Cars, since forever</span></a>
+    <a class="hob rev" href="/hobbies/"><span class="hn">Leatherwork</span><span class="hm">Made by hand</span></a>
+    <a class="hob rev" href="/hobbies/"><span class="hn">Skiing</span><span class="hm">Slopes with friends</span></a>
+  </div>
+</section>
+
+<!-- PROJECTS (de-emphasized, below the visual half) -->
+<section class="sec shell" id="work">
+  <div class="sec-head">
+    <h2 class="sec-title rev rev-clip">Things I've built</h2>
+    <span class="sec-kicker rev">Software, hardware, and things by hand</span>
+  </div>
+  <div class="work">
+    <a class="job rev" href="https://lisant.aamirdhanani.com">
+      <span class="jn">01</span>
+      <div><h3>Lisant</h3></div>
+      <div class="jd">An AI news aggregator that curates and summarizes the day's most important stories. Factual, personalized, no clickbait.</div>
+      <span class="jgo">Visit &#8599;</span>
+    </a>
+    <a class="job rev" href="https://archive.aamirdhanani.com">
+      <span class="jn">02</span>
+      <div><h3>Agreement Archive</h3></div>
+      <div class="jd">Secure document storage with quick notes and an AI chat to query and extract info straight from your files.</div>
+      <span class="jgo">Visit &#8599;</span>
+    </a>
+    <a class="job rev" href="/portfolio/projects/">
+      <span class="jn">03</span>
+      <div><h3>Split Keyboard</h3></div>
+      <div class="jd">A hand-soldered, 3D-printed split mechanical keyboard. Ergonomics, custom mapping, and a lot of patience.</div>
+      <span class="jgo">Details &rarr;</span>
+    </a>
+    <a class="job rev" href="/portfolio/projects/">
+      <span class="jn">04</span>
+      <div><h3>My Closet App</h3></div>
+      <div class="jd">A wardrobe manager that organizes outfits, tracks usage, and simplifies the daily what-to-wear decision.</div>
+      <span class="jgo">Details &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec shell contact-sec" id="contact">
+  <div class="sec-head">
+    <h2 class="sec-title rev rev-clip">Let's talk.</h2>
+    <span class="sec-kicker rev">Open to good people and projects</span>
+  </div>
+  <div class="contact-grid">
+    <p class="contact-lead rev">If any of this resonated, a project, a role, or just a good conversation, the door's <i>open.</i> I read everything that lands in my inbox.</p>
+    <div class="contact-cards rev" data-d="1">
+      <a class="cc" href="mailto:contact@aamirdhanani.com">
+        <span class="cc-k">Email</span>
+        <span class="cc-v">contact@aamirdhanani.com</span>
+        <span class="cc-go">&#8599;</span>
+      </a>
+      <a class="cc" href="https://ca.linkedin.com/in/aamir-dhanani" target="_blank" rel="noopener noreferrer">
+        <span class="cc-k">LinkedIn</span>
+        <span class="cc-v">in/aamir-dhanani</span>
+        <span class="cc-go">&#8599;</span>
+      </a>
+      <a class="cc" href="https://github.com/aamirdhanani" target="_blank" rel="noopener noreferrer">
+        <span class="cc-k">GitHub</span>
+        <span class="cc-v">@aamirdhanani</span>
+        <span class="cc-go">&#8599;</span>
+      </a>
+      <a class="cc" href="https://www.instagram.com/aamirdhanani/" target="_blank" rel="noopener noreferrer">
+        <span class="cc-k">Instagram</span>
+        <span class="cc-v">@aamirdhanani</span>
+        <span class="cc-go">&#8599;</span>
+      </a>
+      <a class="cc" href="https://www.strava.com/athletes/66377789" target="_blank" rel="noopener noreferrer">
+        <span class="cc-k">Strava</span>
+        <span class="cc-v">Follow my runs</span>
+        <span class="cc-go">&#8599;</span>
+      </a>
+    </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="foot" id="foot">
+    <div class="shell">
+      <div class="foot-bar">
+        <span>&copy; 2026 Aamir Dhanani</span>
+        <a href="#" style="color:inherit">Back to top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/home.js" defer></script>
   <script data-goatcounter="https://aamirdhanani.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 </body>
-
-
 </html>
-

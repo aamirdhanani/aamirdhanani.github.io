@@ -97,6 +97,12 @@ img{display:block;max-width:100%}
 .theme .ic-sun{display:none}
 .theme[data-mode="dark"] .ic-moon{display:none}
 .theme[data-mode="dark"] .ic-sun{display:block}
+/* fixed theme toggle (homepage has no nav to hold it) */
+.theme-fab{position:fixed;bottom:20px;right:20px;z-index:80;width:44px;height:44px;border-radius:50%;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid var(--line);box-shadow:0 6px 20px rgba(0,0,0,.12);padding:0;color:var(--ink-2);transition:color .2s,transform .2s,border-color .2s}
+.theme-fab:hover{color:var(--ink);transform:translateY(-2px);border-color:var(--line-2)}
+@media (max-width:640px){.theme-fab{bottom:16px;right:16px;width:42px;height:42px}}
 @media (max-width:880px){
   .nav-links{position:fixed;inset:54px 0 auto 0;flex-direction:column;gap:0;background:var(--paper);
     border-bottom:1px solid var(--line);padding:4px var(--gut) 20px;transform:translateY(-130%);
@@ -112,7 +118,7 @@ img{display:block;max-width:100%}
 }
 
 /* ---------------- HERO ---------------- */
-.hero{padding-top:clamp(18px,3vw,40px);padding-bottom:clamp(30px,5vw,54px);position:relative}
+.hero{padding-top:clamp(28px,5vw,60px);padding-bottom:clamp(30px,5vw,54px);position:relative}
 .tick-row{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:clamp(18px,3.5vw,34px)}
 .ticks{flex:1;height:10px;margin:0 18px;background-image:repeating-linear-gradient(90deg,var(--line-2) 0,var(--line-2) 1px,transparent 1px,transparent 40px);opacity:.8}
 .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(26px,5vw,60px);align-items:end}

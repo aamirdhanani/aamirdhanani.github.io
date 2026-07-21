@@ -1,9 +1,16 @@
-/* --- Dashboard Layout --- */
+/* --- Dashboard Layout ---
+   Presented as a dark "instrument panel" embedded in the warm page, so the
+   existing white-on-glass cards read correctly (they previously relied on the
+   old blue page background). Deliberately dark in both light and dark themes. */
 .dashboard-container {
-  max-width: 1000px;
+  width: min(1040px, calc(100% - 2 * var(--gut, 32px)));
   margin: 0 auto;
-  padding: 0 1.5rem;
-  color: white;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  color: #f3f0ea;
+  background: #16130e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
 }
 
 .dashboard-grid {

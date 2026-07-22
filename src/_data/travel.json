@@ -70,6 +70,12 @@
         },
         {
           "month": "May",
+          "location": "Las Vegas → Zion → Bryce Canyon → Death Valley, USA",
+          "description": "A Southwest road trip through Las Vegas, the Hoover Dam, Death Valley, Washington (Utah), Zion National Park, and Bryce Canyon.",
+          "image": ""
+        },
+        {
+          "month": "May",
           "location": "Halifax, Nova Scotia, Canada",
           "description": "Trip with friends.",
           "image": "/images/travel/novascotia.jpg"

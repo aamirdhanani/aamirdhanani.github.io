@@ -21,7 +21,15 @@ title: Aamir Dhanani
       <div class="scrollcue anim-up"><span class="bar"></span> Scroll to explore</div>
     </div>
     <figure class="frame anim-up anim-frame" style="margin:0">
-      <img class="shot" src="/images/homepage/me.jpg" alt="Aamir Dhanani" width="800" height="1000">
+      <img class="shot" id="heroShot" alt="Aamir Dhanani" width="800" height="1000">
+      <script>
+        /* Pick a random hero photo on each visit (set before paint to avoid a flash). */
+        (function(){
+          var shots = ['/images/homepage/me.jpg','/images/homepage/hero-2.jpg','/images/homepage/hero-3.jpg'];
+          var el = document.getElementById('heroShot');
+          if (el) el.src = shots[Math.floor(Math.random() * shots.length)];
+        })();
+      </script>
       <div class="ov"></div>
       <span class="exif">&fnof;/1.8 &middot; 1/250s &middot; ISO 100 &middot; 35mm</span>
     </figure>

@@ -4,6 +4,12 @@
       "year": "2026",
       "items": [
         {
+          "month": "July",
+          "location": "Death Valley, Zion, Bryce Canyon, Hoover Dam & Las Vegas, USA",
+          "description": "Southwest road trip through Death Valley, Zion and Bryce Canyon national parks, plus the Hoover Dam and Las Vegas.",
+          "image": ""
+        },
+        {
           "month": "June",
           "location": "Italy → France → Monaco → Switzerland → Germany → Austria → Italy → New York, USA",
           "description": "Went for the Formula 1 Grand Prix and some Alpine road drives.",
@@ -67,12 +73,6 @@
           "location": "Italy (Naples, Rome, Pompeii, Capri, Sorrento)",
           "description": "Family trip exploring cities along the coast.",
           "image": "/images/travel/italywithfam.jpg"
-        },
-        {
-          "month": "May",
-          "location": "Las Vegas → Zion → Bryce Canyon → Death Valley, USA",
-          "description": "A Southwest road trip through Las Vegas, the Hoover Dam, Death Valley, Washington (Utah), Zion National Park, and Bryce Canyon.",
-          "image": ""
         },
         {
           "month": "May",

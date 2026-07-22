@@ -2,6 +2,12 @@
   "_comment": "Pins for the travel map (one per unique city across all trips). Edit lat/lng or notes freely. Entries flagged APPROX are best-guess locations — correct them if you like.",
   "pins": [
     { "name": "New York City, USA", "lat": 40.7128, "lng": -74.0060, "note": "Visited many times (2022–2026)" },
+    { "name": "Death Valley National Park, USA", "lat": 36.5323, "lng": -117.0794, "note": "Jul 2026 — Southwest road trip" },
+    { "name": "Washington, Utah, USA", "lat": 37.1303, "lng": -113.5085, "note": "Jul 2026 — Southwest road trip" },
+    { "name": "Zion National Park, USA", "lat": 37.2982, "lng": -113.0263, "note": "Jul 2026 — Southwest road trip" },
+    { "name": "Bryce Canyon National Park, USA", "lat": 37.5930, "lng": -112.1871, "note": "Jul 2026 — Southwest road trip" },
+    { "name": "Hoover Dam, USA", "lat": 36.0161, "lng": -114.7377, "note": "Jul 2026 — Southwest road trip" },
+    { "name": "Las Vegas, Nevada, USA", "lat": 36.1699, "lng": -115.1398, "note": "Jul 2026 — Southwest road trip" },
     { "name": "Montreal, Canada", "lat": 45.5019, "lng": -73.5674, "note": "Mar 2026 — visiting my brother" },
     { "name": "Ellicottville, New York, USA", "lat": 42.2706, "lng": -78.6736, "note": "Ski trips (2024–2026)" },
     { "name": "Torrance Barrens Dark Sky Preserve, Muskoka, Canada", "lat": 44.9550, "lng": -79.4200, "note": "Oct 2025 — camping" },
@@ -54,12 +60,6 @@
     { "name": "Kolkata, India", "lat": 22.5726, "lng": 88.3639, "note": "Childhood trip" },
     { "name": "Mumbai, India", "lat": 19.0760, "lng": 72.8777, "note": "Childhood trip" },
     { "name": "Ahmedabad, India", "lat": 23.0225, "lng": 72.5714, "note": "Childhood trip" },
-    { "name": "Washington, D.C., USA", "lat": 38.9072, "lng": -77.0369, "note": "Childhood trip" },
-    { "name": "Las Vegas, Nevada, USA", "lat": 36.1699, "lng": -115.1398, "note": "May 2025 — Southwest road trip" },
-    { "name": "Hoover Dam, USA", "lat": 36.0161, "lng": -114.7377, "note": "May 2025 — Southwest road trip" },
-    { "name": "Death Valley National Park, USA", "lat": 36.5054, "lng": -117.0794, "note": "May 2025 — Southwest road trip" },
-    { "name": "Washington, Utah, USA", "lat": 37.1303, "lng": -113.5083, "note": "May 2025 — Southwest road trip" },
-    { "name": "Zion National Park, Utah, USA", "lat": 37.2982, "lng": -113.0263, "note": "May 2025 — Southwest road trip" },
-    { "name": "Bryce Canyon National Park, Utah, USA", "lat": 37.5930, "lng": -112.1871, "note": "May 2025 — Southwest road trip" }
+    { "name": "Washington, D.C., USA", "lat": 38.9072, "lng": -77.0369, "note": "Childhood trip" }
   ]
 }

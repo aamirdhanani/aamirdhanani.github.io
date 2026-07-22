@@ -8,22 +8,40 @@ const REFRESH_TOKEN = process.env.STRAVA_REFRESH_TOKEN;
 
 async function getAccessToken() {
     console.log('Refreshing access token...');
-    const response = await fetch('https://www.strava.com/oauth/token', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            client_id: CLIENT_ID,
-            client_secret: CLIENT_SECRET,
-            refresh_token: REFRESH_TOKEN,
-            grant_type: 'refresh_token',
-        }),
+    // Use form-urlencoded query params — the most universally accepted method for
+    // Strava's token endpoint (avoids any JSON content-type ambiguity).
+    const params = new URLSearchParams({
+        client_id: CLIENT_ID,
+        client_secret: CLIENT_SECRET,
+        refresh_token: REFRESH_TOKEN,
+        grant_type: 'refresh_token',
     });
 
-    const data = await response.json();
-    if (data.errors) {
-        console.error('Error refreshing token:', data.errors);
+    const response = await fetch(`https://www.strava.com/oauth/token?${params.toString()}`, {
+        method: 'POST',
+    });
+
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok || data.errors || !data.access_token) {
+        console.error(`\n❌ Strava rejected the token refresh (HTTP ${response.status}).`);
+        console.error('Response:', JSON.stringify(data, null, 2));
+        console.error('\nThis almost always means the GitHub secret STRAVA_REFRESH_TOKEN is');
+        console.error('invalid/expired, or the app was disconnected on Strava. Re-authorize the');
+        console.error('app and update STRAVA_REFRESH_TOKEN (and STRAVA_CLIENT_ID/SECRET) in');
+        console.error('the repo: Settings → Secrets and variables → Actions.\n');
         process.exit(1);
     }
+
+    // Strava may rotate the refresh token. If it changed, surface it loudly so the
+    // secret can be updated (a workflow can't rewrite its own secret without a PAT).
+    if (data.refresh_token && data.refresh_token !== REFRESH_TOKEN) {
+        console.warn('\n⚠️  Strava returned a NEW refresh token.');
+        console.warn('   Update the STRAVA_REFRESH_TOKEN secret to this value to avoid future failures:');
+        console.warn(`   ${data.refresh_token}\n`);
+    }
+
+    console.log('✅ Access token acquired.');
     return data.access_token;
 }
 
@@ -189,7 +207,8 @@ async function main() {
         console.log('Successfully updated heatmap and stats.');
 
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Error fetching Strava data:', error);
+        process.exit(1);
     }
 }
 

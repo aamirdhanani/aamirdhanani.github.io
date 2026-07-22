@@ -85,6 +85,23 @@ title: Aamir Dhanani
   </div>
 </section>
 
+<!-- TRAVEL (compact recent-trips list; auto-updates from travel.json) -->
+<section class="sec shell" id="travel">
+  <div class="sec-head">
+    <h2 class="sec-title rev rev-clip">On the road</h2>
+    <span class="sec-kicker rev">Recent trips. <a href="/travel/">Full map &amp; timeline &rarr;</a></span>
+  </div>
+  <div class="trips">
+    {% for t in recentTrips %}
+    <a class="trip rev" href="/travel/">
+      <span class="tdate">{{ t.month }} {{ t.year }}</span>
+      <span class="tloc">{{ t.location }}</span>
+      <span class="tgo">&#8599;</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
 <!-- PROJECTS (de-emphasized, below the visual half) -->
 <section class="sec shell" id="work">
   <div class="sec-head">

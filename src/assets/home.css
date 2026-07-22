@@ -199,6 +199,18 @@ img{display:block;max-width:100%}
 .serie:hover .peek{opacity:1;transform:translateY(-50%) scale(1)}
 @media (max-width:700px){.serie .peek{display:none}}
 
+/* ---------------- TRAVEL (compact recent-trips list) ---------------- */
+.trips{display:flex;flex-direction:column}
+.trip{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:baseline;padding:17px 6px;
+  border-top:1px solid var(--line);transition:background .3s,padding-left .3s;min-width:0}
+.trip:last-child{border-bottom:1px solid var(--line)}
+.trip:hover{background:var(--panel);padding-left:16px}
+.trip .tdate{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--signal);white-space:nowrap}
+.trip .tloc{font-size:clamp(1.05rem,2.4vw,1.4rem);letter-spacing:-.01em;font-weight:600;
+  min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.trip .tgo{font-family:var(--mono);color:var(--ink-2);transition:color .2s,transform .25s}
+.trip:hover .tgo{color:var(--signal);transform:translate(3px,-3px)}
+
 /* ---------------- TOP HOBBIES ---------------- */
 .hobs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .hob{background:var(--paper);padding:clamp(20px,3vw,30px) clamp(18px,2.5vw,26px);display:flex;flex-direction:column;gap:6px;transition:background .3s,transform .3s}

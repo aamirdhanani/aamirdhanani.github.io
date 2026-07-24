@@ -111,13 +111,18 @@ img{display:block;max-width:100%}
   .nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 }
 
-/* ---------------- MENU (persistent toggle + full-screen overlay) ---------------- */
-.menu-btn{position:fixed;top:16px;right:clamp(16px,4vw,44px);z-index:95;display:inline-flex;align-items:center;gap:10px;
-  background:color-mix(in srgb,var(--paper) 80%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border:1px solid var(--line);border-radius:999px;padding:9px 15px;cursor:pointer;color:var(--ink);
+/* ---------------- MASTHEAD (sticky) + MENU overlay ---------------- */
+.masthead{position:sticky;top:0;z-index:95;background:color-mix(in srgb,var(--paper) 85%,transparent);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.masthead-in{display:flex;align-items:center;gap:clamp(14px,3vw,24px);height:50px}
+.masthead-label{white-space:nowrap;color:var(--ink-2)}
+.masthead .ticks{margin:0}
+
+.menu-btn{flex-shrink:0;display:inline-flex;align-items:center;gap:9px;
+  border:1px solid var(--line-2);border-radius:999px;padding:7px 14px;cursor:pointer;color:var(--ink);background:transparent;
   font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
-  transition:border-color .2s,background .2s}
-.menu-btn:hover{border-color:var(--ink-2)}
+  transition:border-color .2s,color .2s}
+.menu-btn:hover{border-color:var(--ink);color:var(--signal)}
 .menu-btn:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
 .menu-btn-label{line-height:1}
 .menu-btn-icon{display:inline-flex;flex-direction:column;justify-content:center;gap:4px;width:15px;height:11px}
@@ -157,7 +162,7 @@ body.menu-open .menu-foot{opacity:1}
 .menu-foot a:hover{color:var(--signal)}
 
 /* ---------------- HERO ---------------- */
-.hero{padding-top:clamp(28px,5vw,60px);padding-bottom:clamp(30px,5vw,54px);position:relative}
+.hero{padding-top:clamp(22px,4vw,44px);padding-bottom:clamp(30px,5vw,54px);position:relative}
 .tick-row{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:clamp(18px,3.5vw,34px)}
 .ticks{flex:1;height:10px;margin:0 18px;background-image:repeating-linear-gradient(90deg,var(--line-2) 0,var(--line-2) 1px,transparent 1px,transparent 40px);opacity:.8}
 .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(26px,5vw,60px);align-items:end}

@@ -14,12 +14,17 @@
 <body>
   <script>document.documentElement.classList.add('js')</script>
 
-  <!-- Persistent menu toggle (homepage has no sticky nav). Opens a full-screen
-       overlay to the inner pages. Theme still follows the visitor's OS setting. -->
-  <button class="menu-btn" id="menuBtn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="menuOverlay">
-    <span class="menu-btn-label">Menu</span>
-    <span class="menu-btn-icon" aria-hidden="true"><span></span><span></span></span>
-  </button>
+  <!-- Minimal sticky masthead: journal label + ruler + the menu toggle folded in. -->
+  <header class="masthead">
+    <div class="shell masthead-in">
+      <span class="masthead-label u-mono">A public journal</span>
+      <span class="ticks" aria-hidden="true"></span>
+      <button class="menu-btn" id="menuBtn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="menuOverlay">
+        <span class="menu-btn-label">Menu</span>
+        <span class="menu-btn-icon" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
   <div class="menu-overlay" id="menuOverlay" role="dialog" aria-modal="true" aria-label="Site menu">
     <nav class="menu-nav" aria-label="Pages">
       <a href="/portfolio/">Portfolio</a>

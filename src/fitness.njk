@@ -21,11 +21,11 @@ title: "Fitness & Athletics"
         <h2 class="card-title">Weekly Summary</h2>
         <div class="stats-row">
           <div class="big-stat">
-            <span class="stat-value">{{ strava.weeklyTotalDistance }} <small>km</small></span>
+            <span class="stat-value">{{ fitness.weeklyTotalDistance }} <small>km</small></span>
             <span class="stat-label">Total Distance</span>
           </div>
           <div class="big-stat">
-            <span class="stat-value">{{ strava.recentActivities.length }}</span>
+            <span class="stat-value">{{ fitness.recentActivities.length }}</span>
             <span class="stat-label">Activities</span>
           </div>
         </div>
@@ -34,7 +34,7 @@ title: "Fitness & Athletics"
         <div class="distribution-chart">
           <span class="chart-label">Discipline Mix</span>
           <div class="bar-container">
-            {% for type, data in strava.weeklyVolume %}
+            {% for type, data in fitness.weeklyVolume %}
             <div class="bar-segment {{ type | lower }}" 
                  style="width: {{ data.percentage }}%;" 
                  title="{{ type }}: {{ data.percentage }}%">
@@ -42,7 +42,7 @@ title: "Fitness & Athletics"
             {% endfor %}
           </div>
           <div class="bar-legend">
-            {% for type, data in strava.weeklyVolume %}
+            {% for type, data in fitness.weeklyVolume %}
             <div class="legend-item">
               <span class="dot {{ type | lower }}"></span> {{ type | replace("WeightTraining", "Weight Training") }} ({{ data.percentage }}%)
             </div>
@@ -54,7 +54,7 @@ title: "Fitness & Athletics"
       <section class="dashboard-card insights">
         <h2 class="card-title">Weekly Insights</h2>
         <div class="insights-list">
-          {% for type, data in strava.weeklyVolume %}
+          {% for type, data in fitness.weeklyVolume %}
           <div class="insight-row">
              <span class="insight-icon">{% if type == 'Run' %}🏃{% elif type == 'Ride' %}🚴{% elif type == 'Swim' %}🏊{% elif type == 'WeightTraining' %}💪{% else %}✨{% endif %}</span>
              <div class="insight-content">
@@ -63,7 +63,7 @@ title: "Fitness & Athletics"
              </div>
           </div>
           {% endfor %}
-          {% if not strava.weeklyVolume %}
+          {% if not fitness.weeklyVolume %}
           <p class="no-data">Waiting for your first activity of the week!</p>
           {% endif %}
         </div>
@@ -77,15 +77,15 @@ title: "Fitness & Athletics"
         <h2 class="card-title">This Year (YTD)</h2>
         <div class="stats-mini-grid">
           <div class="mini-stat">
-            <span class="m-val">{{ strava.ytdStats.run.distance or 0 }} <small>km</small></span>
+            <span class="m-val">{{ fitness.ytdStats.run.distance or 0 }} <small>km</small></span>
             <span class="m-lab">🏃 Run</span>
           </div>
           <div class="mini-stat">
-            <span class="m-val">{{ strava.ytdStats.ride.distance or 0 }} <small>km</small></span>
+            <span class="m-val">{{ fitness.ytdStats.ride.distance or 0 }} <small>km</small></span>
             <span class="m-lab">🚴 Ride</span>
           </div>
           <div class="mini-stat">
-            <span class="m-val">{{ (strava.ytdStats.run.time or 0) + (strava.ytdStats.ride.time or 0) }} <small>hrs</small></span>
+            <span class="m-val">{{ (fitness.ytdStats.run.time or 0) + (fitness.ytdStats.ride.time or 0) }} <small>hrs</small></span>
             <span class="m-lab">⏱️ Total Time</span>
           </div>
         </div>
@@ -95,15 +95,15 @@ title: "Fitness & Athletics"
         <h2 class="card-title">Lifetime Totals</h2>
         <div class="stats-mini-grid">
           <div class="mini-stat">
-            <span class="m-val">{{ strava.allTimeStats.run.distance or 0 }} <small>km</small></span>
+            <span class="m-val">{{ fitness.allTimeStats.run.distance or 0 }} <small>km</small></span>
             <span class="m-lab">🏃 Run</span>
           </div>
           <div class="mini-stat">
-            <span class="m-val">{{ strava.allTimeStats.ride.distance or 0 }} <small>km</small></span>
+            <span class="m-val">{{ fitness.allTimeStats.ride.distance or 0 }} <small>km</small></span>
             <span class="m-lab">🚴 Ride</span>
           </div>
           <div class="mini-stat">
-            <span class="m-val">{{ (strava.allTimeStats.run.time or 0) + (strava.allTimeStats.ride.time or 0) }} <small>hrs</small></span>
+            <span class="m-val">{{ (fitness.allTimeStats.run.time or 0) + (fitness.allTimeStats.ride.time or 0) }} <small>hrs</small></span>
             <span class="m-lab">⏱️ Total Time</span>
           </div>
         </div>
@@ -114,7 +114,7 @@ title: "Fitness & Athletics"
       <h2 class="card-title">Activity Heatmap (Last 365 Days)</h2>
       <div class="heatmap-wrapper">
         <div class="heatmap-grid" id="heatmapGrid">
-          {% for day in strava.heatmap %}
+          {% for day in fitness.heatmap %}
           <div class="heatmap-cell intensity-{{ day.intensity }}" 
                data-date="{{ day.date }}"
                data-count="{{ day.count }}"
@@ -141,7 +141,7 @@ title: "Fitness & Athletics"
     <section class="activity-section">
       <h2 class="section-title">Recent Adventures</h2>
       <div class="activity-list">
-        {% for activity in strava.recentActivities %}
+        {% for activity in fitness.recentActivities %}
         <div class="activity-strip">
           <div class="activity-type-badge {{ activity.type | lower }}">
             {% if activity.type == 'Run' %}🏃{% elif activity.type == 'Ride' %}🚴{% elif activity.type == 'Swim' %}🏊{% else %}✨{% endif %}
@@ -172,7 +172,7 @@ title: "Fitness & Athletics"
     </section>
 
 
-    <p class="sync-footer">Last synced: {{ strava.lastUpdated | dateFilter }}</p>
+    <p class="sync-footer">Last synced: {{ fitness.lastUpdated | dateFilter }}</p>
   </div>
 
 </div>

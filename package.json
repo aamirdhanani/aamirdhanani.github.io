@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node scripts/fetch-strava.js && npx @11ty/eleventy --serve",
-    "build": "node scripts/fetch-strava.js && npx @11ty/eleventy",
+    "start": "node scripts/fetch-garmin.js && npx @11ty/eleventy --serve",
+    "build": "node scripts/fetch-garmin.js && npx @11ty/eleventy",
     "verify": "npx @11ty/eleventy && node scripts/verify-site.js",
-    "deploy": "node scripts/fetch-strava.js && npx eleventy && cp -r dist/* . && git add -A && git commit -m \"Deploy site\" && git push origin main --force"
+    "deploy": "node scripts/fetch-garmin.js && npx eleventy && cp -r dist/* . && git add -A && git commit -m \"Deploy site\" && git push origin main --force"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "dotenv": "^17.3.1",
+    "garmin-connect": "^1.6.2",
     "lightbox2": "^2.11.5"
   }
 }

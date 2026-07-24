@@ -1,206 +1,76 @@
 {
-  "lastUpdated": "2026-06-30T20:00:41.927Z",
+  "lastUpdated": "2026-07-24T16:06:06.956Z",
+  "source": "garmin",
   "athlete": {
     "firstname": "Aamir",
     "lastname": "Dhanani",
-    "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/66377789/19961150/2/large.jpg"
+    "profile": "https://s3.amazonaws.com/garmin-connect-prod/profile_images/cfdeaef6-6b2a-414c-ab0f-c9960a37db20-prof.png"
   },
   "recentActivities": [
     {
-      "id": 19122715703,
-      "name": "Morning Weight Training",
+      "id": 23593717645,
+      "name": "Strength",
       "type": "WeightTraining",
       "distance": "0.00",
-      "movingTime": 3647,
-      "pace": "0:00",
-      "startDate": "2026-06-30T11:03:15Z",
-      "total_elevation_gain": 0
-    },
-    {
-      "id": 19014239583,
-      "name": "Afternoon Tennis",
-      "type": "Workout",
-      "distance": "1.52",
-      "movingTime": 2207,
+      "movingTime": 3630.410888671875,
       "pace": "",
-      "startDate": "2026-06-21T17:37:12Z",
+      "startDate": "2026-07-14T07:02:45",
       "total_elevation_gain": 0
     },
     {
-      "id": 18999702715,
-      "name": "Lunch Run",
-      "type": "Run",
-      "distance": "8.54",
-      "movingTime": 3597,
-      "pace": "7:01 /km",
-      "startDate": "2026-06-20T15:47:41Z",
-      "total_elevation_gain": 35
+      "id": 23529801769,
+      "name": "Washington County Hiking",
+      "type": "Hike",
+      "distance": "30.55",
+      "movingTime": 9675,
+      "pace": "",
+      "startDate": "2026-07-08T09:16:20",
+      "total_elevation_gain": 584
     },
     {
-      "id": 18950984111,
-      "name": "Evening Run",
-      "type": "Run",
-      "distance": "1.09",
-      "movingTime": 403,
-      "pace": "6:11 /km",
-      "startDate": "2026-06-16T23:13:15Z",
-      "total_elevation_gain": 7
+      "id": 23516137102,
+      "name": "Washington County Hiking",
+      "type": "Hike",
+      "distance": "3.06",
+      "movingTime": 2132,
+      "pace": "",
+      "startDate": "2026-07-07T14:47:36",
+      "total_elevation_gain": 23
     },
     {
-      "id": 18762360809,
-      "name": "Afternoon Run",
-      "type": "Run",
-      "distance": "5.13",
-      "movingTime": 1891,
-      "pace": "6:08 /km",
-      "startDate": "2026-06-02T21:54:13Z",
-      "total_elevation_gain": 24
+      "id": 23516135629,
+      "name": "Washington County Hiking",
+      "type": "Hike",
+      "distance": "6.28",
+      "movingTime": 3604,
+      "pace": "",
+      "startDate": "2026-07-07T12:22:00",
+      "total_elevation_gain": 184
     },
     {
-      "id": 18732216340,
-      "name": "Morning Run",
-      "type": "Run",
-      "distance": "36.10",
-      "movingTime": 20382,
-      "pace": "9:24 /km",
-      "startDate": "2026-05-31T11:04:12Z",
-      "total_elevation_gain": 169
+      "id": 23502728101,
+      "name": "Garfield County Hiking",
+      "type": "Hike",
+      "distance": "13.29",
+      "movingTime": 9877,
+      "pace": "",
+      "startDate": "2026-07-06T09:16:42",
+      "total_elevation_gain": 541
+    },
+    {
+      "id": 23493369156,
+      "name": "Washington County Hiking",
+      "type": "Hike",
+      "distance": "8.33",
+      "movingTime": 4950,
+      "pace": "",
+      "startDate": "2026-07-05T12:22:15",
+      "total_elevation_gain": 527
     }
   ],
-  "weeklyVolume": {
-    "WeightTraining": {
-      "distance": 0,
-      "time": 3647,
-      "count": 1,
-      "distanceKm": "0.00",
-      "formattedTime": "1h 0m",
-      "percentage": "100",
-      "isCardio": false,
-      "avgPace": ""
-    }
-  },
+  "weeklyVolume": {},
   "weeklyTotalDistance": "0.00",
   "heatmap": [
-    {
-      "date": "2025-07-01",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-02",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-03",
-      "count": 2,
-      "intensity": 2
-    },
-    {
-      "date": "2025-07-04",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-05",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-06",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-07",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-08",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-09",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-10",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-11",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-12",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-13",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-14",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-15",
-      "count": 1,
-      "intensity": 1
-    },
-    {
-      "date": "2025-07-16",
-      "count": 1,
-      "intensity": 1
-    },
-    {
-      "date": "2025-07-17",
-      "count": 1,
-      "intensity": 1
-    },
-    {
-      "date": "2025-07-18",
-      "count": 1,
-      "intensity": 1
-    },
-    {
-      "date": "2025-07-19",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-20",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-21",
-      "count": 1,
-      "intensity": 1
-    },
-    {
-      "date": "2025-07-22",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-23",
-      "count": 0,
-      "intensity": 0
-    },
-    {
-      "date": "2025-07-24",
-      "count": 0,
-      "intensity": 0
-    },
     {
       "date": "2025-07-25",
       "count": 0,
@@ -303,8 +173,8 @@
     },
     {
       "date": "2025-08-14",
-      "count": 1,
-      "intensity": 1
+      "count": 0,
+      "intensity": 0
     },
     {
       "date": "2025-08-15",
@@ -1223,8 +1093,8 @@
     },
     {
       "date": "2026-02-14",
-      "count": 2,
-      "intensity": 2
+      "count": 3,
+      "intensity": 3
     },
     {
       "date": "2026-02-15",
@@ -1323,13 +1193,13 @@
     },
     {
       "date": "2026-03-06",
-      "count": 0,
-      "intensity": 0
+      "count": 1,
+      "intensity": 1
     },
     {
       "date": "2026-03-07",
-      "count": 1,
-      "intensity": 1
+      "count": 0,
+      "intensity": 0
     },
     {
       "date": "2026-03-08",
@@ -1383,8 +1253,8 @@
     },
     {
       "date": "2026-03-18",
-      "count": 0,
-      "intensity": 0
+      "count": 1,
+      "intensity": 1
     },
     {
       "date": "2026-03-19",
@@ -1633,8 +1503,8 @@
     },
     {
       "date": "2026-05-07",
-      "count": 0,
-      "intensity": 0
+      "count": 1,
+      "intensity": 1
     },
     {
       "date": "2026-05-08",
@@ -1905,12 +1775,132 @@
       "date": "2026-06-30",
       "count": 1,
       "intensity": 1
+    },
+    {
+      "date": "2026-07-01",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-02",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-03",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-04",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-07-05",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-07-06",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-07-07",
+      "count": 2,
+      "intensity": 2
+    },
+    {
+      "date": "2026-07-08",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-07-09",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-10",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-11",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-12",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-13",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-14",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-07-15",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-16",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-17",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-18",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-19",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-20",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-21",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-22",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-23",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-07-24",
+      "count": 0,
+      "intensity": 0
     }
   ],
   "ytdStats": {
     "run": {
-      "count": 67,
-      "distance": "496",
+      "count": 70,
+      "distance": "512",
       "time": 60
     },
     "ride": {
@@ -1919,26 +1909,26 @@
       "time": 0
     },
     "swim": {
-      "count": 16,
+      "count": 17,
       "distance": "4",
-      "time": 8
+      "time": 1174
     }
   },
   "allTimeStats": {
     "run": {
-      "count": 555,
-      "distance": "4542",
-      "time": 508
+      "count": 509,
+      "distance": "4263",
+      "time": 469
     },
     "ride": {
-      "count": 134,
-      "distance": "3407",
-      "time": 140
+      "count": 107,
+      "distance": "2855",
+      "time": 116
     },
     "swim": {
-      "count": 20,
+      "count": 21,
       "distance": "5",
-      "time": 10
+      "time": 1239
     }
   }
 }

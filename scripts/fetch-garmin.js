@@ -189,15 +189,49 @@ async function fetchAllActivities(client) {
     return all;
 }
 
-async function main() {
-    if (!EMAIL || !PASSWORD) {
-        console.error('Missing GARMIN_EMAIL / GARMIN_PASSWORD environment variables.');
-        process.exit(1);
+async function authenticate(client) {
+    // Preferred (CI): restore a saved session token. A fresh email/password login
+    // from a datacenter IP (GitHub Actions) is frequently blocked by Garmin's
+    // Cloudflare, so we log in once locally, export the token, and reuse it here.
+    if (process.env.GARMIN_TOKEN) {
+        console.log('Restoring Garmin session from GARMIN_TOKEN...');
+        const t = JSON.parse(Buffer.from(process.env.GARMIN_TOKEN, 'base64').toString('utf8'));
+        client.loadToken(t.oauth1, t.oauth2);
+        return;
     }
-    try {
-        const client = new GarminConnect({ username: EMAIL, password: PASSWORD });
-        console.log('Logging into Garmin Connect...');
+    if (EMAIL && PASSWORD) {
+        console.log('Logging into Garmin Connect with email/password...');
         await client.login();
+        return;
+    }
+    throw new Error('No GARMIN_TOKEN, and no GARMIN_EMAIL/GARMIN_PASSWORD provided.');
+}
+
+async function main() {
+    const client = new GarminConnect({ username: EMAIL, password: PASSWORD });
+
+    // One-off: `node scripts/fetch-garmin.js --export-token` logs in with the
+    // password and writes a base64 session token to .garmin-token.txt, whose
+    // contents go into the GARMIN_TOKEN GitHub secret for CI.
+    if (process.argv.includes('--export-token')) {
+        if (!EMAIL || !PASSWORD) {
+            console.error('--export-token needs GARMIN_EMAIL / GARMIN_PASSWORD in your .env.');
+            process.exit(1);
+        }
+        try {
+            await client.login();
+            const b64 = Buffer.from(JSON.stringify(client.exportToken())).toString('base64');
+            fs.writeFileSync(path.join(__dirname, '..', '.garmin-token.txt'), b64 + '\n');
+            console.log('✅ Wrote .garmin-token.txt — put its contents in the GARMIN_TOKEN secret. Do NOT commit it.');
+        } catch (err) {
+            console.error('Token export failed:', err && err.message);
+            process.exit(1);
+        }
+        return;
+    }
+
+    try {
+        await authenticate(client);
 
         let profile = null;
         try { profile = await client.getUserProfile(); }
@@ -216,9 +250,9 @@ async function main() {
         console.log(`✅ Wrote src/_data/fitness.json (${data.recentActivities.length} recent, ${raw.length} total activities).`);
     } catch (err) {
         console.error('\n❌ Garmin fetch failed:', err && err.message);
-        console.error('Likely causes: wrong GARMIN_EMAIL/GARMIN_PASSWORD; MFA enabled on the');
-        console.error('account (Garmin login via this library does not support MFA); or Garmin');
-        console.error('changed their login flow (try `npm update garmin-connect`).');
+        console.error('In CI this is usually the datacenter IP being blocked on a fresh login —');
+        console.error('use a GARMIN_TOKEN secret (regenerate locally with `--export-token`).');
+        console.error('Other causes: wrong credentials, MFA enabled, or an expired token.');
         process.exit(1);
     }
 }

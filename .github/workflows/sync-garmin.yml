@@ -25,8 +25,10 @@ jobs:
 
       - name: Fetch Garmin data
         env:
-          GARMIN_EMAIL: ${{ secrets.GARMIN_EMAIL }}
-          GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
+          # A saved session token — a fresh email/password login from GitHub's
+          # datacenter IPs is blocked by Garmin. Regenerate locally when it
+          # expires: `node scripts/fetch-garmin.js --export-token`.
+          GARMIN_TOKEN: ${{ secrets.GARMIN_TOKEN }}
         run: node scripts/fetch-garmin.js
 
       - name: Build site

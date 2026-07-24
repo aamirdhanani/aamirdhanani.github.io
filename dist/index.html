@@ -14,8 +14,26 @@
 <body>
   <script>document.documentElement.classList.add('js')</script>
 
-  <!-- No sticky nav on the homepage: sections link out on their own.
-       Theme follows the visitor's OS setting automatically. -->
+  <!-- Persistent menu toggle (homepage has no sticky nav). Opens a full-screen
+       overlay to the inner pages. Theme still follows the visitor's OS setting. -->
+  <button class="menu-btn" id="menuBtn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="menuOverlay">
+    <span class="menu-btn-label">Menu</span>
+    <span class="menu-btn-icon" aria-hidden="true"><span></span><span></span></span>
+  </button>
+  <div class="menu-overlay" id="menuOverlay" role="dialog" aria-modal="true" aria-label="Site menu">
+    <nav class="menu-nav" aria-label="Pages">
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/hobbies/">Hobbies</a>
+      <a href="/fitness/">Fitness</a>
+      <a href="/travel/">Travel</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <div class="menu-foot">
+      <span class="menu-foot-k">Reach me</span>
+      <a href="mailto:contact@aamirdhanani.com">contact@aamirdhanani.com</a>
+    </div>
+  </div>
+
   <main>
     <h1 class="sr-only">Aamir Dhanani. Builder, avid runner, and photographer.</h1>
     <!-- HERO -->
@@ -23,7 +41,6 @@
   <div class="tick-row">
     <span class="u-mono">A public journal</span>
     <div class="ticks" aria-hidden="true"></div>
-    <span class="u-mono">Ontario, Canada</span>
   </div>
   <div class="hero-grid">
     <div>

@@ -9,6 +9,39 @@
   "use strict";
   var reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
 
+  /* full-screen menu overlay (the homepage has no sticky nav) */
+  var menuBtn = document.getElementById("menuBtn");
+  var menuOverlay = document.getElementById("menuOverlay");
+  if (menuBtn && menuOverlay) {
+    var menuLabel = menuBtn.querySelector(".menu-btn-label");
+    var pageParts = [document.querySelector("main"), document.querySelector(".foot")];
+    function setInert(on){ pageParts.forEach(function(el){ if(el){ on ? el.setAttribute("inert","") : el.removeAttribute("inert"); } }); }
+    function openMenu(){
+      document.body.classList.add("menu-open");
+      menuBtn.setAttribute("aria-expanded","true");
+      if(menuLabel) menuLabel.textContent = "Close";
+      setInert(true);
+      var first = menuOverlay.querySelector("a");
+      if(first) first.focus();
+    }
+    function closeMenu(){
+      document.body.classList.remove("menu-open");
+      menuBtn.setAttribute("aria-expanded","false");
+      if(menuLabel) menuLabel.textContent = "Menu";
+      setInert(false);
+      menuBtn.focus();
+    }
+    menuBtn.addEventListener("click", function(){
+      document.body.classList.contains("menu-open") ? closeMenu() : openMenu();
+    });
+    menuOverlay.addEventListener("click", function(e){
+      if(e.target.tagName === "A") closeMenu(); // navigating away — close first
+    });
+    addEventListener("keydown", function(e){
+      if(e.key === "Escape" && document.body.classList.contains("menu-open")) closeMenu();
+    });
+  }
+
   /* theme toggle — follows the OS setting by default; this only overrides for the session */
   var themeBtn = document.getElementById("theme");
   function effTheme(){

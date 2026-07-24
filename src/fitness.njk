@@ -44,7 +44,7 @@ title: "Fitness & Athletics"
           <div class="bar-legend">
             {% for type, data in strava.weeklyVolume %}
             <div class="legend-item">
-              <span class="dot {{ type | lower }}"></span> {{ type }} ({{ data.percentage }}%)
+              <span class="dot {{ type | lower }}"></span> {{ type | replace("WeightTraining", "Weight Training") }} ({{ data.percentage }}%)
             </div>
             {% endfor %}
           </div>
@@ -58,7 +58,7 @@ title: "Fitness & Athletics"
           <div class="insight-row">
              <span class="insight-icon">{% if type == 'Run' %}🏃{% elif type == 'Ride' %}🚴{% elif type == 'Swim' %}🏊{% elif type == 'WeightTraining' %}💪{% else %}✨{% endif %}</span>
              <div class="insight-content">
-               <span class="insight-label">{{ type }} {% if data.isCardio %}Pace{% else %}Duration{% endif %}</span>
+               <span class="insight-label">{{ type | replace("WeightTraining", "Weight Training") }} {% if data.isCardio %}Pace{% else %}Duration{% endif %}</span>
                <span class="insight-value">{% if data.isCardio %}{{ data.avgPace }}{% else %}{{ data.formattedTime }}{% endif %}</span>
              </div>
           </div>

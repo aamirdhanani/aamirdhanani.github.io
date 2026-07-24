@@ -36,7 +36,9 @@
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-  font-size:17px;line-height:1.55;overflow-x:hidden;width:100%;max-width:100%}
+  font-size:17px;line-height:1.55;overflow-x:hidden;width:100%;max-width:100%;
+  min-height:100vh;display:flex;flex-direction:column}
+.content{flex:1 0 auto}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 .page-container{min-height:100vh;display:flex;flex-direction:column}
@@ -98,9 +100,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-off
 /* ---------------- PORTFOLIO LANDING CARDS ---------------- */
 .portfolio-grid{max-width:var(--maxw);margin:0 auto;display:grid;gap:18px;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));padding:0 var(--gut)}
-.portfolio-card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:16px;
+.portfolio-card{position:relative;display:block;background:var(--panel);border:1px solid var(--line);border-radius:16px;
   padding:2rem;color:var(--ink);transition:transform .28s cubic-bezier(.2,.7,.2,1),border-color .28s,box-shadow .28s}
 .portfolio-card:hover{transform:translateY(-5px);border-color:var(--signal);box-shadow:0 16px 34px rgba(0,0,0,.08)}
+.portfolio-card::after{content:"\2197";position:absolute;top:1.6rem;right:1.6rem;font-family:var(--mono);
+  color:var(--signal);opacity:0;transform:translate(-4px,4px);transition:opacity .25s,transform .25s}
+.portfolio-card:hover::after{opacity:1;transform:none}
 .card-content h2{margin:0 0 .4rem;font-size:clamp(1.4rem,3.5vw,1.7rem);letter-spacing:-.02em}
 .card-content p{margin:0;color:var(--ink-2);font-size:1rem}
 

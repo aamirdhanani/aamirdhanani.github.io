@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-26T08:02:06.874Z",
+  "lastUpdated": "2026-07-26T12:51:24.233Z",
   "source": "garmin",
   "athlete": {
     "firstname": "Aamir",
@@ -7,6 +7,16 @@
     "profile": "https://s3.amazonaws.com/garmin-connect-prod/profile_images/cfdeaef6-6b2a-414c-ab0f-c9960a37db20-prof.png"
   },
   "recentActivities": [
+    {
+      "id": 23737925190,
+      "name": "Hamilton Ultra Running",
+      "type": "Run",
+      "distance": "100.00",
+      "movingTime": 64011.55111694336,
+      "pace": "10:40 /km",
+      "startDate": "2026-07-25T08:00:30",
+      "total_elevation_gain": 1976
+    },
     {
       "id": 23593717645,
       "name": "Strength",
@@ -56,16 +66,6 @@
       "pace": "",
       "startDate": "2026-07-06T09:16:42",
       "total_elevation_gain": 541
-    },
-    {
-      "id": 23493369156,
-      "name": "Washington County Hiking",
-      "type": "Hike",
-      "distance": "8.33",
-      "movingTime": 4950,
-      "pace": "",
-      "startDate": "2026-07-05T12:22:15",
-      "total_elevation_gain": 527
     }
   ],
   "weeklyVolume": {},
@@ -1888,8 +1888,8 @@
     },
     {
       "date": "2026-07-25",
-      "count": 0,
-      "intensity": 0
+      "count": 1,
+      "intensity": 1
     },
     {
       "date": "2026-07-26",
@@ -1899,9 +1899,9 @@
   ],
   "ytdStats": {
     "run": {
-      "count": 70,
-      "distance": "512",
-      "time": 60
+      "count": 71,
+      "distance": "612",
+      "time": 77
     },
     "ride": {
       "count": 0,
@@ -1916,9 +1916,9 @@
   },
   "allTimeStats": {
     "run": {
-      "count": 509,
-      "distance": "4263",
-      "time": 469
+      "count": 510,
+      "distance": "4363",
+      "time": 487
     },
     "ride": {
       "count": 107,

@@ -112,9 +112,10 @@ img{display:block;max-width:100%}
 }
 
 /* ---------------- MASTHEAD (sticky) + MENU overlay ---------------- */
-/* non-sticky top bar; NO backdrop-filter here — it would become the containing
-   block for the fixed floating pill and drag it off-screen on scroll. */
-.masthead{position:relative;z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
+/* non-sticky top bar. No backdrop-filter and no z-index here — either makes this
+   a stacking context / containing block that traps the fixed floating pill
+   (hiding it behind the menu overlay, or dragging it off-screen on scroll). */
+.masthead{position:relative;background:var(--paper);border-bottom:1px solid var(--line)}
 .masthead-in{display:flex;align-items:center;gap:clamp(14px,3vw,24px);height:50px}
 .masthead-label{white-space:nowrap;color:var(--ink-2)}
 .masthead .ticks{margin:0}

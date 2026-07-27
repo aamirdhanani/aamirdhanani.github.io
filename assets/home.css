@@ -9,6 +9,7 @@
   --ink:#1a1714; --ink-2:#6c655a; --ink-3:#938b7e;
   --line:#d9d3c7; --line-2:#c8c1b4;
   --signal:#bd4b25;
+  --glow:rgba(224,113,63,.045);
   --maxw:1240px; --gut:clamp(24px,5vw,64px);
   --sans:"Helvetica Neue",Helvetica,"Inter",Arial,sans-serif;
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
@@ -19,6 +20,7 @@
     --paper:#14120e; --paper-2:#1b1813; --panel:#1f1c16;
     --ink:#f1ede4; --ink-2:#a49c8d; --ink-3:#7c7466;
     --line:#2c281f; --line-2:#3a3529; --signal:#e0713f;
+    --glow:rgba(224,113,63,.14);
   }
 }
 :root[data-theme="light"]{
@@ -30,6 +32,7 @@
   --paper:#14120e; --paper-2:#1b1813; --panel:#1f1c16;
   --ink:#f1ede4; --ink-2:#a49c8d; --ink-3:#7c7466;
   --line:#2c281f; --line-2:#3a3529; --signal:#e0713f;
+  --glow:rgba(224,113,63,.14);
 }
 
 *{box-sizing:border-box}
@@ -38,6 +41,15 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
   font-size:17px;line-height:1.5;overflow-x:hidden;width:100%;max-width:100%}
+/* ambient ember glow — sits behind all content, drifts slowly. Mode-aware via
+   --glow (a whisper in light, present in dark). One atmosphere, no twinkles. */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(760px 620px at 80% -6%, var(--glow), transparent 60%);
+  animation:emberDrift 24s ease-in-out infinite alternate}
+@keyframes emberDrift{
+  from{transform:translate(0,0) scale(1);opacity:.85}
+  to{transform:translate(-42px,30px) scale(1.16);opacity:1}
+}
 /* never let a grid/flex cell force the page wider than the screen */
 .hero-grid,.about-grid,.sec-head,.job,.serie,.cc,.fact{min-width:0}
 .hero-grid>*,.about-grid>*,.job>*,.serie>*,.cc>*,.fact>*{min-width:0}

@@ -16,19 +16,25 @@
     var menuLabel = menuBtn.querySelector(".menu-btn-label");
     var pageParts = [document.querySelector("main"), document.querySelector(".foot")];
     function setInert(on){ pageParts.forEach(function(el){ if(el){ on ? el.setAttribute("inert","") : el.removeAttribute("inert"); } }); }
+    // The pill sits in the masthead at the top; once you scroll past it (or while
+    // the menu is open) it detaches and floats fixed to the top-right, animating in.
+    function updateFloat(){
+      menuBtn.classList.toggle("floating", document.body.classList.contains("menu-open") || scrollY > 64);
+    }
     function openMenu(){
       document.body.classList.add("menu-open");
       menuBtn.setAttribute("aria-expanded","true");
       if(menuLabel) menuLabel.textContent = "Close";
+      updateFloat();
       setInert(true);
-      var first = menuOverlay.querySelector("a");
-      if(first) first.focus();
+      requestAnimationFrame(function(){ var first = menuOverlay.querySelector("a"); if(first) first.focus(); });
     }
     function closeMenu(){
       document.body.classList.remove("menu-open");
       menuBtn.setAttribute("aria-expanded","false");
       if(menuLabel) menuLabel.textContent = "Menu";
       setInert(false);
+      updateFloat();
       menuBtn.focus();
     }
     menuBtn.addEventListener("click", function(){
@@ -40,6 +46,8 @@
     addEventListener("keydown", function(e){
       if(e.key === "Escape" && document.body.classList.contains("menu-open")) closeMenu();
     });
+    addEventListener("scroll", updateFloat, {passive:true});
+    updateFloat();
   }
 
   /* theme toggle — follows the OS setting by default; this only overrides for the session */

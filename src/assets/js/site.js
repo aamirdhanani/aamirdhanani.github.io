@@ -4,7 +4,9 @@
 (function(){
   "use strict";
 
-  /* theme toggle — follows OS by default, overrides for the session */
+  /* theme toggle — follows OS by default; an explicit choice is saved to
+     localStorage and re-applied on every page (see the inline <head> script)
+     so light/dark carries across the whole site. */
   var themeBtn = document.getElementById("theme");
   function effTheme(){
     var t = document.documentElement.getAttribute("data-theme");
@@ -13,7 +15,9 @@
   function syncIcon(){ if(themeBtn) themeBtn.setAttribute("data-mode", effTheme()); }
   if(themeBtn){
     themeBtn.addEventListener("click", function(){
-      document.documentElement.setAttribute("data-theme", effTheme()==="dark" ? "light" : "dark");
+      var next = effTheme()==="dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try{ localStorage.setItem("theme", next); }catch(e){}
       syncIcon();
     });
     syncIcon();

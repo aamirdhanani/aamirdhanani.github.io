@@ -50,16 +50,26 @@
     updateFloat();
   }
 
-  /* theme toggle — follows the OS setting by default; this only overrides for the session */
+  /* theme toggle — follows the OS setting by default; an explicit choice is
+     saved to localStorage and applied on every page (see the inline <head>
+     script in home.njk/layout.njk) so it carries across the whole site. */
   var themeBtn = document.getElementById("theme");
   function effTheme(){
     var t = document.documentElement.getAttribute("data-theme");
     return t || (matchMedia("(prefers-color-scheme:dark)").matches ? "dark" : "light");
   }
-  function syncIcon(){ if(themeBtn) themeBtn.setAttribute("data-mode", effTheme()); }
+  function syncIcon(){
+    if(!themeBtn) return;
+    var m = effTheme();
+    themeBtn.setAttribute("data-mode", m);
+    var lbl = themeBtn.querySelector(".theme-label");
+    if(lbl) lbl.textContent = m === "dark" ? "Light mode" : "Dark mode";
+  }
   if(themeBtn){
     themeBtn.addEventListener("click", function(){
-      document.documentElement.setAttribute("data-theme", effTheme()==="dark" ? "light" : "dark");
+      var next = effTheme()==="dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try{ localStorage.setItem("theme", next); }catch(e){}
       syncIcon();
     });
     syncIcon();

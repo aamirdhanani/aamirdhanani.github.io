@@ -24,23 +24,43 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* Route-draw animation: trace each GPS track when its card enters the viewport.
-   The CSS handles the sweep; this just adds .is-drawn at the right moment. */
+/* Route-draw animation: trace each GPS track from the run's start to its finish
+   when the card enters the viewport. The dash length is measured per path
+   (getTotalLength) and set in real user units, so once revealed (offset 0) it
+   always covers the whole route — a normalized pathLength dash was dropping
+   segments on some paths under non-scaling-stroke. */
 (function () {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const cards = [].slice.call(document.querySelectorAll('.route-card'))
     .filter((c) => c.querySelector('.route-line'));
   if (!cards.length) return;
 
-  if (!('IntersectionObserver' in window)) {
+  // Arm each route: park the full-length dash just before the start point.
+  cards.forEach((card) => {
+    const line = card.querySelector('.route-line');
+    let len = 0;
+    try { len = line.getTotalLength(); } catch (e) { /* no geometry */ }
+    if (!len) { card.dataset.noDraw = '1'; return; }
+    if (reduce) return; // leave the line solid; dots shown via reduced-motion CSS
+    line.style.transition = 'none';                       // don't animate the arming
+    line.style.strokeDasharray = `${len} ${len + 1}`;     // non-repeating over the path
+    line.style.strokeDashoffset = -len;                   // hidden, parked before the start
+    line.getBoundingClientRect();                         // commit before enabling transition
+    line.style.transition = '';
+  });
+
+  if (reduce || !('IntersectionObserver' in window)) {
     cards.forEach((c) => c.classList.add('is-drawn'));
     return;
   }
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => {
-      if (en.isIntersecting) {
-        en.target.classList.add('is-drawn');
-        io.unobserve(en.target);
-      }
+      if (!en.isIntersecting) return;
+      const card = en.target;
+      const line = card.querySelector('.route-line');
+      if (line && !card.dataset.noDraw) line.style.strokeDashoffset = '0'; // trace start -> finish
+      card.classList.add('is-drawn');
+      io.unobserve(card);
     });
   }, { threshold: 0.3 });
   cards.forEach((c) => io.observe(c));

@@ -327,23 +327,17 @@
    carries pathLength="1", so one normalized dash animates every route with the
    same timing regardless of its real length. Gated on .js so no-JS visitors
    still see the full route; disabled under reduced-motion. */
-/* Dash 1 / gap 2 (a non-repeating pattern over pathLength=1) so the offset's
-   direction is meaningful — a symmetric `1` array reveals the same way for any
-   sign. Offset -1 parks the dash just before the path start, so easing it to 0
-   traces from the first GPS point (run start) to the last (finish). */
-.js .route-line { stroke-dasharray: 1 2; stroke-dashoffset: -1; }
-.js .route-card.is-drawn .route-line {
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 1.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* JS measures each path's length and parks the dash just before its start
+   point; the reveal (offset -> 0) traces from the first GPS point to the finish.
+   Because the dash is the real path length, offset 0 always covers the whole
+   route. No-JS keeps the line solid; reduced-motion skips the animation. */
+.js .route-line { transition: stroke-dashoffset 1.3s cubic-bezier(0.4, 0, 0.2, 1); }
 .js .route-dot { opacity: 0; }
 .js .route-card.is-drawn .route-dot--start { opacity: 1; transition: opacity 0.3s ease 0.15s; }
 .js .route-card.is-drawn .route-dot--end { opacity: 1; transition: opacity 0.3s ease 1.15s; }
 @media (prefers-reduced-motion: reduce) {
-  .js .route-line,
-  .js .route-card.is-drawn .route-line { stroke-dashoffset: 0; transition: none; }
-  .js .route-dot,
-  .js .route-card.is-drawn .route-dot { opacity: 1; transition: none; }
+  .js .route-line { transition: none; }
+  .js .route-dot { opacity: 1; }
 }
 
 /* Indoor / no-GPS state */

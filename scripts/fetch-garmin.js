@@ -42,6 +42,64 @@ function normalize(a) {
     };
 }
 
+const ACTIVITY_URL = 'https://connectapi.garmin.com/activity-service/activity/';
+
+// Turn a Garmin GPS polyline ([{lat,lon},...]) into a compact, ready-to-draw
+// SVG path normalized into a fixed 100x70 viewBox (centered, aspect-preserved).
+// Uses an equirectangular projection with cos(lat) longitude compression so the
+// route isn't horizontally squished. Returns {d, sx, sy, ex, ey} (start/end dot
+// coords) or null when there aren't enough GPS points (e.g. indoor workouts).
+function buildRoutePath(polyline, W = 100, H = 70, pad = 7) {
+    if (!Array.isArray(polyline) || polyline.length < 2) return null;
+    // Downsample to keep the path small while preserving the route's shape.
+    const target = 200;
+    const step = Math.max(1, Math.floor(polyline.length / target));
+    const pts = [];
+    for (let i = 0; i < polyline.length; i += step) {
+        const p = polyline[i];
+        if (p && p.lat != null && p.lon != null) pts.push([p.lat, p.lon]);
+    }
+    const last = polyline[polyline.length - 1];
+    if (last && last.lat != null && last.lon != null) pts.push([last.lat, last.lon]);
+    if (pts.length < 2) return null;
+
+    const lats = pts.map(p => p[0]), lons = pts.map(p => p[1]);
+    const minLat = Math.min(...lats), maxLat = Math.max(...lats);
+    const minLon = Math.min(...lons), maxLon = Math.max(...lons);
+    const kx = Math.cos(((minLat + maxLat) / 2) * Math.PI / 180) || 1; // lon compression
+    const xs = pts.map(p => (p[1] - minLon) * kx);   // east -> right
+    const ys = pts.map(p => (maxLat - p[0]));         // north -> up (SVG y is flipped)
+    const minX = Math.min(...xs), minY = Math.min(...ys);
+    const spanX = (Math.max(...xs) - minX) || 1e-6;
+    const spanY = (Math.max(...ys) - minY) || 1e-6;
+    const scale = Math.min((W - 2 * pad) / spanX, (H - 2 * pad) / spanY);
+    const offX = (W - spanX * scale) / 2 - minX * scale;
+    const offY = (H - spanY * scale) / 2 - minY * scale;
+    const px = i => +(xs[i] * scale + offX).toFixed(1);
+    const py = i => +(ys[i] * scale + offY).toFixed(1);
+
+    const d = pts.map((_, i) => (i === 0 ? 'M' : 'L') + px(i) + ' ' + py(i)).join(' ');
+    return { d, sx: px(0), sy: py(0), ex: px(pts.length - 1), ey: py(pts.length - 1) };
+}
+
+// Fetch the GPS track for each given activity id and build its route path.
+// One extra API call per id (only the handful of recent activities), each
+// failure is non-fatal — that activity just renders without a map.
+async function fetchActivityRoutes(client, ids) {
+    const routes = {};
+    for (const id of ids) {
+        try {
+            const det = await client.get(ACTIVITY_URL + id + '/details',
+                { params: { maxChartSize: 0, maxPolylineSize: 2000 } });
+            routes[id] = buildRoutePath(det && det.geoPolylineDTO && det.geoPolylineDTO.polyline);
+        } catch (e) {
+            console.warn(`Could not fetch route for activity ${id} (non-fatal):`, e.message);
+            routes[id] = null;
+        }
+    }
+    return routes;
+}
+
 function formatPace(time, distance, type) {
     if (!distance) return '';
     if (type === 'Run') {
@@ -137,8 +195,9 @@ function processStats(t) {
     };
 }
 
-// Pure transform — exported for testing.
-function buildFitnessData(rawActivities, profile) {
+// Pure transform — exported for testing. `routes` maps activityId -> SVG route
+// path object (or null); attached to each recent activity for the map cards.
+function buildFitnessData(rawActivities, profile, routes = {}) {
     const activities = rawActivities
         .map(normalize)
         .sort((x, y) => new Date(y.start_date) - new Date(x.start_date));
@@ -167,7 +226,8 @@ function buildFitnessData(rawActivities, profile) {
             movingTime: a.moving_time,
             pace: formatPace(a.moving_time, a.distance, a.type),
             startDate: a.start_date,
-            total_elevation_gain: a.total_elevation_gain
+            total_elevation_gain: a.total_elevation_gain,
+            route: routes[a.id] || null
         })),
         weeklyVolume: weekly.types,
         weeklyTotalDistance: weekly.totalDistance,
@@ -245,9 +305,20 @@ async function main() {
             process.exit(1);
         }
 
-        const data = buildFitnessData(raw, profile);
+        // Fetch GPS route tracks only for the handful of activities that will
+        // actually be shown as recent-activity cards.
+        const recentIds = raw
+            .map(normalize)
+            .sort((x, y) => new Date(y.start_date) - new Date(x.start_date))
+            .slice(0, 6)
+            .map(a => a.id);
+        console.log('Fetching route tracks for recent activities...');
+        const routes = await fetchActivityRoutes(client, recentIds);
+        const withRoutes = Object.values(routes).filter(Boolean).length;
+
+        const data = buildFitnessData(raw, profile, routes);
         fs.writeFileSync(path.join(__dirname, '../src/_data/fitness.json'), JSON.stringify(data, null, 2));
-        console.log(`✅ Wrote src/_data/fitness.json (${data.recentActivities.length} recent, ${raw.length} total activities).`);
+        console.log(`✅ Wrote src/_data/fitness.json (${data.recentActivities.length} recent, ${withRoutes} with route maps, ${raw.length} total activities).`);
     } catch (err) {
         console.error('\n❌ Garmin fetch failed:', err && err.message);
         console.error('In CI this is usually the datacenter IP being blocked on a fresh login —');

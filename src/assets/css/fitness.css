@@ -183,29 +183,132 @@
 /* --- Activity Feed --- */
 .activity-section { margin-top: 2.5rem; }
 .section-title { font-size: 1.6rem; margin-bottom: 1.75rem; font-weight: 800; border-left: 5px solid white; padding-left: 1.25rem; line-height: 1; }
-.activity-list { display: flex; flex-direction: column; gap: 0.75rem; }
-.activity-strip {
+/* Route-map cards: each recent activity's GPS track as SVG line-art cover. */
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
+  gap: 1.15rem;
+}
+.route-card {
+  display: flex;
+  flex-direction: column;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
-  padding: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.28s, box-shadow 0.28s;
+}
+.route-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(224, 113, 63, 0.55);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
+}
+
+/* Map cover */
+.route-map {
+  position: relative;
+  aspect-ratio: 100 / 70;
+  overflow: hidden;
+  background: radial-gradient(120% 120% at 50% 0%, #1d1811 0%, #100d09 78%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+/* faint blueprint grid behind the route, faded at the edges */
+.route-map::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(120% 120% at 50% 40%, #000 40%, transparent 86%);
+  mask-image: radial-gradient(120% 120% at 50% 40%, #000 40%, transparent 86%);
+}
+.route-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.route-line {
+  fill: none;
+  stroke: #e0713f;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 3px rgba(224, 113, 63, 0.45));
+}
+.route-dot { stroke: #16130e; stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.route-dot--start { fill: #f3f0ea; }
+.route-dot--end { fill: #e0713f; }
+
+/* Indoor / no-GPS state */
+.route-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.route-empty-icon { font-size: 2rem; opacity: 0.85; }
+.route-empty-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.4;
+}
+
+/* Overlays */
+.route-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 1.75rem;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  justify-content: center;
+  font-size: 1.05rem;
+  background: rgba(16, 13, 9, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
-.activity-strip:hover { background: rgba(255, 255, 255, 0.09); transform: translateX(8px); border-color: rgba(255,255,255,0.15); }
+.route-dist {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
 
-.activity-type-badge { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; background: rgba(255,255,255,0.1); flex-shrink: 0; }
-.activity-type-badge.run { color: #ff6e6e; }
-.activity-type-badge.ride { color: #6bb9ff; }
-
-.activity-info { flex: 1; display: flex; justify-content: space-between; align-items: center; }
-.activity-main-info h3 { margin: 0 0 0.25rem; font-size: 1.25rem; font-weight: 700; color: #fff; }
-.activity-main-info .date { font-size: 0.85rem; opacity: 0.5; font-weight: 500; }
-
-.activity-metrics { display: flex; gap: 2.5rem; }
-.metric { display: flex; flex-direction: column; align-items: flex-end; }
+/* Card body */
+.route-body { display: flex; flex-direction: column; flex: 1; padding: 1.1rem 1.25rem 1.25rem; }
+.route-name {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.route-date { font-size: 0.8rem; opacity: 0.5; font-weight: 500; }
+.route-metrics { display: flex; gap: 1.75rem; margin-top: auto; padding-top: 1rem; }
+.route-metric { display: flex; flex-direction: column; align-items: flex-start; }
+.route-metric .rv { font-size: 1rem; font-weight: 700; color: #fff; }
+.route-metric .rv small { font-size: 0.7rem; opacity: 0.5; margin-left: 1px; }
+.route-metric .rl {
+  font-size: 0.62rem;
+  opacity: 0.45;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 0.2rem;
+}
 .m-val { font-size: 1.15rem; font-weight: 700; color: #fff; }
 .m-val small { font-size: 0.75rem; opacity: 0.5; font-weight: 500; margin-left: 1px; }
 .m-lab { font-size: 0.65rem; opacity: 0.45; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-top: 0.2rem; }
@@ -214,8 +317,7 @@
 @media (max-width: 850px) {
   .dashboard-grid { grid-template-columns: 1fr; gap: 1.25rem; }
   .stats-comparison-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-  .activity-info { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
-  .activity-metrics { width: 100%; justify-content: space-between; gap: 0; }
+  .route-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
   .stats-row { gap: 2rem; justify-content: space-between; }
 }
 

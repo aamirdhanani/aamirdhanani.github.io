@@ -137,36 +137,38 @@ title: "Fitness & Athletics"
       </div>
     </section>
 
-    <!-- Recent Activity Feed (Moved to bottom) -->
+    <!-- Recent Activity Feed — each card's cover is the GPS route, drawn as
+         inline SVG line-art (baked at sync time; no map tiles or API keys). -->
     <section class="activity-section">
       <h2 class="section-title">Recent Adventures</h2>
-      <div class="activity-list">
+      <div class="route-grid">
         {% for activity in fitness.recentActivities %}
-        <div class="activity-strip">
-          <div class="activity-type-badge {{ activity.type | lower }}">
-            {% if activity.type == 'Run' %}🏃{% elif activity.type == 'Ride' %}🚴{% elif activity.type == 'Swim' %}🏊{% else %}✨{% endif %}
-          </div>
-          <div class="activity-info">
-            <div class="activity-main-info">
-              <h3>{{ activity.name }}</h3>
-              <span class="date">{{ activity.startDate | dateFilter }}</span>
+        <article class="route-card">
+          <div class="route-map">
+            {% if activity.route %}
+            <svg class="route-svg" viewBox="0 0 100 70" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+              <path class="route-line" d="{{ activity.route.d }}"/>
+              <circle class="route-dot route-dot--start" cx="{{ activity.route.sx }}" cy="{{ activity.route.sy }}" r="2.4"/>
+              <circle class="route-dot route-dot--end" cx="{{ activity.route.ex }}" cy="{{ activity.route.ey }}" r="2.4"/>
+            </svg>
+            {% else %}
+            <div class="route-empty">
+              <span class="route-empty-icon">{% if activity.type == 'Swim' %}🏊{% elif activity.type == 'WeightTraining' %}💪{% else %}✨{% endif %}</span>
+              <span class="route-empty-label">Indoor · no GPS</span>
             </div>
-            <div class="activity-metrics">
-              <div class="metric">
-                <span class="m-val">{{ activity.distance }} <small>km</small></span>
-                <span class="m-lab">Dist</span>
-              </div>
-              <div class="metric">
-                <span class="m-val">{{ activity.pace }}</span>
-                <span class="m-lab">Pace</span>
-              </div>
-              <div class="metric">
-                <span class="m-val">{{ activity.total_elevation_gain }} <small>m</small></span>
-                <span class="m-lab">Gain</span>
-              </div>
+            {% endif %}
+            <span class="route-badge">{% if activity.type == 'Run' %}🏃{% elif activity.type == 'Ride' %}🚴{% elif activity.type == 'Swim' %}🏊{% elif activity.type == 'Hike' %}🥾{% elif activity.type == 'Walk' %}🚶{% elif activity.type == 'WeightTraining' %}💪{% else %}✨{% endif %}</span>
+            {% if activity.distance and activity.distance != '0.00' %}<span class="route-dist">{{ activity.distance }} km</span>{% endif %}
+          </div>
+          <div class="route-body">
+            <h3 class="route-name">{{ activity.name }}</h3>
+            <span class="route-date">{{ activity.startDate | dateFilter }}</span>
+            <div class="route-metrics">
+              {% if activity.pace %}<div class="route-metric"><span class="rv">{{ activity.pace }}</span><span class="rl">Pace</span></div>{% endif %}
+              <div class="route-metric"><span class="rv">{{ activity.total_elevation_gain }}<small>m</small></span><span class="rl">Elev</span></div>
             </div>
           </div>
-        </div>
+        </article>
         {% endfor %}
       </div>
     </section>

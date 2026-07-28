@@ -72,20 +72,21 @@
   overflow: hidden;
   margin-bottom: 1.25rem;
 }
-.bar-segment { height: 100%; transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-.bar-segment.run { background: #ff4d4d; }
-.bar-segment.ride { background: #4dabff; }
-.bar-segment.swim { background: #4dff88; }
-.bar-segment.weighttraining { background: #e0713f; } /* ember, harmonized with site accent */
-.bar-segment.other { background: #ffcc4d; }
+/* Discipline colors: one warm ember-family ramp so the chart belongs to the
+   site palette. Swim gets a muted teal as the single quiet cool complement. */
+.bar-segment, .legend-item .dot { --c: #c9a24a; }
+.run           { --c: #e0713f; } /* ember */
+.ride          { --c: #e8a24e; } /* amber */
+.swim          { --c: #6fa89e; } /* muted teal (water) */
+.hike          { --c: #c07d4a; } /* clay */
+.walk          { --c: #d8ab72; } /* sand */
+.weighttraining{ --c: #a8552f; } /* deep brick */
+
+.bar-segment { height: 100%; background: var(--c); }
 
 .bar-legend { display: flex; gap: 1.25rem; flex-wrap: wrap; }
 .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; opacity: 0.7; }
-.legend-item .dot { width: 8px; height: 8px; border-radius: 50%; }
-.legend-item .dot.run { background: #ff4d4d; }
-.legend-item .dot.ride { background: #4dabff; }
-.legend-item .dot.swim { background: #4dff88; }
-.legend-item .dot.weighttraining { background: #e0713f; }
+.legend-item .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
 
 /* --- Weekly Insights --- */
 .insights-list { display: flex; flex-direction: column; gap: 1.5rem; }
@@ -94,6 +95,24 @@
 .insight-content { display: flex; flex-direction: column; }
 .insight-label { font-size: 0.7rem; opacity: 0.5; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
 .insight-value { font-size: 1.15rem; font-weight: 700; }
+
+/* Empty state — used whenever the trailing-7-day window has no activity, so the
+   summary/insights cards read as an intentional "rest week" rather than broken. */
+.empty-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.85rem;
+  min-height: 128px;
+  padding: 1.25rem 1rem;
+  margin-top: 1rem;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+}
+.empty-panel-icon { font-size: 1.9rem; opacity: 0.9; }
+.empty-panel-text { margin: 0; font-size: 0.9rem; line-height: 1.5; color: rgba(255, 255, 255, 0.55); }
 
 /* --- Stats Comparison Grid --- */
 .stats-comparison-grid {
@@ -165,10 +184,11 @@
 }
 .heatmap-cell:hover { transform: scale(1.2); z-index: 10; cursor: default; }
 
-.intensity-1 { background: #0e4429; }
-.intensity-2 { background: #006d32; }
-.intensity-3 { background: #26a641; }
-.intensity-4 { background: #39d353; }
+/* Ember ramp — harmonized with the site accent instead of GitHub green. */
+.intensity-1 { background: #4a2417; }
+.intensity-2 { background: #843c20; }
+.intensity-3 { background: #bd5a2c; }
+.intensity-4 { background: #e8763c; box-shadow: 0 0 4px rgba(232, 118, 60, 0.55); }
 
 .heatmap-legend {
   display: flex;
@@ -182,7 +202,24 @@
 
 /* --- Activity Feed --- */
 .activity-section { margin-top: 2.5rem; }
-.section-title { font-size: 1.6rem; margin-bottom: 1.75rem; font-weight: 800; border-left: 5px solid white; padding-left: 1.25rem; line-height: 1; }
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 1.6rem;
+  margin-bottom: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.section-title::before {
+  content: "";
+  width: 26px;
+  height: 3px;
+  border-radius: 2px;
+  background: #e0713f;
+  flex-shrink: 0;
+}
 /* Route-map cards: each recent activity's GPS track as SVG line-art cover. */
 .route-grid {
   display: grid;

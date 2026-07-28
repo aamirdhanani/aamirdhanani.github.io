@@ -114,15 +114,18 @@ function formatPace(time, distance, type) {
 }
 
 function calculateWeeklyVolume(activities) {
-    const now = new Date();
-    const startOfWeek = new Date(now.setDate(now.getDate() - now.getDay()));
-    startOfWeek.setHours(0, 0, 0, 0);
+    // Rolling last-7-days window rather than calendar-week-to-date: the latter
+    // is empty (and the whole summary reads broken) for the first days after a
+    // week rolls over. A trailing window is both robust and the more meaningful
+    // "recent training load" glance.
+    const windowStart = Date.now() - 7 * 24 * 60 * 60 * 1000;
 
     let totalTime = 0;
     let totalDistance = 0;
+    let totalCount = 0;
     const volume = {};
     activities.forEach(activity => {
-        if (new Date(activity.start_date) < startOfWeek) return;
+        if (new Date(activity.start_date).getTime() < windowStart) return;
         const type = activity.type;
         if (!volume[type]) volume[type] = { distance: 0, time: 0, count: 0 };
         volume[type].distance += activity.distance;
@@ -130,6 +133,7 @@ function calculateWeeklyVolume(activities) {
         volume[type].count += 1;
         totalDistance += activity.distance;
         totalTime += activity.moving_time;
+        totalCount += 1;
     });
 
     const cardioTypes = ['Run', 'Ride', 'Swim', 'Hike', 'Walk'];
@@ -144,7 +148,7 @@ function calculateWeeklyVolume(activities) {
         v.avgPace = v.isCardio ? formatPace(v.time, v.distance, type) : '';
     });
 
-    return { types: volume, totalDistance: (totalDistance / 1000).toFixed(2) };
+    return { types: volume, totalDistance: (totalDistance / 1000).toFixed(2), count: totalCount };
 }
 
 function generateHeatmapData(activities) {
@@ -231,6 +235,7 @@ function buildFitnessData(rawActivities, profile, routes = {}) {
         })),
         weeklyVolume: weekly.types,
         weeklyTotalDistance: weekly.totalDistance,
+        weeklyCount: weekly.count,
         heatmap: generateHeatmapData(activities),
         ytdStats: { run: processStats(ytd.run), ride: processStats(ytd.ride), swim: processStats(ytd.swim) },
         allTimeStats: { run: processStats(all.run), ride: processStats(all.ride), swim: processStats(all.swim) }

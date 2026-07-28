@@ -20,6 +20,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const d = new Date(date);
     const formattedDate = d.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
-    info.innerHTML = `<strong>${formattedDate}</strong>: ${count} activity${count == 1 ? '' : 'ies'}`;
+    info.innerHTML = `<strong>${formattedDate}</strong>: ${count} ${count == 1 ? 'activity' : 'activities'}`;
   });
 });
+
+/* Route-draw animation: trace each GPS track when its card enters the viewport.
+   The CSS handles the sweep; this just adds .is-drawn at the right moment. */
+(function () {
+  const cards = [].slice.call(document.querySelectorAll('.route-card'))
+    .filter((c) => c.querySelector('.route-line'));
+  if (!cards.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    cards.forEach((c) => c.classList.add('is-drawn'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (en.isIntersecting) {
+        en.target.classList.add('is-drawn');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  cards.forEach((c) => io.observe(c));
+})();

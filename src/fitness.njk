@@ -158,7 +158,7 @@ title: "Fitness & Athletics"
           <div class="route-map">
             {% if activity.route %}
             <svg class="route-svg" viewBox="0 0 100 70" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-              <path class="route-line" d="{{ activity.route.d }}"/>
+              <path class="route-line" pathLength="1" d="{{ activity.route.d }}"/>
               <circle class="route-dot route-dot--start" cx="{{ activity.route.sx }}" cy="{{ activity.route.sy }}" r="2.4"/>
               <circle class="route-dot route-dot--end" cx="{{ activity.route.ex }}" cy="{{ activity.route.ey }}" r="2.4"/>
             </svg>

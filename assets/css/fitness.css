@@ -323,6 +323,25 @@
 .route-dot--start { fill: #f3f0ea; }
 .route-dot--end { fill: #e0713f; }
 
+/* Route-draw: trace each GPS track when its card scrolls into view. The path
+   carries pathLength="1", so one normalized dash animates every route with the
+   same timing regardless of its real length. Gated on .js so no-JS visitors
+   still see the full route; disabled under reduced-motion. */
+.js .route-line { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.js .route-card.is-drawn .route-line {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.js .route-dot { opacity: 0; }
+.js .route-card.is-drawn .route-dot--start { opacity: 1; transition: opacity 0.3s ease 0.15s; }
+.js .route-card.is-drawn .route-dot--end { opacity: 1; transition: opacity 0.3s ease 1.15s; }
+@media (prefers-reduced-motion: reduce) {
+  .js .route-line,
+  .js .route-card.is-drawn .route-line { stroke-dashoffset: 0; transition: none; }
+  .js .route-dot,
+  .js .route-card.is-drawn .route-dot { opacity: 1; transition: none; }
+}
+
 /* Indoor / no-GPS state */
 .route-empty {
   position: absolute;

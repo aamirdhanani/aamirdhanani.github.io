@@ -310,23 +310,22 @@
   mask-image: radial-gradient(120% 120% at 50% 40%, #000 40%, transparent 86%);
 }
 .route-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+/* Stroke width is in viewBox units (NOT non-scaling-stroke): that keeps the line
+   length, the dash, and getTotalLength all in the same coordinate space, so the
+   draw dash covers the whole path exactly. non-scaling-stroke dashes in screen
+   px while getTotalLength measures in viewBox units — the mismatch left gaps. */
 .route-line {
   fill: none;
   stroke: #e0713f;
-  stroke-width: 2;
+  stroke-width: 0.75;
   stroke-linejoin: round;
   stroke-linecap: round;
-  vector-effect: non-scaling-stroke;
-  filter: drop-shadow(0 0 3px rgba(224, 113, 63, 0.45));
+  filter: drop-shadow(0 0 2px rgba(224, 113, 63, 0.45));
 }
-.route-dot { stroke: #16130e; stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.route-dot { stroke: #16130e; stroke-width: 0.6; }
 .route-dot--start { fill: #f3f0ea; }
 .route-dot--end { fill: #e0713f; }
 
-/* Route-draw: trace each GPS track when its card scrolls into view. The path
-   carries pathLength="1", so one normalized dash animates every route with the
-   same timing regardless of its real length. Gated on .js so no-JS visitors
-   still see the full route; disabled under reduced-motion. */
 /* JS measures each path's length and parks the dash just before its start
    point; the reveal (offset -> 0) traces from the first GPS point to the finish.
    Because the dash is the real path length, offset 0 always covers the whole

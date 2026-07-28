@@ -327,7 +327,11 @@
    carries pathLength="1", so one normalized dash animates every route with the
    same timing regardless of its real length. Gated on .js so no-JS visitors
    still see the full route; disabled under reduced-motion. */
-.js .route-line { stroke-dasharray: 1; stroke-dashoffset: 1; }
+/* Dash 1 / gap 2 (a non-repeating pattern over pathLength=1) so the offset's
+   direction is meaningful — a symmetric `1` array reveals the same way for any
+   sign. Offset -1 parks the dash just before the path start, so easing it to 0
+   traces from the first GPS point (run start) to the last (finish). */
+.js .route-line { stroke-dasharray: 1 2; stroke-dashoffset: -1; }
 .js .route-card.is-drawn .route-line {
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 1.3s cubic-bezier(0.4, 0, 0.2, 1);

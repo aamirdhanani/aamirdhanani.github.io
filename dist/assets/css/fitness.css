@@ -1,16 +1,61 @@
-/* --- Dashboard Layout ---
-   Presented as a dark "instrument panel" embedded in the warm page, so the
-   existing white-on-glass cards read correctly (they previously relied on the
-   old blue page background). Deliberately dark in both light and dark themes. */
+/* --- Dashboard theme tokens ---
+   The dashboard is its own "instrument panel" surface. These tokens flip with
+   the site theme (mirroring the light/dark structure in site.css): a warm light
+   panel in light mode, the dark instrument panel in dark mode. Route-map covers
+   stay dark in both themes on purpose — they're map surfaces. */
+:root {
+  --dash-bg: #f3eee4;
+  --dash-card: #ffffff;
+  --dash-border: rgba(0, 0, 0, 0.08);
+  --dash-fg: #1a1714;
+  --dash-fill: rgba(0, 0, 0, 0.05);
+  --dash-fill-2: rgba(0, 0, 0, 0.035);
+  --dash-shadow: 0 24px 60px rgba(90, 66, 42, 0.14);
+  --dash-empty-cell: rgba(0, 0, 0, 0.07);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dash-bg: #16130e;
+    --dash-card: rgba(255, 255, 255, 0.06);
+    --dash-border: rgba(255, 255, 255, 0.1);
+    --dash-fg: #f3f0ea;
+    --dash-fill: rgba(255, 255, 255, 0.08);
+    --dash-fill-2: rgba(255, 255, 255, 0.05);
+    --dash-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+    --dash-empty-cell: rgba(255, 255, 255, 0.06);
+  }
+}
+:root[data-theme="light"] {
+  --dash-bg: #f3eee4;
+  --dash-card: #ffffff;
+  --dash-border: rgba(0, 0, 0, 0.08);
+  --dash-fg: #1a1714;
+  --dash-fill: rgba(0, 0, 0, 0.05);
+  --dash-fill-2: rgba(0, 0, 0, 0.035);
+  --dash-shadow: 0 24px 60px rgba(90, 66, 42, 0.14);
+  --dash-empty-cell: rgba(0, 0, 0, 0.07);
+}
+:root[data-theme="dark"] {
+  --dash-bg: #16130e;
+  --dash-card: rgba(255, 255, 255, 0.06);
+  --dash-border: rgba(255, 255, 255, 0.1);
+  --dash-fg: #f3f0ea;
+  --dash-fill: rgba(255, 255, 255, 0.08);
+  --dash-fill-2: rgba(255, 255, 255, 0.05);
+  --dash-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  --dash-empty-cell: rgba(255, 255, 255, 0.06);
+}
+
+/* --- Dashboard Layout --- */
 .dashboard-container {
   width: min(1040px, calc(100% - 2 * var(--gut, 32px)));
   margin: 0 auto;
   padding: clamp(1.75rem, 4vw, 3rem);
-  color: #f3f0ea;
-  background: #16130e;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--dash-fg);
+  background: var(--dash-bg);
+  border: 1px solid var(--dash-border);
   border-radius: 28px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  box-shadow: var(--dash-shadow);
 }
 
 .dashboard-grid {
@@ -22,13 +67,13 @@
 
 /* --- Redesigned Cards (Global Align) --- */
 .dashboard-card {
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--dash-card);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--dash-border);
   border-radius: 24px;
   padding: 2.25rem;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
   height: 100%;
 }
 
@@ -66,7 +111,7 @@
 .chart-label { display: block; margin-bottom: 1rem; font-size: 0.85rem; opacity: 0.6; font-weight: 500; }
 .bar-container {
   height: 10px;
-  background: rgba(255,255,255,0.08);
+  background: var(--dash-fill);
   border-radius: 5px;
   display: flex;
   overflow: hidden;
@@ -91,7 +136,7 @@
 /* --- Weekly Insights --- */
 .insights-list { display: flex; flex-direction: column; gap: 1.5rem; }
 .insight-row { display: flex; align-items: center; gap: 1.25rem; }
-.insight-icon { font-size: 1.4rem; background: rgba(255,255,255,0.08); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 14px; flex-shrink: 0; }
+.insight-icon { font-size: 1.4rem; background: var(--dash-fill); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 14px; flex-shrink: 0; }
 .insight-content { display: flex; flex-direction: column; }
 .insight-label { font-size: 0.7rem; opacity: 0.5; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
 .insight-value { font-size: 1.15rem; font-weight: 700; }
@@ -108,11 +153,11 @@
   min-height: 128px;
   padding: 1.25rem 1rem;
   margin-top: 1rem;
-  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border: 1px dashed var(--dash-border);
   border-radius: 16px;
 }
 .empty-panel-icon { font-size: 1.9rem; opacity: 0.9; }
-.empty-panel-text { margin: 0; font-size: 0.9rem; line-height: 1.5; color: rgba(255, 255, 255, 0.55); }
+.empty-panel-text { margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--dash-fg); opacity: 0.6; }
 
 /* --- Stats Comparison Grid --- */
 .stats-comparison-grid {
@@ -179,7 +224,7 @@
   width: 12px;
   height: 12px;
   border-radius: 2px;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--dash-empty-cell);
   transition: transform 0.1s ease;
 }
 .heatmap-cell:hover { transform: scale(1.2); z-index: 10; cursor: default; }
@@ -229,8 +274,9 @@
 .route-card {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--dash-fg);
+  background: var(--dash-card);
+  border: 1px solid var(--dash-border);
   border-radius: 20px;
   overflow: hidden;
   transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.28s, box-shadow 0.28s;
@@ -241,11 +287,13 @@
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
 }
 
-/* Map cover */
+/* Map cover — always dark (a map surface), regardless of page theme. Pin the
+   text color light so overlays read on the dark map in light mode too. */
 .route-map {
   position: relative;
   aspect-ratio: 100 / 70;
   overflow: hidden;
+  color: #f3f0ea;
   background: radial-gradient(120% 120% at 50% 0%, #1d1811 0%, #100d09 78%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -327,7 +375,7 @@
   margin: 0 0 0.2rem;
   font-size: 1.05rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--dash-fg);
   line-height: 1.25;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -336,7 +384,7 @@
 .route-date { font-size: 0.8rem; opacity: 0.5; font-weight: 500; }
 .route-metrics { display: flex; gap: 1.75rem; margin-top: auto; padding-top: 1rem; }
 .route-metric { display: flex; flex-direction: column; align-items: flex-start; }
-.route-metric .rv { font-size: 1rem; font-weight: 700; color: #fff; }
+.route-metric .rv { font-size: 1rem; font-weight: 700; color: var(--dash-fg); }
 .route-metric .rv small { font-size: 0.7rem; opacity: 0.5; margin-left: 1px; }
 .route-metric .rl {
   font-size: 0.62rem;
@@ -346,7 +394,7 @@
   letter-spacing: 0.5px;
   margin-top: 0.2rem;
 }
-.m-val { font-size: 1.15rem; font-weight: 700; color: #fff; }
+.m-val { font-size: 1.15rem; font-weight: 700; color: var(--dash-fg); }
 .m-val small { font-size: 0.75rem; opacity: 0.5; font-weight: 500; margin-left: 1px; }
 .m-lab { font-size: 0.65rem; opacity: 0.45; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-top: 0.2rem; }
 
@@ -362,7 +410,7 @@
   .dashboard-container { padding: 0 1rem; }
   .dashboard-card { padding: 1.75rem; }
   .stats-mini-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-  .mini-stat:last-child { grid-column: span 2; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.05); }
+  .mini-stat:last-child { grid-column: span 2; padding-top: 0.75rem; border-top: 1px solid var(--dash-border); }
 }
 
 /* --- Final Polish --- */
@@ -371,19 +419,20 @@
 .heatmap-info {
   margin-top: 1.5rem;
   padding: 0.75rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--dash-fill-2);
   border-radius: 12px;
   font-size: 0.9rem;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--dash-border);
   min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--dash-fg);
+  opacity: 0.7;
 }
 
 .heatmap-cell.is-selected {
-  outline: 2px solid #fff;
+  outline: 2px solid var(--dash-fg);
   outline-offset: 2px;
 }

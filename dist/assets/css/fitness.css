@@ -330,10 +330,10 @@
    point; the reveal (offset -> 0) traces from the first GPS point to the finish.
    Because the dash is the real path length, offset 0 always covers the whole
    route. No-JS keeps the line solid; reduced-motion skips the animation. */
-.js .route-line { transition: stroke-dashoffset 1.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.js .route-line { transition: stroke-dashoffset 2.6s cubic-bezier(0.35, 0, 0.25, 1); }
 .js .route-dot { opacity: 0; }
-.js .route-card.is-drawn .route-dot--start { opacity: 1; transition: opacity 0.3s ease 0.15s; }
-.js .route-card.is-drawn .route-dot--end { opacity: 1; transition: opacity 0.3s ease 1.15s; }
+.js .route-card.is-drawn .route-dot--start { opacity: 1; transition: opacity 0.35s ease 0.2s; }
+.js .route-card.is-drawn .route-dot--end { opacity: 1; transition: opacity 0.35s ease 2.45s; }
 @media (prefers-reduced-motion: reduce) {
   .js .route-line { transition: none; }
   .js .route-dot { opacity: 1; }

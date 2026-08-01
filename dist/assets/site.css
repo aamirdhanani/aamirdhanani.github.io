@@ -46,44 +46,79 @@ img{display:block;max-width:100%}
 .shell{max-width:var(--maxw);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
 a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
 
-/* ---------------- NAV (shared with home) ---------------- */
-.nav{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--paper) 86%,transparent);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
-  transition:transform .38s cubic-bezier(.2,.7,.2,1)}
-.nav.hidden{transform:translateY(-100%)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:54px}
-.brand{font-weight:700;letter-spacing:-.03em;font-size:20px;color:var(--ink)}
-.nav-links{display:flex;gap:30px;align-items:center}
-.nav-links a{font-size:13.5px;letter-spacing:.01em;color:var(--ink-2);position:relative;padding:4px 0;transition:color .2s}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--ink);transition:width .28s cubic-bezier(.2,.7,.2,1)}
-.nav-links a:hover{color:var(--ink)}
-.nav-links a:hover::after{width:100%}
-.nav-links a.active{color:var(--ink)}
-.nav-links a.active::after{width:100%;background:var(--signal)}
-.nav-cta{color:var(--signal)}
-.nav-cta:hover{color:var(--signal)}
-.nav-links a.nav-cta::after{background:var(--signal)}
-.nav-tools{display:flex;align-items:center;gap:6px}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
-.burger span{width:22px;height:2px;background:var(--ink);transition:transform .3s,opacity .2s}
-.theme{background:none;border:0;cursor:pointer;color:var(--ink-2);padding:6px;display:flex;align-items:center;justify-content:center;transition:color .2s}
-.theme:hover{color:var(--ink)}
-.theme svg{width:18px;height:18px;display:block}
+/* ---------------- MASTHEAD + MENU overlay (shared language with the homepage) ---------------- */
+.u-mono{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.ticks{flex:1;height:10px;margin:0 18px;background-image:repeating-linear-gradient(90deg,var(--line-2) 0,var(--line-2) 1px,transparent 1px,transparent 40px);opacity:.8}
+
+/* Non-sticky top bar. No backdrop-filter and no z-index here — either creates a
+   stacking context / containing block that traps the fixed floating pill. */
+.masthead{position:relative;background:var(--paper);border-bottom:1px solid var(--line)}
+.masthead-in{display:flex;align-items:center;gap:clamp(14px,3vw,24px);height:50px}
+.masthead-label{white-space:nowrap;color:var(--ink-2);transition:color .2s}
+a.masthead-label:hover{color:var(--signal)}
+.masthead .ticks{margin:0}
+
+.menu-btn{flex-shrink:0;display:inline-flex;align-items:center;gap:9px;
+  border:1px solid var(--line-2);border-radius:999px;padding:7px 14px;cursor:pointer;color:var(--ink);background:transparent;
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  transition:border-color .2s,color .2s}
+.menu-btn:hover{border-color:var(--ink);color:var(--signal)}
+/* once scrolled past the masthead (or while the menu is open) the pill detaches
+   and floats to the top-right, animating into place */
+@keyframes pillDrop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+.menu-btn.floating{position:fixed;top:14px;right:clamp(16px,4vw,44px);z-index:96;
+  background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 6px 22px rgba(0,0,0,.12);animation:pillDrop .4s cubic-bezier(.2,.7,.2,1) both}
+.menu-btn:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+.menu-btn-label{line-height:1}
+.menu-btn-icon{display:inline-flex;flex-direction:column;justify-content:center;gap:4px;width:15px;height:11px}
+.menu-btn-icon span{display:block;height:1.5px;width:100%;background:currentColor;border-radius:2px;
+  transition:transform .32s cubic-bezier(.2,.7,.2,1),opacity .2s}
+body.menu-open .menu-btn-icon span:nth-child(1){transform:translateY(2.75px) rotate(45deg)}
+body.menu-open .menu-btn-icon span:nth-child(2){transform:translateY(-2.75px) rotate(-45deg)}
+
+.menu-overlay{position:fixed;inset:0;z-index:90;background:var(--paper);
+  display:flex;flex-direction:column;justify-content:center;padding:clamp(80px,14vh,140px) var(--gut) clamp(40px,8vh,72px);
+  opacity:0;visibility:hidden;transform:scale(1.015);
+  transition:opacity .42s cubic-bezier(.2,.7,.2,1),visibility .42s,transform .42s cubic-bezier(.2,.7,.2,1)}
+body.menu-open{overflow:hidden}
+body.menu-open .menu-overlay{opacity:1;visibility:visible;transform:none}
+.menu-nav{max-width:var(--maxw);margin:0 auto;width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+.menu-nav a{position:relative;font-size:clamp(38px,7.6vw,82px);font-weight:700;letter-spacing:-.045em;line-height:1.05;
+  color:var(--ink);padding:3px 0;
+  opacity:0;transform:translateY(26px);
+  transition:opacity .5s cubic-bezier(.2,.7,.2,1),transform .5s cubic-bezier(.2,.7,.2,1),color .2s}
+body.menu-open .menu-nav a{opacity:1;transform:none}
+body.menu-open .menu-nav a:nth-child(1){transition-delay:.08s}
+body.menu-open .menu-nav a:nth-child(2){transition-delay:.13s}
+body.menu-open .menu-nav a:nth-child(3){transition-delay:.18s}
+body.menu-open .menu-nav a:nth-child(4){transition-delay:.23s}
+body.menu-open .menu-nav a:nth-child(5){transition-delay:.28s}
+body.menu-open .menu-nav a:nth-child(6){transition-delay:.33s}
+.menu-nav a:hover,.menu-nav a.active{color:var(--signal)}
+.menu-nav a::after{content:"\2197";font-family:var(--mono);font-size:.26em;font-weight:500;vertical-align:super;
+  margin-left:.5em;color:var(--signal);opacity:0;transform:translate(-6px,4px);transition:opacity .25s,transform .25s}
+.menu-nav a:hover::after,.menu-nav a.active::after{opacity:1;transform:none}
+.menu-nav a:focus-visible{outline:2px solid var(--signal);outline-offset:4px;border-radius:3px}
+.menu-foot{max-width:var(--maxw);margin:clamp(30px,6vh,56px) auto 0;width:100%;display:flex;gap:14px;align-items:baseline;
+  flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+  opacity:0;transition:opacity .5s cubic-bezier(.2,.7,.2,1) .38s}
+body.menu-open .menu-foot{opacity:1}
+.menu-foot-k{text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3)}
+.menu-foot a{color:var(--ink-2)}
+.menu-foot a:hover{color:var(--signal)}
+/* theme toggle folded into the menu foot — icon + label pill */
+.menu-theme{margin-left:auto;align-self:center;gap:8px;padding:8px 14px;
+  border:1px solid var(--line);border-radius:999px;color:var(--ink-2);
+  font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  transition:color .2s,border-color .2s}
+.menu-theme:hover{color:var(--ink);border-color:var(--ink-3)}
+.menu-theme .theme-label{line-height:1}
+.theme{background:none;border:0;cursor:pointer;color:var(--ink-2);display:inline-flex;align-items:center;justify-content:center;transition:color .2s}
+.theme svg{width:16px;height:16px;display:block}
 .theme .ic-sun{display:none}
 .theme[data-mode="dark"] .ic-moon{display:none}
 .theme[data-mode="dark"] .ic-sun{display:block}
-@media (max-width:880px){
-  .nav-links{position:fixed;inset:54px 0 auto 0;flex-direction:column;gap:0;background:var(--paper);
-    border-bottom:1px solid var(--line);padding:4px var(--gut) 20px;transform:translateY(-130%);
-    transition:transform .42s cubic-bezier(.2,.7,.2,1);height:auto}
-  .nav.open .nav-links{transform:translateY(0)}
-  .nav-links a{width:100%;padding:16px 0;border-bottom:1px solid var(--line);font-size:18px}
-  .nav-links .nav-cta{color:var(--signal)}
-  .burger{display:flex}
-  .nav.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .nav.open .burger span:nth-child(2){opacity:0}
-  .nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-}
 
 /* ---------------- PAGE HEADER (.portfolio-hero) ---------------- */
 .portfolio-hero{max-width:var(--maxw);margin:0 auto;padding:clamp(40px,7vw,90px) var(--gut) clamp(18px,3vw,30px);
@@ -233,6 +268,5 @@ html:not(.js) .timeline-animate{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .timeline-animate{opacity:1;transform:none;transition:none}
-  .nav.hidden{transform:none}
   *{transition-duration:.01ms!important;animation-duration:.01ms!important}
 }

@@ -60,29 +60,36 @@ img{display:block;max-width:100%}
 .u-mono{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
 .shell{max-width:var(--maxw);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
 
+/* Motion system — "Spring Cascade" (tuned in the motion lab). Only the arrival
+   changes; the settled layout/appearance is identical. */
+:root{ --sp-dur:820ms; --sp-dist:34px; --sp-stag:85ms; --spring:cubic-bezier(.34,1.8,.5,1) }
+
 /* reveal (JS-gated: if scripting fails, content stays visible) */
-.js .rev{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rev{opacity:0;transform:translateY(var(--sp-dist));transition:opacity var(--sp-dur) ease-out,transform var(--sp-dur) var(--spring)}
 .rev.in{opacity:1;transform:none}
-.rev[data-d="1"]{transition-delay:.08s}.rev[data-d="2"]{transition-delay:.16s}
-.rev[data-d="3"]{transition-delay:.24s}.rev[data-d="4"]{transition-delay:.32s}
+.rev[data-d="1"]{transition-delay:calc(var(--sp-stag)*1)}.rev[data-d="2"]{transition-delay:calc(var(--sp-stag)*2)}
+.rev[data-d="3"]{transition-delay:calc(var(--sp-stag)*3)}.rev[data-d="4"]{transition-delay:calc(var(--sp-stag)*4)}
+/* cards get a subtle scale pop riding the same spring */
+.js .serie.rev,.js .hob.rev,.js .job.rev,.js .trip.rev{transform:translateY(var(--sp-dist)) scale(.94)}
+.serie.rev.in,.hob.rev.in,.job.rev.in,.trip.rev.in{transform:none}
 /* headline / title clip reveal */
-.js .rev-clip{clip-path:inset(0 0 102% 0);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),clip-path .95s cubic-bezier(.2,.7,.2,1)}
+.js .rev-clip{clip-path:inset(0 0 102% 0);transition:opacity var(--sp-dur) ease-out,transform var(--sp-dur) var(--spring),clip-path calc(var(--sp-dur)*1.05) var(--spring)}
 .rev-clip.in{clip-path:inset(0 0 -14% 0)}
 /* hero entrance: CSS-driven (auto-plays on load, never depends on JS to become visible) */
-@keyframes animUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-@keyframes animClip{from{opacity:0;clip-path:inset(0 0 102% 0);transform:translateY(16px)}to{opacity:1;clip-path:inset(0 0 -14% 0);transform:none}}
-.anim-up{animation:animUp .85s cubic-bezier(.2,.7,.2,1) both}
-.anim-clip{animation:animClip .95s cubic-bezier(.2,.7,.2,1) .08s both}
-.hero .lede.anim-up{animation-delay:.16s}
-.hero-actions.anim-up{animation-delay:.24s}
-.hero .scrollcue.anim-up{animation-delay:.32s}
-.anim-frame{animation-delay:.16s}
-/* staggered grid reveals */
-.series>.rev:nth-child(2),.work>.rev:nth-child(2),.hobs>.rev:nth-child(2),.contact-cards>.rev:nth-child(2){transition-delay:.06s}
-.series>.rev:nth-child(3),.work>.rev:nth-child(3),.hobs>.rev:nth-child(3){transition-delay:.12s}
-.series>.rev:nth-child(4),.work>.rev:nth-child(4),.hobs>.rev:nth-child(4){transition-delay:.18s}
-.series>.rev:nth-child(5),.hobs>.rev:nth-child(5){transition-delay:.24s}
-.series>.rev:nth-child(6),.hobs>.rev:nth-child(6){transition-delay:.30s}
+@keyframes animUp{from{opacity:0;transform:translateY(var(--sp-dist))}to{opacity:1;transform:none}}
+@keyframes animClip{from{opacity:0;clip-path:inset(0 0 102% 0);transform:translateY(var(--sp-dist))}to{opacity:1;clip-path:inset(0 0 -14% 0);transform:none}}
+.anim-up{animation:animUp var(--sp-dur) var(--spring) both}
+.anim-clip{animation:animClip calc(var(--sp-dur)*1.05) var(--spring) .08s both}
+.hero .lede.anim-up{animation-delay:calc(var(--sp-stag)*2)}
+.hero-actions.anim-up{animation-delay:calc(var(--sp-stag)*3)}
+.hero .scrollcue.anim-up{animation-delay:calc(var(--sp-stag)*4)}
+.anim-frame{animation-delay:calc(var(--sp-stag)*2)}
+/* staggered grid reveals (cards cascade within a section) */
+.series>.rev:nth-child(2),.work>.rev:nth-child(2),.hobs>.rev:nth-child(2),.contact-cards>.rev:nth-child(2){transition-delay:calc(var(--sp-stag)*1)}
+.series>.rev:nth-child(3),.work>.rev:nth-child(3),.hobs>.rev:nth-child(3){transition-delay:calc(var(--sp-stag)*2)}
+.series>.rev:nth-child(4),.work>.rev:nth-child(4),.hobs>.rev:nth-child(4){transition-delay:calc(var(--sp-stag)*3)}
+.series>.rev:nth-child(5),.hobs>.rev:nth-child(5){transition-delay:calc(var(--sp-stag)*4)}
+.series>.rev:nth-child(6),.hobs>.rev:nth-child(6){transition-delay:calc(var(--sp-stag)*5)}
 
 /* ---------------- NAV ---------------- */
 .nav{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--paper) 86%,transparent);

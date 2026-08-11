@@ -147,9 +147,12 @@ body.menu-open .menu-foot{opacity:1}
 /* ---------------- LIST CARDS (projects / hobbies / racing) ---------------- */
 .projects-list{max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;gap:16px;padding:0 var(--gut)}
 .project-card{display:flex;gap:clamp(18px,3vw,32px);padding:clamp(18px,3vw,28px);align-items:center;
-  background:var(--panel);border:1px solid var(--line);border-radius:18px;
+  background:var(--panel);border:1px solid var(--line);border-radius:18px;scroll-margin-top:90px;
   transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s,box-shadow .25s}
 .project-card:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 14px 32px rgba(0,0,0,.07)}
+/* deep-linked card (e.g. from a homepage project) gets a brief ember highlight */
+.project-card:target{border-color:var(--signal);box-shadow:0 0 0 1px var(--signal),0 16px 36px rgba(224,113,63,.16);animation:cardFlag 1.6s ease-out}
+@keyframes cardFlag{0%{box-shadow:0 0 0 1px var(--signal),0 0 0 rgba(224,113,63,0)}30%{box-shadow:0 0 0 2px var(--signal),0 0 34px rgba(224,113,63,.4)}100%{box-shadow:0 0 0 1px var(--signal),0 16px 36px rgba(224,113,63,.16)}}
 .project-card img,.project-media-placeholder{width:clamp(150px,26vw,300px);height:clamp(120px,18vw,200px);
   object-fit:cover;border-radius:12px;flex-shrink:0}
 .project-media-placeholder{display:flex;align-items:center;justify-content:center;

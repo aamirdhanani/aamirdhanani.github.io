@@ -16,7 +16,7 @@ title: "Projects"
   {% set sortedProjects = projects | sort(attribute="title") %}
 
   {% for project in sortedProjects %}
-    <article class="project-card timeline-animate">
+    <article class="project-card timeline-animate" id="{{ project.title | slugify }}">
 
       {% if project.image %}
         <img src="{{ project.image }}" alt="{{ project.title }}" loading="lazy">

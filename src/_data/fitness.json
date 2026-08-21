@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-21T12:20:03.334Z",
+  "lastUpdated": "2026-08-21T18:18:32.925Z",
   "source": "garmin",
   "athlete": {
     "firstname": "Aamir",
@@ -98,20 +98,9 @@
       }
     }
   ],
-  "weeklyVolume": {
-    "WeightTraining": {
-      "distance": 0,
-      "time": 4282.31103515625,
-      "count": 1,
-      "distanceKm": "0.00",
-      "formattedTime": "1h 11m",
-      "percentage": "100",
-      "isCardio": false,
-      "avgPace": ""
-    }
-  },
+  "weeklyVolume": {},
   "weeklyTotalDistance": "0.00",
-  "weeklyCount": 1,
+  "weeklyCount": 0,
   "heatmap": [
     {
       "date": "2025-08-22",

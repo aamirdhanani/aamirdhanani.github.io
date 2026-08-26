@@ -218,6 +218,12 @@ body.lightbox-active{overflow:hidden}
 .travel-pin svg{display:block;filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))}
 .travel-pin .tp-body{fill:var(--signal)}
 .travel-pin .tp-hole{fill:var(--paper)}
+/* Recolor the OSM basemap toward the site palette (theme-aware, no API key):
+   light = warm & muted; dark = inverted into a dark map, then warmed. */
+.leaflet-tile-pane{filter:sepia(.42) saturate(.62) brightness(1.03) contrast(.93) hue-rotate(-8deg)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.92) contrast(.9) sepia(.35) saturate(.8)}}
+:root[data-theme="light"] .leaflet-tile-pane{filter:sepia(.42) saturate(.62) brightness(1.03) contrast(.93) hue-rotate(-8deg)}
+:root[data-theme="dark"] .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.92) contrast(.9) sepia(.35) saturate(.8)}
 @media (max-width:700px){.travel-map{height:340px;margin-left:var(--gut);margin-right:var(--gut)}}
 
 .timeline-container{position:relative;max-width:860px;margin:0 auto;padding:0 var(--gut) 3rem}

@@ -1,7 +1,9 @@
-// Interactive travel map (Leaflet + OpenStreetMap).
-// Pins come from window.TRAVEL_PLACES, injected by the travel page. The map is
-// shown by default; the button toggles it. Markers are themed divIcons (styled
-// in site.css via CSS variables) so they follow the site's light/dark theme.
+// Interactive travel map (Leaflet + OpenStreetMap). Pins come from
+// window.TRAVEL_PLACES, injected by the travel page. The map is shown by default;
+// the button toggles it. Both the basemap and the pins follow the site's
+// light/dark theme: the pins are themed divIcons, and the tiles are recolored
+// (warm-muted in light, inverted+warmed into a dark map in dark) via a CSS
+// filter on .leaflet-tile-pane in site.css — so no API key or tile swap needed.
 (function () {
   function themedIcon() {
     return L.divIcon({
@@ -53,7 +55,7 @@
     buildMap();
     setTimeout(function () { map.invalidateSize(); }, 0);
 
-    // Button still toggles the map (now default-open).
+    // Button toggles the (default-open) map.
     if (btn) {
       var label = btn.querySelector(".mt-label");
       function setLabel(text) { if (label) label.textContent = text; }

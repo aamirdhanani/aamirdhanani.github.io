@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-13T01:35:58.406Z",
+  "lastUpdated": "2026-09-13T10:41:40.040Z",
   "source": "garmin",
   "athlete": {
     "firstname": "Aamir",
@@ -105,23 +105,13 @@
       "count": 1,
       "distanceKm": "0.00",
       "formattedTime": "2h 6m",
-      "percentage": "39",
+      "percentage": "100",
       "isCardio": false,
-      "avgPace": ""
-    },
-    "Hike": {
-      "distance": 16790.3203125,
-      "time": 12118,
-      "count": 1,
-      "distanceKm": "16.79",
-      "formattedTime": "3h 21m",
-      "percentage": "61",
-      "isCardio": true,
       "avgPace": ""
     }
   },
-  "weeklyTotalDistance": "16.79",
-  "weeklyCount": 2,
+  "weeklyTotalDistance": "0.00",
+  "weeklyCount": 1,
   "heatmap": [
     {
       "date": "2025-09-14",

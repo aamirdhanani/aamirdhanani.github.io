@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-12T19:44:09.485Z",
+  "lastUpdated": "2026-09-13T01:35:58.406Z",
   "source": "garmin",
   "athlete": {
     "firstname": "Aamir",
@@ -7,6 +7,17 @@
     "profile": "https://s3.amazonaws.com/garmin-connect-prod/profile_images/cfdeaef6-6b2a-414c-ab0f-c9960a37db20-prof.png"
   },
   "recentActivities": [
+    {
+      "id": 24338863231,
+      "name": "Cardio",
+      "type": "Indoor Cardio",
+      "distance": "0.00",
+      "movingTime": 7592.38720703125,
+      "pace": "",
+      "startDate": "2026-09-12T15:33:34",
+      "total_elevation_gain": 0,
+      "route": null
+    },
     {
       "id": 24265318392,
       "name": "Coos County Hiking",
@@ -85,39 +96,33 @@
         "ex": 27.3,
         "ey": 48.9
       }
-    },
-    {
-      "id": 23593717645,
-      "name": "Strength",
-      "type": "WeightTraining",
-      "distance": "0.00",
-      "movingTime": 3630.410888671875,
-      "pace": "",
-      "startDate": "2026-07-14T07:02:45",
-      "total_elevation_gain": 0,
-      "route": null
     }
   ],
   "weeklyVolume": {
+    "Indoor Cardio": {
+      "distance": 0,
+      "time": 7592.38720703125,
+      "count": 1,
+      "distanceKm": "0.00",
+      "formattedTime": "2h 6m",
+      "percentage": "39",
+      "isCardio": false,
+      "avgPace": ""
+    },
     "Hike": {
       "distance": 16790.3203125,
       "time": 12118,
       "count": 1,
       "distanceKm": "16.79",
       "formattedTime": "3h 21m",
-      "percentage": "100",
+      "percentage": "61",
       "isCardio": true,
       "avgPace": ""
     }
   },
   "weeklyTotalDistance": "16.79",
-  "weeklyCount": 1,
+  "weeklyCount": 2,
   "heatmap": [
-    {
-      "date": "2025-09-13",
-      "count": 1,
-      "intensity": 1
-    },
     {
       "date": "2025-09-14",
       "count": 1,
@@ -1935,6 +1940,11 @@
     },
     {
       "date": "2026-09-12",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-09-13",
       "count": 0,
       "intensity": 0
     }

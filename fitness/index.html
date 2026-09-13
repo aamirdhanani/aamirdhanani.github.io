@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
-  <link rel="stylesheet" href="/assets/site.css?v=mtysn01k">
+  <link rel="stylesheet" href="/assets/site.css?v=mtz57fsy">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -48,9 +48,9 @@
   </div>
 
   <main class="content">
-    <link rel="stylesheet" href="/assets/css/fitness.css?v=mtysn01k">
-<script src="/assets/js/main.js?v=mtysn01k" defer></script>
-<script src="/assets/js/fitness.js?v=mtysn01k" defer></script>
+    <link rel="stylesheet" href="/assets/css/fitness.css?v=mtz57fsy">
+<script src="/assets/js/main.js?v=mtz57fsy" defer></script>
+<script src="/assets/js/fitness.js?v=mtz57fsy" defer></script>
 
 <section class="portfolio-hero">
   <h1>Fitness & Athletics</h1>
@@ -71,8 +71,8 @@
             <span class="stat-label">Distance</span>
           </div>
           <div class="big-stat">
-            <span class="stat-value">1</span>
-            <span class="stat-label">Session</span>
+            <span class="stat-value">2</span>
+            <span class="stat-label">Sessions</span>
           </div>
         </div>
 
@@ -82,16 +82,25 @@
           <span class="chart-label">Discipline Mix</span>
           <div class="bar-container">
             
+            <div class="bar-segment indoor cardio"
+                 style="width: 39%;"
+                 title="Indoor Cardio: 39%">
+            </div>
+            
             <div class="bar-segment hike"
-                 style="width: 100%;"
-                 title="Hike: 100%">
+                 style="width: 61%;"
+                 title="Hike: 61%">
             </div>
             
           </div>
           <div class="bar-legend">
             
             <div class="legend-item">
-              <span class="dot hike"></span> Hike (100%)
+              <span class="dot indoor cardio"></span> Indoor Cardio (39%)
+            </div>
+            
+            <div class="legend-item">
+              <span class="dot hike"></span> Hike (61%)
             </div>
             
           </div>
@@ -103,6 +112,14 @@
         <h2 class="card-title">Training Focus</h2>
         
         <div class="insights-list">
+          
+          <div class="insight-row">
+             <span class="insight-icon">✨</span>
+             <div class="insight-content">
+               <span class="insight-label">Indoor Cardio · 1 session</span>
+               <span class="insight-value">2h 6m</span>
+             </div>
+          </div>
           
           <div class="insight-row">
              <span class="insight-icon">🥾</span>
@@ -161,12 +178,6 @@
       <h2 class="card-title">Activity Heatmap (Last 365 Days)</h2>
       <div class="heatmap-wrapper">
         <div class="heatmap-grid" id="heatmapGrid">
-          
-          <div class="heatmap-cell intensity-1" 
-               data-date="2025-09-13"
-               data-count="1"
-               title="2025-09-13: 1 activities">
-          </div>
           
           <div class="heatmap-cell intensity-1" 
                data-date="2025-09-14"
@@ -2346,10 +2357,16 @@
                title="2026-09-11: 0 activities">
           </div>
           
-          <div class="heatmap-cell intensity-0" 
+          <div class="heatmap-cell intensity-1" 
                data-date="2026-09-12"
+               data-count="1"
+               title="2026-09-12: 1 activities">
+          </div>
+          
+          <div class="heatmap-cell intensity-0" 
+               data-date="2026-09-13"
                data-count="0"
-               title="2026-09-12: 0 activities">
+               title="2026-09-13: 0 activities">
           </div>
           
         </div>
@@ -2373,6 +2390,27 @@
     <section class="activity-section">
       <h2 class="section-title">Recent Adventures</h2>
       <div class="route-grid">
+        
+        <article class="route-card">
+          <div class="route-map">
+            
+            <div class="route-empty">
+              <span class="route-empty-icon">✨</span>
+              <span class="route-empty-label">Indoor · no GPS</span>
+            </div>
+            
+            <span class="route-badge">✨</span>
+            
+          </div>
+          <div class="route-body">
+            <h3 class="route-name">Cardio</h3>
+            <span class="route-date">Sep 12, 2026</span>
+            <div class="route-metrics">
+              
+              <div class="route-metric"><span class="rv">0<small>m</small></span><span class="rl">Elev</span></div>
+            </div>
+          </div>
+        </article>
         
         <article class="route-card">
           <div class="route-map">
@@ -2483,32 +2521,11 @@
           </div>
         </article>
         
-        <article class="route-card">
-          <div class="route-map">
-            
-            <div class="route-empty">
-              <span class="route-empty-icon">💪</span>
-              <span class="route-empty-label">Indoor · no GPS</span>
-            </div>
-            
-            <span class="route-badge">💪</span>
-            
-          </div>
-          <div class="route-body">
-            <h3 class="route-name">Strength</h3>
-            <span class="route-date">Jul 14, 2026</span>
-            <div class="route-metrics">
-              
-              <div class="route-metric"><span class="rv">0<small>m</small></span><span class="rl">Elev</span></div>
-            </div>
-          </div>
-        </article>
-        
       </div>
     </section>
 
 
-    <p class="sync-footer">Last synced: Sep 12, 2026</p>
+    <p class="sync-footer">Last synced: Sep 13, 2026</p>
   </div>
 
 </div>
@@ -2523,7 +2540,7 @@
     </div>
   </footer>
 
-  <script src="/assets/js/site.js?v=mtysn01k" defer></script>
+  <script src="/assets/js/site.js?v=mtz57fsy" defer></script>
   <script data-goatcounter="https://aamirdhanani.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 </body>

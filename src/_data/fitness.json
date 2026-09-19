@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-19T14:53:52.863Z",
+  "lastUpdated": "2026-09-19T19:39:36.762Z",
   "source": "garmin",
   "athlete": {
     "firstname": "Aamir",
@@ -98,20 +98,9 @@
       }
     }
   ],
-  "weeklyVolume": {
-    "Indoor Cardio": {
-      "distance": 0,
-      "time": 7592.38720703125,
-      "count": 1,
-      "distanceKm": "0.00",
-      "formattedTime": "2h 6m",
-      "percentage": "100",
-      "isCardio": false,
-      "avgPace": ""
-    }
-  },
+  "weeklyVolume": {},
   "weeklyTotalDistance": "0.00",
-  "weeklyCount": 1,
+  "weeklyCount": 0,
   "heatmap": [
     {
       "date": "2025-09-20",

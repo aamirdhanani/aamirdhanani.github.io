@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aamir Dhanani — for MScA Co-President</title>
-  <meta name="description" content="The best part of this year is the people in it. That shouldn't be left to chance. Aamir Dhanani, candidate for MScA Co-President at Ivey.">
+  <title>Aamir Dhanani for MScA Co-President</title>
+  <meta name="description" content="Aamir Dhanani for MScA Co-President at Ivey. More connection, better communication, and real follow-through.">
   <meta name="robots" content="noindex">
-  <meta property="og:title" content="Aamir Dhanani — for MScA Co-President">
-  <meta property="og:description" content="The best part of this year is the people in it. That shouldn't be left to chance. More connection. Better communication. Real follow-through.">
+  <meta property="og:title" content="Aamir Dhanani for MScA Co-President">
+  <meta property="og:description" content="I'd rather get through this year knowing we tried to do too much than not enough. Aamir Dhanani for MScA Co-President.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,6 +103,20 @@
     .soon .st{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
     .soon .sd{color:var(--ink-2);margin-top:8px;max-width:54ch}
 
+    /* THE PLAN — priorities */
+    .plan{list-style:none;padding:0;margin:44px 0 0;border-top:1px solid var(--line);max-width:70ch}
+    .plan li{padding:26px 0;border-bottom:1px solid var(--line)}
+    .plan h3{font-size:clamp(20px,2.6vw,27px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:0 0 9px}
+    .plan p{color:var(--ink-2);font-size:clamp(15px,1.7vw,17px);line-height:1.55;margin:0;max-width:62ch}
+
+    /* THE EVIDENCE — exhibits */
+    .exhibits{margin:44px 0 0;border-top:1px solid var(--line);max-width:72ch}
+    .exhibit-item{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,52px);padding:28px 0;border-bottom:1px solid var(--line)}
+    .exhibit-item .ex-l{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);white-space:nowrap;padding-top:6px}
+    .exhibit-item h3{font-size:clamp(19px,2.3vw,24px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin:0 0 9px}
+    .exhibit-item p{color:var(--ink-2);font-size:clamp(15px,1.7vw,17px);line-height:1.55;margin:0}
+    @media(max-width:600px){.exhibit-item{grid-template-columns:1fr;gap:8px}}
+
     /* the event-mix list */
     .mix{list-style:none;padding:0;margin:40px 0 0;max-width:64ch;border-top:1px solid var(--line)}
     .mix li{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:baseline;padding:22px 2px;border-bottom:1px solid var(--line)}
@@ -137,7 +151,7 @@
 
       <div class="hero-grid">
         <div>
-          <p class="thesis">The best part of this year is the people in it. <span class="em">That shouldn't be left to chance.</span></p>
+          <p class="thesis">I'd rather get through this year knowing we tried to do <span class="em">too much</span> than not enough.</p>
           <p class="support">More connection. Better communication. Real follow-through.</p>
           <div class="actions">
             <a class="btn" href="#video">Watch the video <span class="arw">&rarr;</span></a>
@@ -147,11 +161,11 @@
 
         <div class="hero-rail">
           <figure class="portrait">
-            <span class="portrait-tag">Exhibit A &mdash; The Candidate</span>
+            <span class="portrait-tag">Exhibit A / The Candidate</span>
             <img src="/images/msca/headshot.jpg" alt="Aamir Dhanani, candidate for MScA Co-President" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="portrait-ph">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>
-              <span>Headshot &mdash; to come</span>
+              <span>Headshot to come</span>
             </div>
           </figure>
 
@@ -167,12 +181,12 @@
 
     <!-- ============ EXHIBIT A — VIDEO ============ -->
     <section id="video" class="shell">
-      <div class="label reveal"><span class="n">Exhibit A</span> &mdash; The Video</div>
+      <div class="label reveal"><span class="n">Exhibit B</span> / The Video</div>
       <div class="frame reveal">
-        <span class="exhibit">Exhibit A</span>
+        <span class="exhibit">Exhibit B</span>
         <div class="ph">
           <div class="play"><svg width="20" height="22" viewBox="0 0 20 22" fill="currentColor" aria-hidden="true"><path d="M0 1.6v18.8a1 1 0 0 0 1.5.87l16.2-9.4a1 1 0 0 0 0-1.74L1.5.73A1 1 0 0 0 0 1.6Z"/></svg></div>
-          <span class="ph-t">Campaign video &mdash; coming soon</span>
+          <span class="ph-t">Campaign video coming soon</span>
         </div>
       </div>
     </section>
@@ -181,33 +195,53 @@
     <section id="case" class="shell">
       <div class="label reveal">The Case</div>
       <h2 class="reveal">We only get one year. Let's get more out of it.</h2>
-      <p class="lede reveal">Students naturally get to know the people they sit beside, work with, or meet early in the program. With multiple streams, it can be easy to spend most of the year within the same circles.</p>
-      <p class="lede reveal">The goal isn't simply <em>more events</em>. It's to create more <strong>reasons</strong> for people across the MSc program to meet, participate, and build relationships throughout the year.</p>
-      <ul class="mix reveal">
-        <li><span class="mi" aria-hidden="true">&#9670;</span><span class="mt">Larger, marquee paid events worth showing up for</span></li>
-        <li><span class="mi" aria-hidden="true">&#9670;</span><span class="mt">Affordable events that don't gatekeep on price</span></li>
-        <li><span class="mi" aria-hidden="true">&#9670;</span><span class="mt">Completely free, low-barrier activities</span></li>
-        <li><span class="mi" aria-hidden="true">&#9670;</span><span class="mt">Informal ways for people across streams to meet</span></li>
-      </ul>
+      <p class="lede reveal">Students naturally get to know the people they sit beside, work with, or meet early on. In a one-year program, it's easy to spend most of it inside the same few circles.</p>
+      <p class="lede reveal">The goal isn't simply <em>more events</em>. It's to create more <strong>reasons</strong> for people across the MScA to meet, participate, and build real relationships over the year.</p>
     </section>
 
     <!-- ============ THE PLAN (scaffold) ============ -->
     <section id="plan" class="shell">
       <div class="label reveal">The Plan</div>
-      <h2 class="reveal">What I'd actually focus on.</h2>
-      <div class="soon reveal">
-        <div class="st">Section in progress</div>
-        <p class="sd">Your specific priorities go here &mdash; each tied back to what the Co-President role can really move. Send me the points and I'll lay them out.</p>
-      </div>
+      <h2 class="reveal">Four things I'd actually work on.</h2>
+      <ol class="plan">
+        <li class="reveal">
+          <h3>Get the clubs what they need</h3>
+          <p>Every MScA club should have the support to actually get events and initiatives off the ground, from funding to logistics to a straight answer when they're stuck. Unblocking that is a big part of what a Co-President is there to do.</p>
+        </li>
+        <li class="reveal">
+          <h3>A clear person to go to</h3>
+          <p>Everyone should feel comfortable knowing exactly who to reach out to when they need help with anything, whether that's academic, social, or something else. No guessing, and no falling through the cracks.</p>
+        </li>
+        <li class="reveal">
+          <h3>Listen more than we announce</h3>
+          <p>Better communication starts with hearing you. That means the MScA checking in often, through surveys and in person, so we actually know what students want instead of assuming.</p>
+        </li>
+        <li class="reveal">
+          <h3>More hands, more momentum</h3>
+          <p>Where it helps, create more MScA positions so projects and initiatives keep real momentum, instead of stalling on one or two overloaded people.</p>
+        </li>
+      </ol>
     </section>
 
     <!-- ============ THE EVIDENCE (scaffold) ============ -->
     <section id="evidence" class="shell">
       <div class="label reveal">The Evidence</div>
-      <h2 class="reveal">Relevant experience I bring.</h2>
-      <div class="soon reveal">
-        <div class="st">Section in progress</div>
-        <p class="sd">The experience / proof-points ("Exhibit B, C, D&hellip;") go here. Send me the highlights and I'll format them as document-style exhibits.</p>
+      <h2 class="reveal">This isn't my first time doing the work.</h2>
+      <div class="exhibits">
+        <div class="exhibit-item reveal">
+          <span class="ex-l">Exhibit C</span>
+          <div class="ex-body">
+            <h3>Co-founder and VP of a club in undergrad</h3>
+            <p>Built a club from scratch and ran it as VP, hosting large-scale events and raising a real amount of money for local charities. It only worked through delegation, building and managing teams to actually get things done.</p>
+          </div>
+        </div>
+        <div class="exhibit-item reveal">
+          <span class="ex-l">Exhibit D</span>
+          <div class="ex-body">
+            <h3>Fundraising in the community</h3>
+            <p>Kept it going beyond school, raising money for charities through running and other events. Showing up for the people around me isn't a campaign line. It's a habit.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -217,7 +251,8 @@
       <h2 class="reveal">Questions, ideas, or feedback?</h2>
       <p class="lede reveal">The best campaigns are built on what people actually want. Tell me what would make your year better.</p>
       <div class="actions reveal">
-        <a class="btn" href="mailto:contact@aamirdhanani.com">Email me <span class="arw">&rarr;</span></a>
+        <a class="btn" href="https://ig.me/m/aamirdhanani" target="_blank" rel="noopener noreferrer">Message me on Instagram <span class="arw">&rarr;</span></a>
+        <a class="btn ghost" href="mailto:contact@aamirdhanani.com">Or email me</a>
       </div>
     </section>
   </main>

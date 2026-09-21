@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aamir Dhanani — for MScA Co-President</title>
+  <meta name="description" content="The best part of this year is the people in it. That shouldn't be left to chance. Aamir Dhanani, candidate for MScA Co-President at Ivey.">
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Aamir Dhanani — for MScA Co-President">
+  <meta property="og:description" content="The best part of this year is the people in it. That shouldn't be left to chance. More connection. Better communication. Real follow-through.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#f4f1e8; --paper-2:#ece5d7; --card:#faf8f2;
+      --ink:#171310; --ink-2:#5c554a; --ink-3:#665e50;
+      --line:#d8d0c0; --line-2:#c6bca8;
+      --accent:#a5341f; --accent-2:#8c2b19;
+      --sans:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+      --mono:'Space Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+      --maxw:1080px; --gut:clamp(20px,5vw,60px);
+    }
+    *{box-sizing:border-box;margin:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;color-scheme:light;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+    a{color:inherit}
+    ::selection{background:var(--accent);color:var(--paper)}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:1px}
+    .shell{max-width:var(--maxw);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+    .mono{font-family:var(--mono);letter-spacing:.04em}
+    .rule{height:1px;background:var(--line);border:0;margin:0}
+
+    /* ---- section scaffolding ---- */
+    section{padding:clamp(56px,9vw,120px) 0;border-top:1px solid var(--line)}
+    section:first-of-type{border-top:0}
+    .label{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);
+      display:flex;align-items:center;gap:12px;margin-bottom:26px}
+    .label::after{content:"";flex:1;height:1px;background:var(--line);max-width:180px}
+    .label .n{color:var(--ink-3)}
+    h2{font-size:clamp(28px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;font-weight:800;max-width:20ch;text-wrap:balance}
+    .lede{font-size:clamp(16px,1.9vw,20px);color:var(--ink-2);max-width:62ch;margin-top:22px}
+    .lede+.lede{margin-top:18px}
+
+    /* ---- reveal motion (subtle) ---- */
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none}
+    html:not(.js) .reveal{opacity:1;transform:none}
+
+    /* ---- HERO ---- */
+    .hero{padding-top:clamp(40px,7vw,84px);padding-bottom:clamp(48px,8vw,96px);border-top:0}
+    .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:clamp(22px,4vw,38px)}
+    .eyebrow .dot{color:var(--accent)}
+    .name{font-size:clamp(52px,12vw,132px);line-height:.9;letter-spacing:-.04em;font-weight:900;text-transform:uppercase}
+    .role{font-size:clamp(18px,2.6vw,28px);font-weight:500;color:var(--ink-2);margin-top:clamp(14px,2vw,22px);letter-spacing:-.01em}
+    .hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:clamp(28px,5vw,60px);align-items:start;margin-top:clamp(34px,6vw,64px)}
+    .thesis{font-size:clamp(23px,3.2vw,38px);line-height:1.14;letter-spacing:-.02em;font-weight:700;max-width:18ch}
+    .thesis .em{color:var(--accent)}
+    .support{margin-top:22px;font-size:clamp(16px,1.9vw,20px);font-weight:500;color:var(--ink-2);letter-spacing:-.005em;max-width:30ch}
+    .support b{color:var(--ink);font-weight:600}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+    .btn{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:600;padding:13px 22px;border-radius:2px;
+      background:var(--ink);color:var(--paper);border:1px solid var(--ink);cursor:pointer;transition:background .2s,color .2s,transform .2s}
+    .btn:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+    .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+    .btn.ghost:hover{background:transparent;color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+    .btn .arw{transition:transform .2s}
+    .btn:hover .arw{transform:translateX(3px)}
+
+    /* voting = document block */
+    .ballot{border:1.5px solid var(--ink);background:var(--card);border-radius:2px;position:relative}
+    .ballot::before{content:"OFFICIAL";position:absolute;top:12px;right:-1px;font-family:var(--mono);font-size:9.5px;
+      letter-spacing:.18em;color:var(--paper);background:var(--accent);padding:3px 10px 3px 12px}
+    .ballot-h{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);
+      padding:16px 20px;border-bottom:1px solid var(--line)}
+    .ballot-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:15px 20px;border-bottom:1px dashed var(--line)}
+    .ballot-row:last-child{border-bottom:0}
+    .ballot-row .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+    .ballot-row .v{font-family:var(--mono);font-size:14px;color:var(--ink);text-align:right}
+    .ballot-row .v.tbd{color:var(--accent)}
+
+    /* ---- VIDEO / EXHIBIT A ---- */
+    .frame{position:relative;aspect-ratio:16/9;border:1.5px solid var(--ink);background:var(--paper-2);border-radius:2px;
+      display:flex;align-items:center;justify-content:center;overflow:hidden;margin-top:8px}
+    .frame .exhibit{position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+      color:var(--paper);background:var(--ink);padding:4px 10px}
+    .frame .ph{display:flex;flex-direction:column;align-items:center;gap:14px;color:var(--ink-2);text-align:center;padding:20px}
+    .frame .play{width:64px;height:64px;border-radius:50%;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;color:var(--ink)}
+    .frame .ph-t{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+    .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+    /* ---- placeholder scaffold ---- */
+    .soon{border:1px dashed var(--line-2);border-radius:2px;padding:22px;margin-top:26px;background:var(--card)}
+    .soon .st{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+    .soon .sd{color:var(--ink-2);margin-top:8px;max-width:54ch}
+
+    /* the event-mix list */
+    .mix{list-style:none;padding:0;margin:40px 0 0;max-width:64ch;border-top:1px solid var(--line)}
+    .mix li{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:baseline;padding:22px 2px;border-bottom:1px solid var(--line)}
+    .mix .mi{color:var(--accent);font-size:13px;line-height:1;position:relative;top:2px}
+    .mix .mt{font-size:clamp(17px,2vw,21px);color:var(--ink);line-height:1.35;font-weight:500;letter-spacing:-.01em}
+
+    /* ---- footer ---- */
+    footer{border-top:1px solid var(--line);padding:38px 0;background:var(--paper-2)}
+    .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;
+      letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+    .foot a:hover{color:var(--accent)}
+
+    @media (max-width:760px){
+      .hero-grid{grid-template-columns:1fr;gap:36px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .reveal{opacity:1;transform:none;transition:none}
+      *{transition-duration:.01ms!important}
+    }
+  </style>
+</head>
+<body>
+  <script>document.documentElement.classList.add('js')</script>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <header class="hero shell">
+      <span class="eyebrow"><span class="dot">&#9670;</span> Ivey MScA &bull; 2026</span>
+      <h1 class="name">Aamir<br>Dhanani</h1>
+      <p class="role">Candidate for MScA Co-President</p>
+
+      <div class="hero-grid">
+        <div>
+          <p class="thesis">The best part of this year is the people in it. <span class="em">That shouldn't be left to chance.</span></p>
+          <p class="support">More connection. Better communication. Real follow-through.</p>
+          <div class="actions">
+            <a class="btn" href="#video">Watch the video <span class="arw">&rarr;</span></a>
+            <a class="btn ghost" href="#plan">See the plan</a>
+          </div>
+        </div>
+
+        <aside class="ballot" aria-label="Voting information">
+          <div class="ballot-h">Voting</div>
+          <div class="ballot-row"><span class="k">Opens</span><span class="v tbd">[ TBD ]</span></div>
+          <div class="ballot-row"><span class="k">Closes</span><span class="v tbd">[ TBD ]</span></div>
+          <div class="ballot-row"><span class="k">Vote at</span><span class="v tbd">[ TBD ]</span></div>
+        </aside>
+      </div>
+    </header>
+
+    <!-- ============ EXHIBIT A — VIDEO ============ -->
+    <section id="video" class="shell">
+      <div class="label reveal"><span class="n">Exhibit A</span> &mdash; The Video</div>
+      <div class="frame reveal">
+        <span class="exhibit">Exhibit A</span>
+        <div class="ph">
+          <div class="play"><svg width="20" height="22" viewBox="0 0 20 22" fill="currentColor" aria-hidden="true"><path d="M0 1.6v18.8a1 1 0 0 0 1.5.87l16.2-9.4a1 1 0 0 0 0-1.74L1.5.73A1 1 0 0 0 0 1.6Z"/></svg></div>
+          <span class="ph-t">Campaign video &mdash; coming soon</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE CASE ============ -->
+    <section id="case" class="shell">
+      <div class="label reveal">The Case</div>
+      <h2 class="reveal">We only get one year. Let's get more out of it.</h2>
+      <p class="lede reveal">Students naturally get to know the people they sit beside, work with, or meet early in the program. With multiple streams, it can be easy to spend most of the year within the same circles.</p>
+      <p class="lede reveal">The goal isn't simply <em>more events</em>. It's to create more <strong>reasons</strong> for people across the MSc program to meet, participate, and build relationships throughout the year.</p>
+      <ul class="mix reveal">
+        <li><span class="mi" aria-hidden="true">&#9670;</span><span class="mt">Larger, marquee paid events worth showing up for</span></li>
+        <li><span class="mi" aria-hidden="true">&#9670;</span><span class="mt">Affordable events that don't gatekeep on price</span></li>
+        <li><span class="mi" aria-hidden="true">&#9670;</span><span class="mt">Completely free, low-barrier activities</span></li>
+        <li><span class="mi" aria-hidden="true">&#9670;</span><span class="mt">Informal ways for people across streams to meet</span></li>
+      </ul>
+    </section>
+
+    <!-- ============ THE PLAN (scaffold) ============ -->
+    <section id="plan" class="shell">
+      <div class="label reveal">The Plan</div>
+      <h2 class="reveal">What I'd actually focus on.</h2>
+      <div class="soon reveal">
+        <div class="st">Section in progress</div>
+        <p class="sd">Your specific priorities go here &mdash; each tied back to what the Co-President role can really move. Send me the points and I'll lay them out.</p>
+      </div>
+    </section>
+
+    <!-- ============ THE EVIDENCE (scaffold) ============ -->
+    <section id="evidence" class="shell">
+      <div class="label reveal">The Evidence</div>
+      <h2 class="reveal">Relevant experience I bring.</h2>
+      <div class="soon reveal">
+        <div class="st">Section in progress</div>
+        <p class="sd">The experience / proof-points ("Exhibit B, C, D&hellip;") go here. Send me the highlights and I'll format them as document-style exhibits.</p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT (scaffold) ============ -->
+    <section id="contact" class="shell">
+      <div class="label reveal">On the Record</div>
+      <h2 class="reveal">Questions, ideas, or feedback?</h2>
+      <p class="lede reveal">The best campaigns are built on what people actually want. Tell me what would make your year better.</p>
+      <div class="actions reveal">
+        <a class="btn" href="mailto:contact@aamirdhanani.com">Email me <span class="arw">&rarr;</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell foot">
+      <span>Aamir Dhanani &middot; MScA Co-President &middot; 2026</span>
+      <span>Not affiliated with any actual court of law.</span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold:.15, rootMargin:"0px 0px -6% 0px" });
+      document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    })();
+  </script>
+</body>
+</html>

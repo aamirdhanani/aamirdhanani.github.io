@@ -27,7 +27,7 @@
     html{scroll-behavior:smooth}
     body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;color-scheme:light;
       -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
-    a{color:inherit}
+    a{color:inherit;text-decoration:none}
     ::selection{background:var(--accent);color:var(--paper)}
     a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:1px}
     .shell{max-width:var(--maxw);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
@@ -66,8 +66,6 @@
     .btn:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
     .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
     .btn.ghost:hover{background:transparent;color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
-    .btn .arw{transition:transform .2s}
-    .btn:hover .arw{transform:translateX(3px)}
 
     /* voting = document block */
     .ballot{border:1.5px solid var(--ink);background:var(--card);border-radius:2px;position:relative}
@@ -81,8 +79,7 @@
     .ballot-row .v{font-family:var(--mono);font-size:14px;color:var(--ink);text-align:right}
     .ballot-row .v.tbd{color:var(--accent)}
     .ballot-note{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:13px 20px;border-top:1px dashed var(--line);text-align:center}
-    .upcoming{margin-top:24px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--ink-2);max-width:46ch;line-height:1.5}
-    .up-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0}
+    .upcoming{margin-top:24px;font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--ink-2);max-width:52ch;line-height:1.55}
 
     /* candidate portrait (Exhibit A) */
     .hero-rail{display:flex;flex-direction:column;gap:22px}
@@ -157,10 +154,10 @@
           <p class="thesis">I'd rather get through this year knowing we tried to do <span class="em">too much</span> than not enough.</p>
           <p class="support">More connection. Better communication. Real follow-through.</p>
           <div class="actions">
-            <a class="btn" href="#video">Watch the video <span class="arw">&rarr;</span></a>
+            <a class="btn" href="#video">Watch the video</a>
             <a class="btn ghost" href="#plan">See the plan</a>
           </div>
-          <p class="upcoming"><span class="up-dot"></span>Meet the candidates live on Zoom, Sept 24 at 5pm. All voters welcome.</p>
+          <p class="upcoming">Meet the candidates live on Zoom, Sept 24 at 5pm. All voters welcome.</p>
         </div>
 
         <div class="hero-rail">
@@ -256,7 +253,7 @@
       <h2 class="reveal">Questions, ideas, or feedback?</h2>
       <p class="lede reveal">The best campaigns are built on what people actually want. Tell me what would make your year better.</p>
       <div class="actions reveal">
-        <a class="btn" href="https://ig.me/m/aamirdhanani" target="_blank" rel="noopener noreferrer">Message me on Instagram <span class="arw">&rarr;</span></a>
+        <a class="btn" href="https://ig.me/m/aamirdhanani" target="_blank" rel="noopener noreferrer">Message me on Instagram</a>
         <a class="btn ghost" href="mailto:contact@aamirdhanani.com">Or email me</a>
       </div>
     </section>

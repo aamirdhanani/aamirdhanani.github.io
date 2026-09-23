@@ -117,6 +117,16 @@
     .exhibit-item p{color:var(--ink-2);font-size:clamp(15px,1.7vw,17px);line-height:1.55;margin:0}
     @media(max-width:600px){.exhibit-item{grid-template-columns:1fr;gap:8px}}
 
+    /* anonymous feedback form */
+    .tip{margin-top:clamp(40px,6vw,60px);max-width:60ch;border-top:1px solid var(--line);padding-top:clamp(28px,4vw,40px)}
+    .tip-label{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:14px}
+    .tip-desc{color:var(--ink-2);font-size:clamp(15px,1.7vw,17px);margin:0 0 18px;max-width:52ch}
+    .tip textarea{width:100%;background:var(--card);border:1.5px solid var(--line-2);border-radius:2px;padding:15px 16px;font-family:var(--sans);font-size:16px;color:var(--ink);line-height:1.5;resize:vertical;min-height:120px;transition:border-color .2s}
+    .tip textarea:focus{outline:none;border-color:var(--ink)}
+    .tip textarea::placeholder{color:var(--ink-3)}
+    .tip-foot{display:flex;align-items:center;gap:16px;margin-top:16px;flex-wrap:wrap}
+    .tip-status{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--ink-2)}
+
     /* the event-mix list */
     .mix{list-style:none;padding:0;margin:40px 0 0;max-width:64ch;border-top:1px solid var(--line)}
     .mix li{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:baseline;padding:22px 2px;border-bottom:1px solid var(--line)}
@@ -252,6 +262,20 @@
         <a class="btn" href="https://ig.me/m/aamirdhanani" target="_blank" rel="noopener noreferrer">Message me on Instagram</a>
         <a class="btn ghost" href="mailto:contact@aamirdhanani.com">Or email me</a>
       </div>
+
+      <form id="tipForm" class="tip reveal">
+        <span class="tip-label">Off the record</span>
+        <p class="tip-desc">Prefer to stay anonymous? Say it here. No name, no email, it comes straight to me.</p>
+        <input type="hidden" name="access_key" value="de614ec8-fe2c-4f75-85ea-71ab323363c1">
+        <input type="hidden" name="subject" value="Anonymous feedback from the MScA campaign page">
+        <input type="hidden" name="from_name" value="MScA Campaign Page">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <textarea name="message" rows="5" required placeholder="What would make your year better?"></textarea>
+        <div class="tip-foot">
+          <button type="submit" class="btn">Submit anonymously</button>
+          <span class="tip-status" id="tipStatus" role="status" aria-live="polite"></span>
+        </div>
+      </form>
     </section>
   </main>
 
@@ -268,6 +292,26 @@
         es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
       }, { threshold:.15, rootMargin:"0px 0px -6% 0px" });
       document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+      var tf = document.getElementById('tipForm');
+      if (tf) {
+        tf.addEventListener('submit', function(e){
+          e.preventDefault();
+          var s = document.getElementById('tipStatus');
+          var btn = tf.querySelector('button[type="submit"]');
+          btn.disabled = true; s.textContent = 'Sending…';
+          fetch('https://api.web3forms.com/submit', { method:'POST', body:new FormData(tf) })
+            .then(function(r){ return r.json(); })
+            .then(function(j){
+              if (j.success) {
+                tf.innerHTML = '<span class="tip-label">Off the record</span><p class="tip-desc">Got it, thank you. That came straight to me, anonymously.</p>';
+              } else {
+                s.textContent = "That didn't send. Try again, or DM me on Instagram."; btn.disabled = false;
+              }
+            })
+            .catch(function(){ s.textContent = "That didn't send. Try again, or DM me on Instagram."; btn.disabled = false; });
+        });
+      }
     })();
   </script>
 </body>

@@ -121,24 +121,28 @@ eleventyExcludeFromCollections: true
     .exhibit-item p{color:var(--ink-2);font-size:clamp(15px,1.7vw,17px);line-height:1.55;margin:0}
     @media(max-width:600px){.exhibit-item{grid-template-columns:1fr;gap:8px}}
 
-    /* anonymous feedback form */
-    .tip{margin-top:clamp(40px,6vw,60px);max-width:60ch;border-top:1px solid var(--line);padding-top:clamp(28px,4vw,40px)}
-    .tip-label{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:14px}
-    .tip-desc{color:var(--ink-2);font-size:clamp(15px,1.7vw,17px);margin:0 0 18px;max-width:52ch}
-    .tip textarea{width:100%;background:var(--card);border:1.5px solid var(--line-2);border-radius:2px;padding:15px 16px;font-family:var(--sans);font-size:16px;color:var(--ink);line-height:1.5;resize:vertical;min-height:120px;transition:border-color .2s}
+    /* anonymous feedback form (in the hero rail, under the ballot) */
+    .tip{border-top:1px solid var(--line);padding-top:20px;scroll-margin-top:24px}
+    .tip-label{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:9px}
+    .tip-desc{color:var(--ink-2);font-size:13.5px;line-height:1.5;margin:0 0 12px}
+    .tip textarea{width:100%;background:var(--card);border:1.5px solid var(--line-2);border-radius:2px;padding:12px 13px;font-family:var(--sans);font-size:15px;color:var(--ink);line-height:1.5;resize:vertical;min-height:96px;transition:border-color .2s}
     .tip textarea:focus{outline:none;border-color:var(--ink)}
     .tip textarea::placeholder{color:var(--ink-3)}
-    .tip-foot{display:flex;align-items:center;gap:16px;margin-top:16px;flex-wrap:wrap}
-    .tip-status{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--ink-2)}
+    .tip-foot{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+    .tip-status{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--ink-2)}
 
     /* sticky "tell me what you want" pill */
-    .jump-pill{position:fixed;left:50%;bottom:22px;transform:translate(-50%,18px);opacity:0;visibility:hidden;z-index:50;
-      background:var(--ink);color:var(--paper);border:1px solid var(--ink);border-radius:999px;padding:13px 26px;
-      font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:-.005em;box-shadow:0 10px 30px rgba(0,0,0,.20);
-      transition:opacity .3s cubic-bezier(.2,.7,.2,1),transform .3s cubic-bezier(.2,.7,.2,1),background .2s}
+    .jump-pill{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);opacity:0;visibility:hidden;z-index:50;
+      background:var(--accent);color:var(--paper);border:1px solid var(--accent);border-radius:999px;padding:17px 38px;
+      font-family:var(--sans);font-size:17px;font-weight:700;letter-spacing:-.01em;box-shadow:0 14px 38px rgba(165,52,31,.38);
+      transition:opacity .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1),background .2s}
     .jump-pill.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
-    .jump-pill:hover{background:var(--accent);border-color:var(--accent)}
-    @media(max-width:600px){.jump-pill{bottom:16px;font-size:13.5px;padding:12px 22px}}
+    .jump-pill:hover{background:var(--accent-2);border-color:var(--accent-2);transform:translate(-50%,-2px)}
+    @media(max-width:600px){
+      .jump-pill{left:16px;right:16px;bottom:16px;transform:translateY(20px);text-align:center;font-size:16px;padding:16px 26px}
+      .jump-pill.show{transform:translateY(0)}
+      .jump-pill:hover{transform:translateY(-2px)}
+    }
 
     /* the event-mix list */
     .mix{list-style:none;padding:0;margin:40px 0 0;max-width:64ch;border-top:1px solid var(--line)}
@@ -200,6 +204,20 @@ eleventyExcludeFromCollections: true
             <div class="ballot-row"><span class="k">Results</span><span class="v">Oct 2</span></div>
             <div class="ballot-note">Open to all MScA members</div>
           </aside>
+
+          <form id="tipForm" class="tip">
+            <span class="tip-label">Off the record</span>
+            <p class="tip-desc">Anonymous feedback, straight to me. No name, no email.</p>
+            <input type="hidden" name="access_key" value="de614ec8-fe2c-4f75-85ea-71ab323363c1">
+            <input type="hidden" name="subject" value="Anonymous feedback from the MScA campaign page">
+            <input type="hidden" name="from_name" value="MScA Campaign Page">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <textarea name="message" rows="4" required placeholder="What would make your year better?"></textarea>
+            <div class="tip-foot">
+              <button type="submit" class="btn">Submit anonymously</button>
+              <span class="tip-status" id="tipStatus" role="status" aria-live="polite"></span>
+            </div>
+          </form>
         </div>
       </div>
     </header>
@@ -275,20 +293,6 @@ eleventyExcludeFromCollections: true
         <a class="btn" href="https://ig.me/m/aamirdhanani" target="_blank" rel="noopener noreferrer">Message me on Instagram</a>
         <a class="btn ghost" href="mailto:contact@aamirdhanani.com">Or email me</a>
       </div>
-
-      <form id="tipForm" class="tip reveal">
-        <span class="tip-label">Off the record</span>
-        <p class="tip-desc">Prefer to stay anonymous? Say it here. No name, no email, it comes straight to me.</p>
-        <input type="hidden" name="access_key" value="de614ec8-fe2c-4f75-85ea-71ab323363c1">
-        <input type="hidden" name="subject" value="Anonymous feedback from the MScA campaign page">
-        <input type="hidden" name="from_name" value="MScA Campaign Page">
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <textarea name="message" rows="5" required placeholder="What would make your year better?"></textarea>
-        <div class="tip-foot">
-          <button type="submit" class="btn">Submit anonymously</button>
-          <span class="tip-status" id="tipStatus" role="status" aria-live="polite"></span>
-        </div>
-      </form>
     </section>
   </main>
 
@@ -299,7 +303,7 @@ eleventyExcludeFromCollections: true
     </div>
   </footer>
 
-  <a class="jump-pill" id="jumpPill" href="#contact">Tell me what you want</a>
+  <a class="jump-pill" id="jumpPill" href="#tipForm">Tell me what you want</a>
 
   <script>
     (function(){
@@ -329,16 +333,7 @@ eleventyExcludeFromCollections: true
       }
 
       var pill = document.getElementById('jumpPill');
-      var contact = document.getElementById('contact');
-      if (pill && contact) {
-        var onScroll = function(){
-          var pastHero = scrollY > window.innerHeight * 0.5;
-          var contactNear = contact.getBoundingClientRect().top < window.innerHeight * 0.85;
-          pill.classList.toggle('show', pastHero && !contactNear);
-        };
-        addEventListener('scroll', onScroll, { passive:true });
-        onScroll();
-      }
+      if (pill) { requestAnimationFrame(function(){ pill.classList.add('show'); }); }
     })();
   </script>
 </body>

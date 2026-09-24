@@ -127,6 +127,15 @@
     .tip-foot{display:flex;align-items:center;gap:16px;margin-top:16px;flex-wrap:wrap}
     .tip-status{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--ink-2)}
 
+    /* sticky "tell me what you want" pill */
+    .jump-pill{position:fixed;left:50%;bottom:22px;transform:translate(-50%,18px);opacity:0;visibility:hidden;z-index:50;
+      background:var(--ink);color:var(--paper);border:1px solid var(--ink);border-radius:999px;padding:13px 26px;
+      font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:-.005em;box-shadow:0 10px 30px rgba(0,0,0,.20);
+      transition:opacity .3s cubic-bezier(.2,.7,.2,1),transform .3s cubic-bezier(.2,.7,.2,1),background .2s}
+    .jump-pill.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+    .jump-pill:hover{background:var(--accent);border-color:var(--accent)}
+    @media(max-width:600px){.jump-pill{bottom:16px;font-size:13.5px;padding:12px 22px}}
+
     /* the event-mix list */
     .mix{list-style:none;padding:0;margin:40px 0 0;max-width:64ch;border-top:1px solid var(--line)}
     .mix li{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:baseline;padding:22px 2px;border-bottom:1px solid var(--line)}
@@ -286,6 +295,8 @@
     </div>
   </footer>
 
+  <a class="jump-pill" id="jumpPill" href="#contact">Tell me what you want</a>
+
   <script>
     (function(){
       var io = new IntersectionObserver(function(es){
@@ -311,6 +322,18 @@
             })
             .catch(function(){ s.textContent = "That didn't send. Try again, or DM me on Instagram."; btn.disabled = false; });
         });
+      }
+
+      var pill = document.getElementById('jumpPill');
+      var contact = document.getElementById('contact');
+      if (pill && contact) {
+        var onScroll = function(){
+          var pastHero = scrollY > window.innerHeight * 0.5;
+          var contactNear = contact.getBoundingClientRect().top < window.innerHeight * 0.85;
+          pill.classList.toggle('show', pastHero && !contactNear);
+        };
+        addEventListener('scroll', onScroll, { passive:true });
+        onScroll();
       }
     })();
   </script>

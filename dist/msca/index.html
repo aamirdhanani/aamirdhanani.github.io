@@ -202,15 +202,15 @@
           </aside>
 
           <form id="tipForm" class="tip">
-            <span class="tip-label">Off the record</span>
-            <p class="tip-desc">Anonymous feedback, straight to me. No name, no email.</p>
+            <span class="tip-label">Submit anonymous feedback</span>
+            <p class="tip-desc">It comes straight to me. No name, no email.</p>
             <input type="hidden" name="access_key" value="de614ec8-fe2c-4f75-85ea-71ab323363c1">
             <input type="hidden" name="subject" value="Anonymous feedback from the MScA campaign page">
             <input type="hidden" name="from_name" value="MScA Campaign Page">
             <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <textarea name="message" rows="4" required placeholder="What would make your year better?"></textarea>
             <div class="tip-foot">
-              <button type="submit" class="btn">Submit anonymously</button>
+              <button type="submit" class="btn">Send anonymously</button>
               <span class="tip-status" id="tipStatus" role="status" aria-live="polite"></span>
             </div>
           </form>
@@ -319,7 +319,7 @@
             .then(function(r){ return r.json(); })
             .then(function(j){
               if (j.success) {
-                tf.innerHTML = '<span class="tip-label">Off the record</span><p class="tip-desc">Got it, thank you. That came straight to me, anonymously.</p>';
+                tf.innerHTML = '<span class="tip-label">Thank you</span><p class="tip-desc">Got it. That came straight to me, anonymously.</p>';
               } else {
                 s.textContent = "That didn't send. Try again, or DM me on Instagram."; btn.disabled = false;
               }

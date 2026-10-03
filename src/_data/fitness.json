@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-02T21:28:49.058Z",
+  "lastUpdated": "2026-10-03T02:30:17.553Z",
   "source": "garmin",
   "athlete": {
     "firstname": "Aamir",
@@ -102,11 +102,6 @@
   "weeklyTotalDistance": "0.00",
   "weeklyCount": 0,
   "heatmap": [
-    {
-      "date": "2025-10-03",
-      "count": 1,
-      "intensity": 1
-    },
     {
       "date": "2025-10-04",
       "count": 0,
@@ -1924,6 +1919,11 @@
     },
     {
       "date": "2026-10-02",
+      "count": 0,
+      "intensity": 0
+    },
+    {
+      "date": "2026-10-03",
       "count": 0,
       "intensity": 0
     }

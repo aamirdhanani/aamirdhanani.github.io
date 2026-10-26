@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bring us a business problem · Ivey MSc Business Analytics</title>
+  <meta name="description" content="A team of MSc Business Analytics students at Ivey Business School is looking for a real-world decision-making problem to analyze and model for our Art of Modelling course.">
+  <meta property="og:title" content="Have a business decision worth getting right? Let's model it.">
+  <meta property="og:description" content="A team of Ivey MSc Business Analytics students is looking to partner with someone in industry on a real decision-making problem. No confidential or large data required.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#f7f6f1; --panel:#ffffff; --panel-2:#f0eee7;
+      --ink:#171a1f; --ink-2:#555a63; --ink-3:#8b8f98;
+      --line:#e4e1d8; --line-2:#d4d0c5;
+      --accent:#1f4e8c; --accent-ink:#173c6c; --accent-soft:#eaf0f8;
+      --serif:'Newsreader',Georgia,'Times New Roman',serif;
+      --sans:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
+      --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+      --maxw:1000px; --gut:clamp(20px,5vw,56px);
+    }
+    *{box-sizing:border-box;margin:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;color-scheme:light;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    ::selection{background:var(--accent);color:#fff}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+    .shell{max-width:var(--maxw);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+    .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500}
+
+    section{padding:clamp(48px,8vw,96px) 0;border-top:1px solid var(--line)}
+    .sec-label{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:22px}
+    h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.8vw,40px);line-height:1.12;letter-spacing:-.01em;max-width:20ch;text-wrap:balance}
+    .lede{font-size:clamp(16px,1.7vw,19px);color:var(--ink-2);max-width:60ch;margin-top:20px}
+
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none}
+    html:not(.js) .reveal{opacity:1;transform:none}
+
+    /* HERO */
+    .hero{padding-top:clamp(40px,7vw,76px);padding-bottom:clamp(48px,8vw,90px);border-top:0}
+    .hero .eyebrow{display:block;margin-bottom:clamp(22px,4vw,34px)}
+    .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,6vw,66px);line-height:1.04;letter-spacing:-.02em;max-width:17ch;text-wrap:balance}
+    .hero .sub{font-size:clamp(17px,1.9vw,21px);color:var(--ink-2);max-width:56ch;margin-top:clamp(20px,3vw,30px);line-height:1.55}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(28px,4vw,38px)}
+    .btn{display:inline-flex;align-items:center;font-size:15px;font-weight:600;padding:14px 26px;border-radius:999px;
+      background:var(--accent);color:#fff;border:1px solid var(--accent);cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+    .btn:hover{background:var(--accent-ink);border-color:var(--accent-ink);transform:translateY(-2px)}
+    .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+    .btn.ghost:hover{background:transparent;color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+
+    /* example areas */
+    .areas{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:34px;border-top:1px solid var(--line);max-width:68ch}
+    .areas div{padding:16px 2px;border-bottom:1px solid var(--line);font-size:16px;color:var(--ink);display:flex;gap:13px;align-items:baseline}
+    .areas div::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;transform:translateY(-2px)}
+    .areas div:nth-child(odd){padding-right:26px;border-right:1px solid var(--line)}
+    .areas div:nth-child(even){padding-left:26px}
+
+    .note{margin-top:34px;background:var(--accent-soft);border:1px solid #d3e0f0;border-radius:10px;padding:20px 22px;max-width:62ch}
+    .note p{color:var(--accent-ink);font-size:15.5px;line-height:1.55;margin:0}
+    .note strong{font-weight:600}
+
+    /* steps */
+    .steps{margin-top:34px;max-width:70ch;counter-reset:s}
+    .step{display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,28px);padding:22px 0;border-bottom:1px solid var(--line)}
+    .step:first-child{border-top:1px solid var(--line)}
+    .step .num{font-family:var(--serif);font-size:26px;color:var(--accent);line-height:1;font-weight:500}
+    .step h3{font-size:17px;font-weight:600;margin:0 0 5px;letter-spacing:-.01em}
+    .step p{color:var(--ink-2);font-size:15.5px;margin:0;max-width:56ch}
+    .commit{margin-top:24px;font-size:15px;color:var(--ink-3);font-style:italic;font-family:var(--serif)}
+
+    .who p{font-size:clamp(16px,1.8vw,19px);color:var(--ink-2);max-width:62ch;margin-top:20px;line-height:1.6}
+    .who p strong{color:var(--ink);font-weight:600}
+
+    /* contact */
+    .contact h2{max-width:24ch}
+    .contact .lede{margin-bottom:28px}
+
+    footer{border-top:1px solid var(--line);padding:30px 0;background:var(--panel-2)}
+    .foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-3)}
+    .foot a:hover{color:var(--accent)}
+
+    @media(max-width:620px){
+      .areas{grid-template-columns:1fr}
+      .areas div:nth-child(odd){border-right:0;padding-right:2px}
+      .areas div:nth-child(even){padding-left:2px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .reveal{opacity:1;transform:none;transition:none}
+      *{transition-duration:.01ms!important}
+    }
+  </style>
+</head>
+<body>
+  <script>document.documentElement.classList.add('js')</script>
+
+  <main>
+    <header class="hero shell">
+      <span class="eyebrow">Ivey Business School &middot; Art of Modelling</span>
+      <h1>Have a business decision worth getting right? Let's model it.</h1>
+      <p class="sub">We're a team of MSc Business Analytics students at Ivey Business School. For our Art of Modelling course, we're looking to partner with someone in industry on a real decision-making problem, then build an analytical model to help solve it.</p>
+      <div class="actions">
+        <a class="btn" href="mailto:contact@aamirdhanani.com?subject=Art%20of%20Modelling%20project">Get in touch</a>
+        <a class="btn ghost" href="#looking">What we're looking for</a>
+      </div>
+    </header>
+
+    <section id="looking" class="shell">
+      <div class="sec-label reveal">What we're looking for</div>
+      <h2 class="reveal">A real decision where data or modelling could make the call better.</h2>
+      <p class="lede reveal">If someone in your organization has to make a call, and there's an opportunity to use data to make it sharper, that's exactly the kind of problem we'd love to explore. A few areas it often shows up:</p>
+      <div class="areas reveal">
+        <div>Demand forecasting</div>
+        <div>Staffing and resource allocation</div>
+        <div>Inventory and supply decisions</div>
+        <div>Pricing and revenue</div>
+        <div>Scheduling and operations</div>
+        <div>Customer behaviour</div>
+        <div>Financial planning</div>
+        <div>Risk and scenario planning</div>
+      </div>
+      <div class="note reveal">
+        <p>You don't need confidential information or a large dataset. A <strong>simplified or anonymized</strong> version of a real problem works perfectly. What matters is a genuine decision where analytics could add value.</p>
+      </div>
+    </section>
+
+    <section id="how" class="shell">
+      <div class="sec-label reveal">How it works</div>
+      <h2 class="reveal">Low effort for you, real work from us.</h2>
+      <div class="steps">
+        <div class="step reveal"><span class="num">1</span><div><h3>A short conversation</h3><p>We learn about the problem and the decision behind it. 20 minutes is plenty to start.</p></div></div>
+        <div class="step reveal"><span class="num">2</span><div><h3>We scope it</h3><p>We identify the relevant data, the assumptions, and what a good outcome actually looks like.</p></div></div>
+        <div class="step reveal"><span class="num">3</span><div><h3>We build the model</h3><p>Using simulation, optimization, or other analytics, we test different scenarios and pressure-test the options.</p></div></div>
+        <div class="step reveal"><span class="num">4</span><div><h3>We share back</h3><p>You get the insights, the trade-offs, and a recommended course of action, written up clearly.</p></div></div>
+      </div>
+      <p class="commit reveal">No commitment to start. Just a short chat to see whether there's a fit.</p>
+    </section>
+
+    <section id="who" class="shell who">
+      <div class="sec-label reveal">Who we are</div>
+      <h2 class="reveal">An Ivey analytics team, doing this for real.</h2>
+      <p class="reveal">We're a team of Master's students in the <strong>MSc in Management (Business Analytics)</strong> program at Ivey Business School, Western University, with backgrounds across analytics, business, and operations. This is a course project, and we want it to be as realistic and practically useful as possible, which is exactly why we're reaching out to people doing real work.</p>
+    </section>
+
+    <section id="contact" class="shell contact">
+      <div class="sec-label reveal">Get in touch</div>
+      <h2 class="reveal">Sound like something you, or someone you know, could help with?</h2>
+      <p class="lede reveal">Reach out and we'll take it from there. Happy to share more about the course or the project if it's helpful.</p>
+      <div class="actions reveal">
+        <a class="btn" href="mailto:contact@aamirdhanani.com?subject=Art%20of%20Modelling%20project">Email us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell foot">
+      <span>Ivey MSc in Management (Business Analytics) &middot; Art of Modelling</span>
+      <a href="mailto:contact@aamirdhanani.com">contact@aamirdhanani.com</a>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold:.14, rootMargin:"0px 0px -6% 0px" });
+      document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    })();
+  </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-21T22:29:37.001Z",
+  "lastUpdated": "2026-11-22T03:40:42.870Z",
   "source": "garmin",
   "athlete": {
     "firstname": "Aamir",
@@ -7,6 +7,17 @@
     "profile": "https://s3.amazonaws.com/garmin-connect-prod/profile_images/cfdeaef6-6b2a-414c-ab0f-c9960a37db20-prof.png"
   },
   "recentActivities": [
+    {
+      "id": 25157161741,
+      "name": "Strength",
+      "type": "WeightTraining",
+      "distance": "0.00",
+      "movingTime": 4562.7509765625,
+      "pace": "",
+      "startDate": "2026-11-21T17:04:40",
+      "total_elevation_gain": 0,
+      "route": null
+    },
     {
       "id": 24603315029,
       "name": "London Running",
@@ -85,28 +96,23 @@
         "ex": 77.5,
         "ey": 7.2
       }
-    },
-    {
-      "id": 23978227144,
-      "name": "Strength",
-      "type": "WeightTraining",
-      "distance": "0.00",
-      "movingTime": 4282.31103515625,
-      "pace": "",
-      "startDate": "2026-08-14T14:13:06",
-      "total_elevation_gain": 0,
-      "route": null
     }
   ],
-  "weeklyVolume": {},
-  "weeklyTotalDistance": "0.00",
-  "weeklyCount": 0,
-  "heatmap": [
-    {
-      "date": "2025-11-22",
+  "weeklyVolume": {
+    "WeightTraining": {
+      "distance": 0,
+      "time": 4562.7509765625,
       "count": 1,
-      "intensity": 1
-    },
+      "distanceKm": "0.00",
+      "formattedTime": "1h 16m",
+      "percentage": "100",
+      "isCardio": false,
+      "avgPace": ""
+    }
+  },
+  "weeklyTotalDistance": "0.00",
+  "weeklyCount": 1,
+  "heatmap": [
     {
       "date": "2025-11-23",
       "count": 0,
@@ -1924,6 +1930,11 @@
     },
     {
       "date": "2026-11-21",
+      "count": 1,
+      "intensity": 1
+    },
+    {
+      "date": "2026-11-22",
       "count": 0,
       "intensity": 0
     }
